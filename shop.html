@@ -1,42 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop - Personality-Based Fashion</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop by Mood – Wear Your Mood</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/script.js"></script>
 </head>
 <body>
-  <!-- Navbar -->
-  <div class="navbar">
-    <div class="logo">Fashion Vibe</div>
-    <nav>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">WEAR YOUR MOOD</div>
+    <nav class="main-nav">
       <a href="index.html">Home</a>
-      <a href="quiz.html">Quiz</a>
+      <a href="quiz.html">Find Your Mood</a>
       <a href="shop.html">Shop</a>
       <a href="lookbook.html">Lookbook</a>
       <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html">Community</a>
     </nav>
-  </div>
+  </header>
 
   <!-- Shop Section -->
-  <div class="shop-container">
-    <h2>Our Latest Styles</h2>
-    <div class="product-gallery">
-      <!-- Example Product Card -->
-      <div class="product-card">
-        <img src="assets/images/product1.jpg" alt="Product 1">
-        <h3>Product Name</h3>
-        <p>$99.99</p>
-        <button class="cta-button">Add to Cart</button>
+  <section class="shop-section">
+    <h1>Shop by Mood</h1>
+    <p class="shop-description">Explore outfits based on your mood. Choose your vibe and find your perfect look.</p>
+    
+    <div class="mood-categories">
+      <div class="mood-category" id="relaxed">
+        <h2>Relaxed</h2>
+        <div class="products-grid">
+          <!-- Example product, will be dynamically populated via JS or JSON -->
+          <div class="product-item" data-id="relaxed1">
+            <img src="images/relaxed1.jpg" alt="Relaxed Look" />
+            <p>Relaxed Outfit 1</p>
+            <button class="cta-button">View Details</button>
+          </div>
+          <!-- Repeat for other items -->
+        </div>
       </div>
+
+      <div class="mood-category" id="bold">
+        <h2>Bold Rebel</h2>
+        <div class="products-grid">
+          <!-- Example product -->
+          <div class="product-item" data-id="bold1">
+            <img src="images/bold1.jpg" alt="Bold Rebel Look" />
+            <p>Bold Rebel Look 1</p>
+            <button class="cta-button">View Details</button>
+          </div>
+          <!-- Repeat for other items -->
+        </div>
+      </div>
+
+      <!-- More categories like Main Character, Chill Vibes, etc. -->
     </div>
-  </div>
+
+    <!-- Mix-and-Match Tool -->
+    <section class="mix-and-match">
+      <h2>Mix & Match Your Look</h2>
+      <div class="match-tool">
+        <div class="tool-item">
+          <h3>Select Top</h3>
+          <select id="select-top">
+            <option value="top1">Casual Top 1</option>
+            <option value="top2">Casual Top 2</option>
+            <option value="top3">Bold Top 1</option>
+          </select>
+        </div>
+        <div class="tool-item">
+          <h3>Select Bottom</h3>
+          <select id="select-bottom">
+            <option value="bottom1">Casual Bottom 1</option>
+            <option value="bottom2">Bold Bottom 1</option>
+            <option value="bottom3">Relaxed Bottom 1</option>
+          </select>
+        </div>
+        <div class="tool-item">
+          <h3>Select Shoes</h3>
+          <select id="select-shoes">
+            <option value="shoes1">Casual Shoes 1</option>
+            <option value="shoes2">Bold Shoes 1</option>
+            <option value="shoes3">Chill Shoes 1</option>
+          </select>
+        </div>
+        <button class="cta-button" id="create-look">Create Look</button>
+      </div>
+    </section>
+  </section>
 
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Personality-Based Fashion | All Rights Reserved</p>
+  <footer class="site-footer">
+    <p>&copy; 2025 Wear Your Mood. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">Contact</a>
+    </div>
   </footer>
 </body>
 </html>

@@ -1,39 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lookbook - Personality-Based Fashion</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lookbook – Wear Your Mood</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/script.js"></script>
 </head>
 <body>
-  <!-- Navbar -->
-  <div class="navbar">
-    <div class="logo">Fashion Vibe</div>
-    <nav>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">WEAR YOUR MOOD</div>
+    <nav class="main-nav">
       <a href="index.html">Home</a>
-      <a href="quiz.html">Quiz</a>
+      <a href="quiz.html">Find Your Mood</a>
       <a href="shop.html">Shop</a>
       <a href="lookbook.html">Lookbook</a>
       <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html">Community</a>
     </nav>
-  </div>
+  </header>
 
   <!-- Lookbook Section -->
-  <div class="lookbook-container">
-    <h2>Our Latest Looks</h2>
+  <section class="lookbook-section">
+    <h1>Lookbook</h1>
+    <p class="lookbook-description">Get inspired by street style and mood-based outfits from influencers and users like you!</p>
+
     <div class="lookbook-gallery">
-      <div class="lookbook-card">
-        <img src="assets/images/look1.jpg" alt="Look 1">
-        <p>Look 1 Description</p>
+      <!-- Example of user-submitted looks -->
+      <div class="look-item" data-id="look1">
+        <img src="images/look1.jpg" alt="Street Style Look 1" />
+        <p class="look-description">Main Character Energy – Street Style Look</p>
       </div>
+      <div class="look-item" data-id="look2">
+        <img src="images/look2.jpg" alt="Street Style Look 2" />
+        <p class="look-description">Chill Vibes – Cozy Yet Cool</p>
+      </div>
+      <div class="look-item" data-id="look3">
+        <img src="images/look3.jpg" alt="Street Style Look 3" />
+        <p class="look-description">Bold Rebel – Breaking the Rules</p>
+      </div>
+
+      <!-- More user-submitted looks -->
     </div>
-  </div>
+
+    <!-- Influencer Feature -->
+    <section class="influencer-feature">
+      <h2>Influencer Looks</h2>
+      <div class="influencer-gallery">
+        <div class="influencer-item">
+          <img src="images/influencer1.jpg" alt="Influencer Look 1" />
+          <p class="influencer-name">@influencer1</p>
+          <p class="influencer-look">Chill Vibes Collection</p>
+        </div>
+        <div class="influencer-item">
+          <img src="images/influencer2.jpg" alt="Influencer Look 2" />
+          <p class="influencer-name">@influencer2</p>
+          <p class="influencer-look">Main Character Energy Collection</p>
+        </div>
+        <!-- Repeat for more influencers -->
+      </div>
+    </section>
+
+  </section>
 
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Personality-Based Fashion | All Rights Reserved</p>
+  <footer class="site-footer">
+    <p>&copy; 2025 Wear Your Mood. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">Contact</a>
+    </div>
   </footer>
 </body>
 </html>

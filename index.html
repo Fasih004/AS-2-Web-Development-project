@@ -1,65 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personality-Based Fashion Brand</title>
-  <link rel="stylesheet" href="css/style.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wear Your Mood – Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/script.js"></script>
 </head>
 <body>
-
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">FashionMood</div>
-    <nav>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">WEAR YOUR MOOD</div>
+    <nav class="main-nav">
       <a href="index.html">Home</a>
-      <a href="quiz.html">Find Your Style</a>
+      <a href="quiz.html">Find Your Mood</a>
       <a href="shop.html">Shop</a>
       <a href="lookbook.html">Lookbook</a>
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact</a>
-      <a href="cart.html">Cart</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Community</a>
     </nav>
   </header>
 
-  <!-- Hero Section with Video Background -->
+  <!-- Hero Section -->
   <section class="hero">
-    <video autoplay muted loop playsinline class="hero-video">
-      <source src="assets/video/Background.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
+    <video autoplay muted loop class="background-video">
+      <source src="videos/background.mp4" type="video/mp4" />
     </video>
-    <div class="video-overlay"></div>
     <div class="hero-content">
-      <h1 class="hero-text">Express your <span>true self</span> through fashion.</h1>
-      <p class="tagline">Style your mood. Shop your vibe.</p>
+      <h1 class="fade-in-text">Express Your True Self Through Fashion</h1>
+      <p class="fade-in-text delay">Style for every mood, every version of you.</p>
       <a href="quiz.html" class="cta-button">Find Your Style</a>
     </div>
   </section>
-  
-  
 
-  <!-- Mood Preview Section -->
+  <!-- Mood Visual Preview -->
   <section class="mood-preview">
-    <h2>Find Your Mood</h2>
-    <div class="mood-gallery">
-        <div class="mood-card chill">🧊 Chill Vibes</div>
-        <div class="mood-card bold">🔥 Bold Rebel</div>
-        <div class="mood-card edgy">⚡ Edgy Mood</div>
-        <div class="mood-card classic">🎩 Classic Fit</div>
-      </div>
+    <h2>Mood-Based Collections</h2>
+    <div class="mood-grid">
+      <div class="mood-box relaxed">Relaxed</div>
+      <div class="mood-box bold">Bold Rebel</div>
+      <div class="mood-box main-character">Main Character</div>
+      <div class="mood-box productive">Productive Power</div>
+      <div class="mood-box chill">Chill Vibes</div>
+      <div class="mood-box night">Night Out</div>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <p>© 2025 Personality Threads. All rights reserved.</p>
-    <p>
-      <a href="https://instagram.com" target="_blank">Instagram</a> |
-      <a href="https://tiktok.com" target="_blank">TikTok</a> |
-      <a href="/contact.html">Contact</a>
-    </p>
+  <footer class="site-footer">
+    <p>&copy; 2025 Wear Your Mood. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">Contact</a>
+    </div>
   </footer>
-  
-
 </body>
 </html>

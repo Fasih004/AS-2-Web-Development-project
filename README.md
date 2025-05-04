@@ -13,7 +13,7 @@ The site concept revolves around **"mood-based fashion"**, where users can take 
 - **HTML** – for semantic structure
 - **CSS** – for styling and mood-based visuals
 - **JavaScript** – for interactivity and navigation (e.g. quiz, dynamic cart)
-- **Responsive Design** – built with differnt screen sizes in mind (e.g. mobiles, laptops,tablets)
+- **Responsive Design** – built with differnt screen sizes in mind (e.g. mobiles, laptops, tablets)
 - **Media Assets** – includes rotating hero images and interactive galleries 
 
 ---

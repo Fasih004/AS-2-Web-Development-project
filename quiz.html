@@ -1,43 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz - Personality-Based Fashion</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Find Your Mood – Wear Your Mood</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/script.js"></script>
 </head>
 <body>
-  <!-- Navbar -->
-  <div class="navbar">
-    <div class="logo">Fashion Vibe</div>
-    <nav>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">WEAR YOUR MOOD</div>
+    <nav class="main-nav">
       <a href="index.html">Home</a>
-      <a href="quiz.html">Quiz</a>
+      <a href="quiz.html">Find Your Mood</a>
       <a href="shop.html">Shop</a>
       <a href="lookbook.html">Lookbook</a>
       <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html">Community</a>
     </nav>
-  </div>
+  </header>
 
   <!-- Quiz Section -->
-  <div class="quiz-container">
-    <h2>What's Your Fashion Mood?</h2>
-    <form>
-      <label for="mood">Select your mood:</label>
-      <select id="mood" name="mood">
-        <option value="chill">Chill</option>
-        <option value="bold">Bold</option>
-        <option value="edgy">Edgy</option>
-        <option value="classic">Classic</option>
-      </select>
-      <button type="submit" class="cta-button">Submit</button>
+  <section class="quiz-section">
+    <h1>Find Your Mood</h1>
+    <p class="quiz-description">Answer these questions to find your mood and discover the perfect outfit!</p>
+    
+    <form id="quiz-form">
+      <div class="question">
+        <label for="question1">1. What’s your energy like today?</label>
+        <select id="question1" name="energy">
+          <option value="calm">Calm</option>
+          <option value="energetic">Energetic</option>
+          <option value="confident">Confident</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label for="question2">2. Pick your favorite color:</label>
+        <select id="question2" name="color">
+          <option value="blue">Blue</option>
+          <option value="red">Red</option>
+          <option value="black">Black</option>
+          <option value="yellow">Yellow</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label for="question3">3. What’s your ideal weekend activity?</label>
+        <select id="question3" name="weekend">
+          <option value="relaxing">Relaxing at home</option>
+          <option value="adventure">Adventure outdoors</option>
+          <option value="socializing">Socializing with friends</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label for="question4">4. How do you feel about change?</label>
+        <select id="question4" name="change">
+          <option value="open">I love it</option>
+          <option value="neutral">I’m okay with it</option>
+          <option value="resistant">I prefer things to stay the same</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label for="question5">5. What do you look for in an outfit?</label>
+        <select id="question5" name="outfit">
+          <option value="comfort">Comfort</option>
+          <option value="style">Style</option>
+          <option value="statement">Statement piece</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label for="question6">6. Which best describes your ideal outfit?</label>
+        <select id="question6" name="outfit-style">
+          <option value="casual">Casual</option>
+          <option value="formal">Formal</option>
+          <option value="chic">Chic</option>
+        </select>
+      </div>
+
+      <button type="submit" class="cta-button">See My Mood</button>
     </form>
-  </div>
+  </section>
 
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Personality-Based Fashion | All Rights Reserved</p>
+  <footer class="site-footer">
+    <p>&copy; 2025 Wear Your Mood. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">Contact</a>
+    </div>
   </footer>
 </body>
 </html>

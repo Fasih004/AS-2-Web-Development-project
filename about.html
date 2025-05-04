@@ -1,35 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - Personality-Based Fashion</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us – Wear Your Mood</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/script.js"></script>
 </head>
 <body>
-  <!-- Navbar -->
-  <div class="navbar">
-    <div class="logo">Fashion Vibe</div>
-    <nav>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">WEAR YOUR MOOD</div>
+    <nav class="main-nav">
       <a href="index.html">Home</a>
-      <a href="quiz.html">Quiz</a>
+      <a href="quiz.html">Find Your Mood</a>
       <a href="shop.html">Shop</a>
       <a href="lookbook.html">Lookbook</a>
       <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html">Community</a>
     </nav>
-  </div>
+  </header>
 
   <!-- About Section -->
-  <div class="about-container">
-    <h2>About Us</h2>
-    <p>We are a fashion brand that believes in personal expression. Our collections are designed to reflect your unique personality and vibe. From classic looks to edgy styles, we have something for everyone.</p>
-    <p>Our mission is to empower individuals to feel confident in their clothing, no matter their mood or personality. Every outfit is a reflection of who you are.</p>
-  </div>
+  <section class="about-section">
+    <div class="about-hero">
+      <h1>Our Story</h1>
+      <p>We don’t just sell clothes. We sell vibes, energy, and personality.</p>
+      <video autoplay muted loop class="about-video">
+        <source src="videos/about-bg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div class="about-content">
+      <div class="brand-story">
+        <h2>How It All Started</h2>
+        <p>
+          Wear Your Mood was born from a simple idea: fashion should reflect how you feel. From bold confidence to mellow calm, every piece in our collection is designed to match a mood. We wanted to disrupt basic wardrobes by giving people outfits that *express their true energy*.
+        </p>
+      </div>
+
+      <div class="founder-message">
+        <h2>From the Founder</h2>
+        <p>
+          "Mood isn’t just a vibe – it’s your identity for the day. That’s why we made a brand that moves with you. It’s not just fashion, it’s a language. I created this for anyone who's ever felt like their clothes should speak louder than their words."
+        </p>
+        <p class="founder-name">– Alex Rivera, Founder</p>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Personality-Based Fashion | All Rights Reserved</p>
+  <footer class="site-footer">
+    <p>&copy; 2025 Wear Your Mood. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">Contact</a>
+    </div>
   </footer>
 </body>
 </html>
