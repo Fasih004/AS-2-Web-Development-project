@@ -1,99 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Find Your Mood – Wear Your Mood</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <script defer src="js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodVibe Threads - Quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <!-- Header -->
-  <header class="site-header">
-    <div class="logo">WEAR YOUR MOOD</div>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="quiz.html">Find Your Mood</a>
-      <a href="shop.html">Shop</a>
-      <a href="lookbook.html">Lookbook</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Community</a>
-    </nav>
-  </header>
+<body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    lour-300">Quiz</a></li>
+                    <li><a href="shop.html" class="hover:text-yellow-300">Shop</a></li>
+                    <li><a href="lookbook.html" class="hover:text-yellow-300">Lookbook</a></li>
+                    <li><a href="about.html" class="hover:text-yellow-300">About</a></li>
+                    <li><a href="contact.html" class="hover:text-yellow-300">Contact</a></li>
+                    <li><a href="cart.html" class="hover:text-yellow-300">Cart</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <!-- Quiz Section -->
-  <section class="quiz-section">
-    <h1>Find Your Mood</h1>
-    <p class="quiz-description">Answer these questions to find your mood and discover the perfect outfit!</p>
-    
-    <form id="quiz-form">
-      <div class="question">
-        <label for="question1">1. What’s your energy like today?</label>
-        <select id="question1" name="energy">
-          <option value="calm">Calm</option>
-          <option value="energetic">Energetic</option>
-          <option value="confident">Confident</option>
-        </select>
-      </div>
+    <!-- Quiz Section -->
+    <section class="quiz container mx-auto py-12">
+        <h2 class="text-3xl font-bold text-center mb-8">Find Your Mood</h2>
+        <div id="quiz-container" class="bg-white p-6 rounded-lg shadow-lg max-w-2xl mx-auto">
+            <div id="question-1" class="question">
+                <p class="text-xl mb-4">1. What's your energy like today?</p>
+                <button class="quiz-option bg-purple-600 text-white px-4 py-2 rounded mb-2 w-full" data-value="main">High and ready to shine</button>
+                <button class="quiz-option bg-purple-600 text-white px-4 py-2 rounded mb-2 w-full" data-value="chill">Low-key and relaxed</button>
+                <button class="quiz-option bg-purple-600 text-white px-4 py-2 rounded mb-2 w-full" data-value="bold">Edgy and intense</button>
+                <button class="quiz-option bg-purple-600 text-white px-4 py-2 rounded mb-2 w-full" data-value="creative">Dreamy and artistic</button>
+            </div>
+            <div id="question-2" class="question hidden">
+                <p class="text-xl mb-4">2. Pick your favorite color vibe:</p>
+                <button class="quiz-option bg-purple-600 text-white px-4 py-2 rounded mb-2 w-full" data-value="main">Gold or Bright Red</button>
+                <button class="quiz-option bg-purple-600 text-white px-4 py-2 rounded mb-2 w-full" data-value="chill">Blue or Pastel Green</button>
+                <button class="quiz-option bg-purple-600 text-white px-4 py-2 rounded mb-2 w-full" data-value="bold">Black or Deep Purple</button>
+                <button class="quiz-option bg-purple-600 text-white px-4 py-2 rounded mb-2 w-full" data-value="creative">Pink or Lavender</button>
+            </div>
+            <div id="question-3" class="question hidden">
+                <p class="text-xl mb-4">3. What's your weekend vibe?</p>
+                <button class="quiz-option bg-purple-600 text-white px-4 py-2 rounded mb-2 w-full" data-value="main">Party or event</button>
+                <button class="quiz-option bg-purple-600 text-white px-4 py-2 rounded mb-2 w-full" data-value="chill">Chilling at home</button>
+                <button class="quiz-option bg-purple-600 text-white px-4 py-2 rounded mb-2 w-full" data-value="bold">Adventure or protest</button>
+                <button class="quiz-option bg-purple-600 text-white px-4 py-2 rounded mb-2 w-full" data-value="creative">Creating art or music</button>
+            </div>
+            <div id="question-4" class="question hidden">
+                <p class="text-xl mb-4">4. Your ideal outfit makes you feel:</p>
+                <button class="quiz-option bg-purple-600 text-white px-4 py-2 rounded mb-2 w-full" data-value="main">Like a star</button>
+                <button class="quiz-option bg-purple-600 text-white px-4 py-2 rounded mb-2 w-full" data-value="chill">Super comfy</button>
+                <button class="quiz-option bg-purple-600 text-white px-4 py-2 rounded mb-2 w-full" data-value="bold">Powerful</button>
+                <button class="quiz-option bg-purple-600 text-white px-4 py-2 rounded mb-2 w-full" data-value="creative">Unique</button>
+            </div>
+            <div id="question-5" class="question hidden">
+                <p class="text-xl mb-4">5. Your music vibe today is:</p>
+                <button class="quiz-option bg-purple-600 text-white px-4 py-2 rounded mb-2 w-full" data-value="main">Pop bangers</button>
+                <button class="quiz-option bg-purple-600 text-white px-4 py-2 rounded mb-2 w-full" data-value="chill">Lo-fi beats</button>
+                <button class="quiz-option bg-purple-600 text-white px-4 py-2 rounded mb-2 w-full" data-value="bold">Rock or hip-hop</button>
+                <button class="quiz-option bg-purple-600 text-white px-4 py-2 rounded mb-2 w-full" data-value="creative">Indie or experimental</button>
+            </div>
+            <div id="question-6" class="question hidden">
+                <p class="text-xl mb-4">6. Your dream destination is:</p>
+                <button class="quiz-option bg-purple-600 text-white px-4 py-2 rounded mb-2 w-full" data-value="main">New York or LA</button>
+                <button class="quiz-option bg-purple-600 text-white px-4 py-2 rounded mb-2 w-full" data-value="chill">Bali or a beach</button>
+                <button class="quiz-option bg-purple-600 text-white px-4 py-2 rounded mb-2 w-full" data-value="bold">Tokyo or Berlin</button>
+                <button class="quiz-option bg-purple-600 text-white px-4 py-2 rounded mb-2 w-full" data-value="creative">Paris or Santorini</button>
+            </div>
+            <div id="result" class="hidden">
+                <h3 class="text-2xl font-bold mb-4">Your Mood: <span id="mood-result"></span></h3>
+                <p id="mood-description" class="mb-4"></p>
+                <div id="outfit-suggestions" class="grid grid-cols-2 gap-4"></div>
+                <audio id="mood-music" autoplay loop>
+                    <source src="assets/music/main.mp3" type="audio/mpeg">
+                </audio>
+                <a href="shop.html" class="bg-yellow-400 text-black px-6 py-3 rounded-full mt-4 inline-block">Shop This Mood</a>
+            </div>
+        </div>
+    </section>
 
-      <div class="question">
-        <label for="question2">2. Pick your favorite color:</label>
-        <select id="question2" name="color">
-          <option value="blue">Blue</option>
-          <option value="red">Red</option>
-          <option value="black">Black</option>
-          <option value="yellow">Yellow</option>
-        </select>
-      </div>
+    <!-- Footer -->
+    <footer class="bg-purple-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 MoodVibe Threads. All rights reserved.</p>
+            <div class="mt-4">
+                <a href="https://instagram.com" class="text-yellow-300 mx-2">Instagram</a>
+                <a href="https://tiktok.com" class="text-yellow-300 mx-2">TikTok</a>
+            </div>
+        </div>
+    </footer>
 
-      <div class="question">
-        <label for="question3">3. What’s your ideal weekend activity?</label>
-        <select id="question3" name="weekend">
-          <option value="relaxing">Relaxing at home</option>
-          <option value="adventure">Adventure outdoors</option>
-          <option value="socializing">Socializing with friends</option>
-        </select>
-      </div>
-
-      <div class="question">
-        <label for="question4">4. How do you feel about change?</label>
-        <select id="question4" name="change">
-          <option value="open">I love it</option>
-          <option value="neutral">I’m okay with it</option>
-          <option value="resistant">I prefer things to stay the same</option>
-        </select>
-      </div>
-
-      <div class="question">
-        <label for="question5">5. What do you look for in an outfit?</label>
-        <select id="question5" name="outfit">
-          <option value="comfort">Comfort</option>
-          <option value="style">Style</option>
-          <option value="statement">Statement piece</option>
-        </select>
-      </div>
-
-      <div class="question">
-        <label for="question6">6. Which best describes your ideal outfit?</label>
-        <select id="question6" name="outfit-style">
-          <option value="casual">Casual</option>
-          <option value="formal">Formal</option>
-          <option value="chic">Chic</option>
-        </select>
-      </div>
-
-      <button type="submit" class="cta-button">See My Mood</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>&copy; 2025 Wear Your Mood. All rights reserved.</p>
-    <div class="social-links">
-      <a href="#">Instagram</a>
-      <a href="#">TikTok</a>
-      <a href="#">Contact</a>
-    </div>
-  </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>

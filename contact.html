@@ -1,78 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Community – Wear Your Mood</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <script defer src="js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodVibe Threads - Contact</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <!-- Header -->
-  <header class="site-header">
-    <div class="logo">WEAR YOUR MOOD</div>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="quiz.html">Find Your Mood</a>
-      <a href="shop.html">Shop</a>
-      <a href="lookbook.html">Lookbook</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Community</a>
-    </nav>
-  </header>
+<body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-purple-800 text-white sticky top-0 z-10">
+        <div class="container mx-auto flex justify-between items-center py-4">
+            <h1 class="text-2xl font-bold">MoodVibe Threads</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    <li><a href="quiz.html" class="hover:text-yellow-300">Quiz</a></li>
+                    <li><a href="shop.html" class="hover:text-yellow-300">Shop</a></li>
+                    <li><a href="lookbook.html" class="hover:text-yellow-300">Lookbook</a></li>
+                    <li><a href="about.html" class="hover:text-yellow-300">About</a></li>
+                    <li><a href="contact.html" class="hover:text-yellow-300">Contact</a></li>
+                    <li><a href="cart.html" class="hover:text-yellow-300">Cart</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <!-- Contact / Community Section -->
-  <section class="contact-section">
-    <h1>Join the Mood Movement</h1>
-    <p>Become part of the community. Submit your looks and get featured on our page!</p>
+    <!-- Contact Section -->
+    <section class="contact container mx-auto py-12">
+        <h2 class="text-3xl font-bold text-center mb-8">Join Our Community</h2>
+        <div class="bg-white p-6 rounded-lg shadow-lg max-w-2xl mx-auto">
+            <h3 class="text-2xl font-bold mb-4">Submit Your Look</h3>
+            <div class="mb-4">
+                <label class="block mb-2">Name</label>
+                <input type="text" class="border p-2 w-full rounded">
+            </div>
+            <div class="mb-4">
+                <label class="block mb-2">Upload Photo</label>
+                <input type="file" class="border p-2 w-full rounded">
+            </div>
+            <button class="bg-yellow-400 text-black px-6 py-3 rounded-full">Submit</button>
+        </div>
+        <div class="mt-12">
+            <h3 class="text-2xl font-bold text-center mb-4">Follow Us</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <img src="assets/images/social1.jpg" alt="Social 1" class="w-full h-64 object-cover rounded">
+                <img src="assets/images/social2.jpg" alt="Social 2" class="w-full h-64 object-cover rounded">
+                <img src="assets/images/social3.jpg" alt="Social 3" class="w-full h-64 object-cover rounded">
+            </div>
+        </div>
+    </section>
 
-    <!-- Submit Your Look Form -->
-    <form class="submit-look-form">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" placeholder="e.g. Alex Rivera" required />
+    <!-- Footer -->
+    <footer class="bg-purple-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 MoodVibe Threads. All rights reserved.</p>
+            <div class="mt-4">
+                <a href="https://instagram.com" class="text-yellow-300 mx-2">Instagram</a>
+                <a href="https://tiktok.com" class="text-yellow-300 mx-2">TikTok</a>
+            </div>
+        </div>
+    </footer>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="alex@email.com" required />
-
-      <label for="social">Instagram / TikTok Handle</label>
-      <input type="text" id="social" name="social" placeholder="@yourhandle" required />
-
-      <label for="mood">Your Mood</label>
-      <select id="mood" name="mood" required>
-        <option value="">--Select Mood--</option>
-        <option value="main">Main Character Energy</option>
-        <option value="chill">Chill Vibes</option>
-        <option value="bold">Bold Rebel</option>
-        <option value="power">Productivity Power</option>
-        <option value="sunday">Relaxed Sunday</option>
-        <option value="night">Night Out</option>
-      </select>
-
-      <label for="photo">Upload Your Look</label>
-      <input type="file" id="photo" name="photo" accept="image/*" required />
-
-      <button type="submit" class="submit-button">Submit Look</button>
-    </form>
-
-    <!-- Social Media Gallery -->
-    <div class="social-feed">
-      <h2>Follow the Vibe</h2>
-      <div class="social-icons">
-        <a href="#" target="_blank"><img src="images/instagram-icon.png" alt="Instagram" /></a>
-        <a href="#" target="_blank"><img src="images/tiktok-icon.png" alt="TikTok" /></a>
-      </div>
-      <p class="hashtag">#WearYourMood #VibeCheck</p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>&copy; 2025 Wear Your Mood. All rights reserved.</p>
-    <div class="social-links">
-      <a href="#">Instagram</a>
-      <a href="#">TikTok</a>
-      <a href="#">Contact</a>
-    </div>
-  </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>

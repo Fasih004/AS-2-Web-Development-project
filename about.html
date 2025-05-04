@@ -1,63 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us – Wear Your Mood</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <script defer src="js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodVibe Threads - About</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <!-- Header -->
-  <header class="site-header">
-    <div class="logo">WEAR YOUR MOOD</div>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="quiz.html">Find Your Mood</a>
-      <a href="shop.html">Shop</a>
-      <a href="lookbook.html">Lookbook</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Community</a>
-    </nav>
-  </header>
+<body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-purple-800 text-white sticky top-0 z-10">
+        <div class="container mx-auto flex justify-between items-center py-4">
+            <h1 class="text-2xl font-bold">MoodVibe Threads</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    <li><a href="quiz.html" class="hover:text-yellow-300">Quiz</a></li>
+                    <li><a href="shop.html" class="hover:text-yellow-300">Shop</a></li>
+                    <li><a href="lookbook.html" class="hover:text-yellow-300">Lookbook</a></li>
+                    <li><a href="about.html" class="hover:text-yellow-300">About</a></li>
+                    <li><a href="contact.html" class="hover:text-yellow-300">Contact</a></li>
+                    <li><a href="cart.html" class="hover:text-yellow-300">Cart</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <!-- About Section -->
-  <section class="about-section">
-    <div class="about-hero">
-      <h1>Our Story</h1>
-      <p>We don’t just sell clothes. We sell vibes, energy, and personality.</p>
-      <video autoplay muted loop class="about-video">
-        <source src="videos/about-bg.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
+    <!-- About Section -->
+    <section class="about relative py-12">
+        <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
+            <source src="assets/video/background.mp4" type="video/mp4">
+        </video>
+        <div class="relative container mx-auto bg-white bg-opacity-80 p-6 rounded-lg">
+            <h2 class="text-3xl font-bold text-center mb-8">Our Story</h2>
+            <p class="text-lg mb-4">MoodVibe Threads was born from a simple idea: fashion should reflect who you are, every single day. We believe your outfit is a canvas for your mood, whether you're feeling like the main character or just chilling.</p>
+            <h3 class="text-2xl font-bold mt-8 mb-4">Founder's Message</h3>
+            <p class="text-lg">"I started MoodVibe Threads because I was tired of fashion that felt one-size-fits-all. Your vibe changes, so why shouldn’t your wardrobe? We’re here to help you wear your mood, loud and proud." - Alex, Founder</p>
+        </div>
+    </section>
 
-    <div class="about-content">
-      <div class="brand-story">
-        <h2>How It All Started</h2>
-        <p>
-          Wear Your Mood was born from a simple idea: fashion should reflect how you feel. From bold confidence to mellow calm, every piece in our collection is designed to match a mood. We wanted to disrupt basic wardrobes by giving people outfits that *express their true energy*.
-        </p>
-      </div>
+    <!-- Footer -->
+    <footer class="bg-purple-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 MoodVibe Threads. All rights reserved.</p>
+            <div class="mt-4">
+                <a href="https://instagram.com" class="text-yellow-300 mx-2">Instagram</a>
+                <a href="https://tiktok.com" class="text-yellow-300 mx-2">TikTok</a>
+            </div>
+        </div>
+    </footer>
 
-      <div class="founder-message">
-        <h2>From the Founder</h2>
-        <p>
-          "Mood isn’t just a vibe – it’s your identity for the day. That’s why we made a brand that moves with you. It’s not just fashion, it’s a language. I created this for anyone who's ever felt like their clothes should speak louder than their words."
-        </p>
-        <p class="founder-name">– Alex Rivera, Founder</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>&copy; 2025 Wear Your Mood. All rights reserved.</p>
-    <div class="social-links">
-      <a href="#">Instagram</a>
-      <a href="#">TikTok</a>
-      <a href="#">Contact</a>
-    </div>
-  </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,102 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shop by Mood – Wear Your Mood</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <script defer src="js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodVibe Threads - Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <!-- Header -->
-  <header class="site-header">
-    <div class="logo">WEAR YOUR MOOD</div>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="quiz.html">Find Your Mood</a>
-      <a href="shop.html">Shop</a>
-      <a href="lookbook.html">Lookbook</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Community</a>
-    </nav>
-  </header>
+<body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-purple-800 text-white sticky top-0 z-10">
+        <div class="container mx-auto flex justify-between items-center py-4">
+            <h1 class="text-2xl font-bold">MoodVibe Threads</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="hover:text-yellow-300">Home</a></li>
+                    <li><a href="quiz.html" class="hover:text-yellow-300">Quiz</a></li>
+                    <li><a href="shop.html" class="hover:text-yellow-300">Shop</a></li>
+                    <li><a href="lookbook.html" class="hover:text-yellow-300">Lookbook</a></li>
+                    <li><a href="about.html" class="hover:text-yellow-300">About</a></li>
+                    <li><a href="contact.html" class="hover:text-yellow-300">Contact</a></li>
+                    <li><a href="cart.html" class="hover:text-yellow-300">Cart</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <!-- Shop Section -->
-  <section class="shop-section">
-    <h1>Shop by Mood</h1>
-    <p class="shop-description">Explore outfits based on your mood. Choose your vibe and find your perfect look.</p>
-    
-    <div class="mood-categories">
-      <div class="mood-category" id="relaxed">
-        <h2>Relaxed</h2>
-        <div class="products-grid">
-          <!-- Example product, will be dynamically populated via JS or JSON -->
-          <div class="product-item" data-id="relaxed1">
-            <img src="images/relaxed1.jpg" alt="Relaxed Look" />
-            <p>Relaxed Outfit 1</p>
-            <button class="cta-button">View Details</button>
-          </div>
-          <!-- Repeat for other items -->
+    <!-- Shop Section -->
+    <section class="shop container mx-auto py-12">
+        <h2 class="text-3xl font-bold text-center mb-8">Shop by Mood</h2>
+        <div class="mood-tabs flex justify-center mb-8">
+            <button class="mood-tab bg-purple-600 text-white px-4 py-2 rounded mx-2" data-mood="main">Main Character Energy</button>
+            <button class="mood-tab bg-purple-600 text-white px-4 py-2 rounded mx-2" data-mood="chill">Chill Vibes</button>
+            <button class="mood-tab bg-purple-600 text-white px-4 py-2 rounded mx-2" data-mood="bold">Bold Rebel</button>
+            <button class="mood-tab bg-purple-600 text-white px-4 py-2 rounded mx-2" data-mood="creative">Creative Flow</button>
         </div>
-      </div>
-
-      <div class="mood-category" id="bold">
-        <h2>Bold Rebel</h2>
-        <div class="products-grid">
-          <!-- Example product -->
-          <div class="product-item" data-id="bold1">
-            <img src="images/bold1.jpg" alt="Bold Rebel Look" />
-            <p>Bold Rebel Look 1</p>
-            <button class="cta-button">View Details</button>
-          </div>
-          <!-- Repeat for other items -->
+        <div id="mix-and-match" class="mb-8">
+            <h3 class="text-2xl font-bold mb-4">Mix and Match</h3>
+            <div class="flex space-x-4">
+                <select id="top-select" class="border p-2 rounded">
+                    <option value="">Select Top</option>
+                </select>
+                <select id="bottom-select" class="border p-2 rounded">
+                    <option value="">Select Bottom</option>
+                </select>
+                <select id="accessory-select" class="border p-2 rounded">
+                    <option value="">Select Accessory</option>
+                </select>
+            </div>
+            <div id="mix-preview" class="mt-4"></div>
         </div>
-      </div>
-
-      <!-- More categories like Main Character, Chill Vibes, etc. -->
-    </div>
-
-    <!-- Mix-and-Match Tool -->
-    <section class="mix-and-match">
-      <h2>Mix & Match Your Look</h2>
-      <div class="match-tool">
-        <div class="tool-item">
-          <h3>Select Top</h3>
-          <select id="select-top">
-            <option value="top1">Casual Top 1</option>
-            <option value="top2">Casual Top 2</option>
-            <option value="top3">Bold Top 1</option>
-          </select>
-        </div>
-        <div class="tool-item">
-          <h3>Select Bottom</h3>
-          <select id="select-bottom">
-            <option value="bottom1">Casual Bottom 1</option>
-            <option value="bottom2">Bold Bottom 1</option>
-            <option value="bottom3">Relaxed Bottom 1</option>
-          </select>
-        </div>
-        <div class="tool-item">
-          <h3>Select Shoes</h3>
-          <select id="select-shoes">
-            <option value="shoes1">Casual Shoes 1</option>
-            <option value="shoes2">Bold Shoes 1</option>
-            <option value="shoes3">Chill Shoes 1</option>
-          </select>
-        </div>
-        <button class="cta-button" id="create-look">Create Look</button>
-      </div>
+        <div id="products" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
     </section>
-  </section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>&copy; 2025 Wear Your Mood. All rights reserved.</p>
-    <div class="social-links">
-      <a href="#">Instagram</a>
-      <a href="#">TikTok</a>
-      <a href="#">Contact</a>
-    </div>
-  </footer>
+    <!-- Footer -->
+    <footer class="bg-purple-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 MoodVibe Threads. All rights reserved.</p>
+            <div class="mt-4">
+                <a href="https://instagram.com" class="text-yellow-300 mx-2">Instagram</a>
+                <a href="https://tiktok.com" class="text-yellow-300 mx-2">TikTok</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
