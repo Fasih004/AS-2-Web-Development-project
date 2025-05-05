@@ -149,4 +149,303 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+    
+    // Car Customization Functionality
+    const customizePage = document.querySelector('.customize-container');
+    if (customizePage) {
+        // Tab switching functionality
+        const optionTabs = document.querySelectorAll('.option-tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        optionTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                optionTabs.forEach(t => t.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                // Hide all tab contents
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Show corresponding tab content
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Car color selection
+        const colorOptions = document.querySelectorAll('.color-option');
+        const carPreviewImage = document.querySelector('.car-preview-image');
+        
+        colorOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove active class from all options
+                colorOptions.forEach(o => o.classList.remove('active'));
+                
+                // Add active class to clicked option
+                this.classList.add('active');
+                
+                // Update car image based on selected color
+                const colorValue = this.getAttribute('data-color');
+                const carAngle = document.querySelector('.rotate-slider').value;
+                const viewType = document.querySelector('.view-toggle').getAttribute('data-view');
+                
+                updateCarImage(colorValue, carAngle, viewType);
+                updatePriceSummary();
+            });
+        });
+        
+        // Wheel selection
+        const wheelOptions = document.querySelectorAll('.wheel-option');
+        
+        wheelOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove active class from all options
+                wheelOptions.forEach(o => o.classList.remove('active'));
+                
+                // Add active class to clicked option
+                this.classList.add('active');
+                
+                // Update wheel image and price
+                updatePriceSummary();
+            });
+        });
+        
+        // Interior options selection
+        const seatOptions = document.querySelectorAll('.seat-option');
+        const materialOptions = document.querySelectorAll('.material-option');
+        
+        seatOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                seatOptions.forEach(o => o.classList.remove('active'));
+                this.classList.add('active');
+                updatePriceSummary();
+            });
+        });
+        
+        materialOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                materialOptions.forEach(o => o.classList.remove('active'));
+                this.classList.add('active');
+                updatePriceSummary();
+            });
+        });
+        
+        // Feature and accessory toggles
+        const featureOptions = document.querySelectorAll('.feature-option');
+        const accessoryOptions = document.querySelectorAll('.accessory-option');
+        
+        featureOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                this.classList.toggle('active');
+                updatePriceSummary();
+            });
+        });
+        
+        accessoryOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                this.classList.toggle('active');
+                updatePriceSummary();
+            });
+        });
+        
+        // 360 degree rotation functionality
+        const rotateSlider = document.querySelector('.rotate-slider');
+        
+        if (rotateSlider) {
+            rotateSlider.addEventListener('input', function() {
+                const colorValue = document.querySelector('.color-option.active').getAttribute('data-color');
+                const viewType = document.querySelector('.view-toggle').getAttribute('data-view');
+                
+                updateCarImage(colorValue, this.value, viewType);
+            });
+        }
+        
+        // View toggle (exterior/interior)
+        const viewToggle = document.querySelector('.view-toggle');
+        
+        if (viewToggle) {
+            viewToggle.addEventListener('click', function() {
+                const currentView = this.getAttribute('data-view');
+                let newView;
+                
+                if (currentView === 'exterior') {
+                    newView = 'interior';
+                    this.textContent = 'View Exterior';
+                } else {
+                    newView = 'exterior';
+                    this.textContent = 'View Interior';
+                }
+                
+                this.setAttribute('data-view', newView);
+                
+                const colorValue = document.querySelector('.color-option.active').getAttribute('data-color');
+                const carAngle = document.querySelector('.rotate-slider').value;
+                
+                updateCarImage(colorValue, carAngle, newView);
+            });
+        }
+        
+        // Environment selection
+        const envOptions = document.querySelectorAll('.env-option');
+        
+        envOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                envOptions.forEach(o => o.classList.remove('active'));
+                this.classList.add('active');
+                
+                const envBackground = this.getAttribute('data-env');
+                document.querySelector('.car-preview-wrapper').style.backgroundImage = `url('../images/custom-backgrounds/${envBackground}')`;
+            });
+        });
+        
+        // Zoom functionality
+        const zoomInBtn = document.querySelector('.zoom-in');
+        const zoomOutBtn = document.querySelector('.zoom-out');
+        let zoomLevel = 1;
+        
+        if (zoomInBtn && zoomOutBtn) {
+            zoomInBtn.addEventListener('click', function() {
+                if (zoomLevel < 1.5) {
+                    zoomLevel += 0.1;
+                    carPreviewImage.style.transform = `scale(${zoomLevel})`;
+                }
+            });
+            
+            zoomOutBtn.addEventListener('click', function() {
+                if (zoomLevel > 0.5) {
+                    zoomLevel -= 0.1;
+                    carPreviewImage.style.transform = `scale(${zoomLevel})`;
+                }
+            });
+        }
+        
+        // Helper function to update car image based on selected options
+        function updateCarImage(color, angle, viewType) {
+            // In a real implementation, this would load the appropriate image
+            // For this example, we'll simulate the image change
+            
+            // The path would typically be something like:
+            // `images/car-details/model-name/color-name/angle-view.jpg`
+            
+            const basePath = 'images/car-details/';
+            const carModel = 'ferrari'; // This would be dynamic based on user selection
+            
+            let imagePath;
+            
+            if (viewType === 'exterior') {
+                imagePath = `${basePath}${carModel}/${color}/angle-${angle}.jpg`;
+            } else {
+                imagePath = `${basePath}${carModel}/interior/angle-${angle}.jpg`;
+            }
+            
+            // For this example, we'll just use a placeholder
+            carPreviewImage.src = '/api/placeholder/600/400';
+            carPreviewImage.alt = `${carModel} in ${color}`;
+        }
+        
+        // Function to update price summary based on selected options
+        function updatePriceSummary() {
+            // Base price
+            let basePrice = 321400; // Would be dynamic based on selected model
+            
+            // Get price elements
+            const basePriceElement = document.querySelector('.base-price-value');
+            const colorPriceElement = document.querySelector('.color-price-value');
+            const wheelsPriceElement = document.querySelector('.wheels-price-value');
+            const interiorPriceElement = document.querySelector('.interior-price-value');
+            const featuresPriceElement = document.querySelector('.features-price-value');
+            const accessoriesPriceElement = document.querySelector('.accessories-price-value');
+            const totalPriceElement = document.querySelector('.total-price-value');
+            
+            // Calculate color price
+            const activeColor = document.querySelector('.color-option.active');
+            const colorPrice = activeColor ? parseInt(activeColor.getAttribute('data-price')) : 0;
+            
+            // Calculate wheels price
+            const activeWheels = document.querySelector('.wheel-option.active');
+            const wheelsPrice = activeWheels ? parseInt(activeWheels.getAttribute('data-price')) : 0;
+            
+            // Calculate interior price
+            const activeSeat = document.querySelector('.seat-option.active');
+            const activeMaterial = document.querySelector('.material-option.active');
+            const seatPrice = activeSeat ? parseInt(activeSeat.getAttribute('data-price')) : 0;
+            const materialPrice = activeMaterial ? parseInt(activeMaterial.getAttribute('data-price')) : 0;
+            const interiorPrice = seatPrice + materialPrice;
+            
+            // Calculate features price
+            let featuresPrice = 0;
+            document.querySelectorAll('.feature-option.active').forEach(feature => {
+                featuresPrice += parseInt(feature.getAttribute('data-price'));
+            });
+            
+            // Calculate accessories price
+            let accessoriesPrice = 0;
+            document.querySelectorAll('.accessory-option.active').forEach(accessory => {
+                accessoriesPrice += parseInt(accessory.getAttribute('data-price'));
+            });
+            
+            // Update price elements
+            if (basePriceElement) basePriceElement.textContent = `${basePrice.toLocaleString()}`;
+            if (colorPriceElement) colorPriceElement.textContent = `${colorPrice.toLocaleString()}`;
+            if (wheelsPriceElement) wheelsPriceElement.textContent = `${wheelsPrice.toLocaleString()}`;
+            if (interiorPriceElement) interiorPriceElement.textContent = `${interiorPrice.toLocaleString()}`;
+            if (featuresPriceElement) featuresPriceElement.textContent = `${featuresPrice.toLocaleString()}`;
+            if (accessoriesPriceElement) accessoriesPriceElement.textContent = `${accessoriesPrice.toLocaleString()}`;
+            
+            // Calculate and update total price
+            const totalPrice = basePrice + colorPrice + wheelsPrice + interiorPrice + featuresPrice + accessoriesPrice;
+            if (totalPriceElement) totalPriceElement.textContent = `${totalPrice.toLocaleString()}`;
+        }
+        
+        // Initialize with default selections
+        const defaultColor = document.querySelector('.color-option');
+        if (defaultColor) defaultColor.classList.add('active');
+        
+        const defaultWheel = document.querySelector('.wheel-option');
+        if (defaultWheel) defaultWheel.classList.add('active');
+        
+        const defaultSeat = document.querySelector('.seat-option');
+        if (defaultSeat) defaultSeat.classList.add('active');
+        
+        const defaultMaterial = document.querySelector('.material-option');
+        if (defaultMaterial) defaultMaterial.classList.add('active');
+        
+        const defaultEnv = document.querySelector('.env-option');
+        if (defaultEnv) defaultEnv.classList.add('active');
+        
+        // Initialize car image and price summary
+        if (carPreviewImage) {
+            updateCarImage('red', 1, 'exterior');
+            updatePriceSummary();
+        }
+        
+        // Add to cart button functionality
+        const addToCartBtn = document.querySelector('.add-to-cart');
+        if (addToCartBtn) {
+            addToCartBtn.addEventListener('click', function() {
+                alert('Configuration added to cart!');
+                // In a real implementation, this would add the configuration to the cart
+            });
+        }
+        
+        // Save configuration button
+        const saveConfigBtn = document.querySelector('.save-config');
+        if (saveConfigBtn) {
+            saveConfigBtn.addEventListener('click', function() {
+                alert('Configuration saved!');
+                // In a real implementation, this would save the configuration
+            });
+        }
+        
+        // Share configuration button
+        const shareConfigBtn = document.querySelector('.share-config');
+        if (shareConfigBtn) {
+            shareConfigBtn.addEventListener('click', function() {
+                alert('Configuration shared!');
+                // In a real implementation, this would share the configuration
+            });
+        }
+    }
 });

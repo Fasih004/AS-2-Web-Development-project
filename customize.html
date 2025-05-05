@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize Your Car - CarVerse</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <h1>CarVerse</h1>
+        </div>
+        <nav class="main-nav">
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="showroom.html">Showroom</a></li>
+                <li><a href="customize.html" class="active">Customize</a></li>
+                <li><a href="buy-sell.html">Buy & Sell</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-banner">
+        <div class="banner-content">
+            <h1>Build Your Dream Car</h1>
+            <p>Customize every detail to create the perfect vehicle that matches your style and preferences.</p>
+        </div>
+    </div>
+
+    <section class="customize-container">
+        <div class="container">
+            <div class="customize-header">
+                <h2>Car Customization Studio</h2>
+                <p>Select a model and customize it to your exact specifications. Preview your changes in real-time with our 360° viewer.</p>
+                
+                <div class="car-model-selector">
+                    <h3>Select Model</h3>
+                    <div class="model-options">
+                        <div class="model-option" data-model="ferrari" data-price="321400">
+                            <img src="images/cars/ferrari.jpg" alt="Ferrari 296 GTB">
+                            <span>Ferrari 296 GTB</span>
+                            <span class="model-price">$321,400</span>
+                        </div>
+                        <div class="model-option" data-model="aston-martin" data-price="248000">
+                            <img src="images/cars/aston-martin.jpg" alt="Aston Martin DB12">
+                            <span>Aston Martin DB12</span>
+                            <span class="model-price">$248,000</span>
+                        </div>
+                        <div class="model-option" data-model="bentley" data-price="202500">
+                            <img src="images/cars/bentley.jpg" alt="Bentley Continental GT">
+                            <span>Bentley Continental GT</span>
+                            <span class="model-price">$202,500</span>
+                        </div>
+                        <div class="model-option" data-model="tesla" data-price="129990">
+                            <img src="images/cars/tesla.jpg" alt="Tesla Model S Plaid">
+                            <span>Tesla Model S Plaid</span>
+                            <span class="model-price">$129,990</span>
+                        </div>
+                        <div class="model-option" data-model="range-rover" data-price="218300">
+                            <img src="images/cars/range-rover.jpg" alt="Range Rover SV">
+                            <span>Range Rover SV</span>
+                            <span class="model-price">$218,300</span>
+                        </div>
+                        <div class="model-option" data-model="porsche" data-price="126400">
+                            <img src="images/cars/porsche.jpg" alt="Porsche 911 Cabriolet">
+                            <span>Porsche 911 Cabriolet</span>
+                            <span class="model-price">$126,400</span>
+                        </div>
+                        <div class="model-option" data-model="lucid" data-price="179000">
+                            <img src="images/cars/lucid.jpg" alt="Lucid Air Dream">
+                            <span>Lucid Air Dream</span>
+                            <span class="model-price">$179,000</span>
+                        </div>
+                        <div class="model-option" data-model="rolls-royce" data-price="420000">
+                            <img src="images/cars/rolls-royce.jpg" alt="Rolls-Royce Spectre">
+                            <span>Rolls-Royce Spectre</span>
+                            <span class="model-price">$420,000</span>
+                        </div>
+                        <div class="model-option" data-model="lamborghini" data-price="248295">
+                            <img src="images/cars/lamborghini.jpg" alt="Lamborghini Huracán">
+                            <span>Lamborghini Huracán</span>
+                            <span class="model-price">$248,295</span>
+                        </div>
+                        <div class="model-option" data-model="mclaren" data-price="382900">
+                            <img src="images/cars/mclaren.jpg" alt="McLaren 765LT">
+                            <span>McLaren 765LT</span>
+                            <span class="model-price">$382,900</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="customize-wrapper">
+                <div class="car-preview">
+                    <div class="car-preview-wrapper">
+                        <img src="images/cars/ferrari.jpg" alt="Ferrari 296 GTB" class="car-preview-image">
+                        
+                        <button class="view-toggle" data-view="exterior">View Interior</button>
+                        
+                        <div class="zoom-controls">
+                            <button class="zoom-btn zoom-in"><i class="fas fa-plus"></i></button>
+                            <button class="zoom-btn zoom-out"><i class="fas fa-minus"></i></button>
+                        </div>
+                        
+                        <div class="environment-select">
+                            <div class="env-option active" data-env="showroom.jpg">
+                                <img src="images/custom-backgrounds/showroom.jpg" alt="Showroom" class="env-img">
+                            </div>
+                            <div class="env-option" data-env="desert.jpg">
+                                <img src="images/custom-backgrounds/desert.jpg" alt="Desert" class="env-img">
+                            </div>
+                            <div class="env-option" data-env="mountain.jpg">
+                                <img src="images/custom-backgrounds/mountain.jpg" alt="Mountain" class="env-img">
+                            </div>
+                            <div class="env-option" data-env="city.jpg">
+                                <img src="images/custom-backgrounds/city.jpg" alt="City" class="env-img">
+                            </div>
+                            <div class="env-option" data-env="track.jpg">
+                                <img src="images/custom-backgrounds/track.jpg" alt="Track" class="env-img">
+                            </div>
+                        </div>
+                        
+                        <div class="rotate-controls">
+                            <i class="fas fa-undo rotate-icon"></i>
+                            <input type="range" min="1" max="8" value="1" class="rotate-slider">
+                            <i class="fas fa-redo rotate-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="customize-options">
+                    <div class="options-tabs">
+                        <button class="option-tab active" data-tab="exterior-tab">Exterior</button>
+                        <button class="option-tab" data-tab="interior-tab">Interior</button>
+                        <button class="option-tab" data-tab="features-tab">Features</button>
+                        <button class="option-tab" data-tab="accessories-tab">Accessories</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="exterior-tab">
+                        <div class="option-group">
+                            <h3>Paint Color</h3>
+                            <div class="color-options">
+                                <div class="color-option" style="background-color: #FF2800;" data-color="red" data-price="0"></div>
+                                <div class="color-option" style="background-color: #FFFF00;" data-color="yellow" data-price="2500"></div>
+                                <div class="color-option" style="background-color: #0000FF;" data-color="blue" data-price="3000"></div>
+                                <div class="color-option" style="background-color: #000000;" data-color="black" data-price="1500"></div>
+                                <div class="color-option" style="background-color: #FFFFFF;" data-color="white" data-price="1000"></div>
+                                <div class="color-option" style="background-color: #808080;" data-color="silver" data-price="2000"></div>
+                                <div class="color-option" style="background-color: #00FF00;" data-color="green" data-price="3500"></div>
+                                <div class="color-option" style="background-color: #FFA500;" data-color="orange" data-price="3000"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="option-group">
+                            <h3>Wheels</h3>
+                            <div class="wheel-options">
+                                <div class="wheel-option" data-price="0">
+                                    <img src="/api/placeholder/50/50" alt="Standard Wheels">
+                                </div>
+                                <div class="wheel-option" data-price="3000">
+                                    <img src="/api/placeholder/50/50" alt="Sport Wheels">
+                                </div>
+                                <div class="wheel-option" data-price="5000">
+                                    <img src="/api/placeholder/50/50" alt="Carbon Fiber Wheels">
+                                </div>
+                                <div class="wheel-option" data-price="4000">
+                                    <img src="/api/placeholder/50/50" alt="Forged Wheels">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="option-group">
+                            <h3>Exterior Trim</h3>
+                            <div class="trim-options">
+                                <div class="trim-option" data-price="0" style="border: 2px solid transparent;">
+                                    <img src="/api/placeholder/50/50" alt="Standard Trim">
+                                </div>
+                                <div class="trim-option" data-price="2000" style="border: 2px solid transparent;">
+                                    <img src="/api/placeholder/50/50" alt="Sport Trim">
+                                </div>
+                                <div class="trim-option" data-price="4000" style="border: 2px solid transparent;">
+                                    <img src="/api/placeholder/50/50" alt="Carbon Fiber Trim">
+                                </div>
+                                <div class="trim-option" data-price="3000" style="border: 2px solid transparent;">
+                                    <img src="/api/placeholder/50/50" alt="Chrome Trim">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="interior-tab">
+                        <div class="option-group">
+                            <h3>Seat Style</h3>
+                            <div class="seats-options">
+                                <div class="seat-option" data-price="0">
+                                    <img src="/api/placeholder/50/50" alt="Standard Seats">
+                                </div>
+                                <div class="seat-option" data-price="3000">
+                                    <img src="/api/placeholder/50/50" alt="Sport Seats">
+                                </div>
+                                <div class="seat-option" data-price="5000">
+                                    <img src="/api/placeholder/50/50" alt="Racing Seats">
+                                </div>
+                                <div class="seat-option" data-price="4000">
+                                    <img src="/api/placeholder/50/50" alt="Comfort Seats">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="option-group">
+                            <h3>Interior Material</h3>
+                            <div class="material-options">
+                                <div class="material-option" data-price="0">
+                                    <img src="/api/placeholder/50/50" alt="Cloth">
+                                </div>
+                                <div class="material-option" data-price="2000">
+                                    <img src="/api/placeholder/50/50" alt="Leather">
+                                </div>
+                                <div class="material-option" data-price="5000">
+                                    <img src="/api/placeholder/50/50" alt="Premium Leather">
+                                </div>
+                                <div class="material-option" data-price="7000">
+                                    <img src="/api/placeholder/50/50" alt="Alcantara">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="option-group">
+                            <h3>Interior Features</h3>
+                            <div class="feature-options">
+                                <div class="feature-option" data-price="1500">
+                                    <i class="fas fa-music"></i>
+                                    <span>Premium Sound System</span>
+                                    <span class="feature-price">$1,500</span>
+                                </div>
+                                <div class="feature-option" data-price="2000">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>Climate Control</span>
+                                    <span class="feature-price">$2,000</span>
+                                </div>
+                                <div class="feature-option" data-price="3000">
+                                    <i class="fas fa-tv"></i>
+                                    <span>Rear Entertainment</span>
+                                    <span class="feature-price">$3,000</span>
+                                </div>
+                                <div class="feature-option" data-price="1000">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>Wi-Fi Hotspot</span>
+                                    <span class="feature-price">$1,000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="features-tab">
+                        <div class="option-group">
+                            <h3>Performance Features</h3>
+                            <div class="feature-options">
+                                <div class="feature-option" data-price="5000">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>Sport Suspension</span>
+                                    <span class="feature-price">$5,000</span>
+                                </div>
+                                <div class="feature-option" data-price="7000">
+                                    <i class="fas fa-bolt"></i>
+                                    <span>Performance Exhaust</span>
+                                    <span class="feature-price">$7,000</span>
+                                </div>
+                                <div class="feature-option" data-price="10000">
+                                    <i class="fas fa-cogs"></i>
+                                    <span>Track Package</span>
+                                    <span class="feature-price">$10,000</span>
+                                </div>
+                                <div class="feature-option" data-price="3000">
+                                    <i class="fas fa-compact-disc"></i>
+                                    <span>Carbon Ceramic Brakes</span>
+                                    <span class="feature-price">$3,000</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="option-group">
+                            <h3>Technology Features</h3>
+                            <div class="feature-options">
+                                <div class="feature-option" data-price="2000">
+                                    <i class="fas fa-car"></i>
+                                    <span>Adaptive Cruise Control</span>
+                                    <span class="feature-price">$2,000</span>
+                                </div>
+                                <div class="feature-option" data-price="3000">
+                                    <i class="fas fa-parking"></i>
+                                    <span>Automatic Parking</span>
+                                    <span class="feature-price">$3,000</span>
+                                </div>
+                                <div class="feature-option" data-price="4000">
+                                    <i class="fas fa-road"></i>
+                                    <span>Lane Keeping Assist</span>
+                                    <span class="feature-price">$4,000</span>
+                                </div>
+                                <div class="feature-option" data-price="5000">
+                                    <i class="fas fa-video"></i>
+                                    <span>360° Camera System</span>
+                                    <span class="feature-price">$5,000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="accessories-tab">
+                        <div class="option-group">
+                            <h3>Exterior Accessories</h3>
+                            <div class="accessory-options">
+                                <div class="accessory-option" data-price="2000">
+                                    <i class="fas fa-wind"></i>
+                                    <span>Rear Spoiler</span>
+                                    <span class="accessory-price">$2,000</span>
+                                </div>
+                                <div class="accessory-option" data-price="1500">
+                                    <i class="fas fa-arrows-alt-h"></i>
+                                    <span>Side Skirts</span>
+                                    <span class="accessory-price">$1,500</span>
+                                </div>
+                                <div class="accessory-option" data-price="1000">
+                                    <i class="fas fa-sun"></i>
+                                    <span>Roof Rack</span>
+                                    <span class="accessory-price">$1,000</span>
+                                </div>
+                                <div class="accessory-option" data-price="800">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Front Splash Guards</span>
+                                    <span class="accessory-price">$800</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="option-group">
+                            <h3>Interior Accessories</h3>
+                            <div class="accessory-options">
+                                <div class="accessory-option" data-price="500">
+                                    <i class="fas fa-suitcase"></i>
+                                    <span>Cargo Organizer</span>
+                                    <span class="accessory-price">$500</span>
+                                </div>
+                                <div class="accessory-option" data-price="300">
+                                    <i class="fas fa-shoe-prints"></i>
+                                    <span>All-Weather Floor Mats</span>
+                                    <span class="accessory-price">$300</span>
+                                </div>
+                                <div class="accessory-option" data-price="200">
+                                    <i class="fas fa-umbrella"></i>
+                                    <span>Cargo Cover</span>
+                                    <span class="accessory-price">$200</span>
+                                </div>
+                                <div class="accessory-option" data-price="100">
+                                    <i class="fas fa-first-aid"></i>
+                                    <span>First Aid Kit</span>
+                                    <span class="accessory-price">$100</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="price-summary">
+                        <h3>Price Summary</h3>
+                        <div class="price-detail">
+                            <span>Base Price</span>
+                            <span class="base-price-value">$321,400</span>
+                        </div>
+                        <div class="price-detail">
+                            <span>Paint Color</span>
+                            <span class="color-price-value">$0</span>
+                        </div>
+                        <div class="price-detail">
+                            <span>Wheels</span>
+                            <span class="wheels-price-value">$0</span>
+                        </div>
+                        <div class="price-detail">
+                            <span>Interior</span>
+                            <span class="interior-price-value">$0</span>
+                        </div>
+                        <div class="price-detail">
+                            <span>Features</span>
+                            <span class="features-price-value">$0</span>
+                        </div>
+                        <div class="price-detail">
+                            <span>Accessories</span>
+                            <span class="accessories-price-value">$0</span>
+                        </div>
+                        <div class="total-price">
+                            <span>Total Price</span>
+                            <span class="total-price-value">$321,400</span>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button class="save-config">Save Configuration</button>
+                            <button class="share-config"><i class="fas fa-share-alt"></i> Share</button>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CarVerse</h3>
+                    <p>Redefining the luxury automotive experience.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="showroom.html">Showroom</a></li>
+                        <li><a href="customize.html">Customize</a></li>
+                        <li><a href="buy-sell.html">Buy & Sell</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CarVerse. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
