@@ -3,58 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MoodVibe Threads - Home</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>CarVerse - Luxury Car Experience</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="header-top">
-            <p>Join our showroom and get 25% off! Coupon code: Bangbang45</p>
+    <header class="main-header">
+        <div class="logo">
+            <h1>CarVerse</h1>
         </div>
-        <div class="header-main">
-            <div class="menu-icon">☰</div>
-            <input type="text" class="search-bar" placeholder="Search for...">
-            <nav class="main-nav">
-                <a href="#" class="nav-link">Home</a>
-                <a href="#" class="nav-link">About</a>
-                <a href="#" class="nav-link">Shop</a>
-                <a href="#" class="nav-link active">AZEDW</a>
-                <a href="#" class="nav-link">Blog</a>
-                <a href="#" class="nav-link">Contact</a>
-                <a href="#" class="nav-link">RTL</a>
-            </nav>
-            <div class="user-icons">
-                <a href="#" class="icon-link">👤</a>
-                <a href="#" class="icon-link">❤️ <span>3</span></a>
-                <a href="#" class="icon-link">🛒</a>
+        <nav class="main-nav">
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
             </div>
-        </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="showroom.html">Showroom</a></li>
+                <li><a href="customize.html">Customize</a></li>
+                <li><a href="buy-sell.html">Buy & Sell</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <div class="hero-container">
+        <div class="video-container">
+            <video autoplay loop muted playsinline class="bg-video">
+                <source src="images/backgrounds/car.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="overlay"></div>
+        </div>
         <div class="hero-content">
-            <img src="assets/images/model.jpg" alt="Model" class="hero-image">
-            <div class="hero-text">
-                <span class="stylist-text">STYLIST</span>
-                <h1 class="hero-title">Trendy Collection</h1>
-                <button class="shop-button">SHOP NOW</button>
-            </div>
-            <div class="carousel-controls">
-                <button class="carousel-prev">⬅</button>
-                <button class="carousel-next">➡</button>
+            <h2>Experience Automotive Excellence</h2>
+            <p>Discover, customize, and own the car of your dreams.</p>
+            <a href="showroom.html" class="cta-button">Enter Showroom</a>
+        </div>
+    </div>
+
+    <section class="featured-section">
+        <div class="container">
+            <h2>Featured Models</h2>
+            <div class="featured-cars">
+                <div class="featured-car">
+                    <div class="car-image-container">
+                        <img src="images/cars/ferrari.jpg" alt="Luxury Sports Car" class="car-image">
+                    </div>
+                    <h3>Prestige Sport</h3>
+                    <p>Ultimate performance meets luxury</p>
+                    <a href="car-details/ferrari.html" class="view-more">View Details</a>
+                </div>
+                <div class="featured-car">
+                    <div class="car-image-container">
+                        <img src="images/cars/tesla.jpg" alt="Electric SUV" class="car-image">
+                    </div>
+                    <h3>Electric Vision</h3>
+                    <p>The future of sustainable driving</p>
+                    <a href="car-details/tesla.html" class="view-more">View Details</a>
+                </div>
+                <div class="featured-car">
+                    <div class="car-image-container">
+                        <img src="images/cars/rolls-royce.jpg" alt="Luxury Sedan" class="car-image">
+                    </div>
+                    <h3>Executive Elite</h3>
+                    <p>Sophistication for the discerning driver</p>
+                    <a href="car-details/rolls-royce.html" class="view-more">View Details</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>© 2025 MoodVibe Threads. All rights reserved.</p>
-        <div class="social-links">
-            <a href="https://instagram.com" class="social-link">Instagram</a>
-            <a href="https://tiktok.com" class="social-link">TikTok</a>
+    <section class="about-preview">
+        <div class="container">
+            <div class="about-content">
+                <h2>The CarVerse Experience</h2>
+                <p>At CarVerse, we're revolutionizing how you interact with automobiles. Our cutting-edge platform offers unmatched customization, a curated showroom of luxury vehicles, and a seamless buying experience.</p>
+                <a href="about.html" class="btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CarVerse</h3>
+                    <p>Redefining the luxury automotive experience.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="showroom.html">Showroom</a></li>
+                        <li><a href="customize.html">Customize</a></li>
+                        <li><a href="buy-sell.html">Buy & Sell</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CarVerse. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
+
+    <script src="js/scripts.js"></script>
 </body>
 </html>

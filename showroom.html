@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showroom - CarVerse</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <h1>CarVerse</h1>
+        </div>
+        <nav class="main-nav">
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="showroom.html" class="active">Showroom</a></li>
+                <li><a href="customize.html">Customize</a></li>
+                <li><a href="buy-sell.html">Buy & Sell</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-banner">
+        <div class="banner-content">
+            <h1>Our Showroom</h1>
+            <p>Explore our extensive collection of premium vehicles and find your perfect match.</p>
+        </div>
+    </div>
+
+    <section class="showroom-filters">
+        <div class="container">
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All Cars</button>
+                <button class="filter-btn" data-filter="sports">Sports</button>
+                <button class="filter-btn" data-filter="luxury">Luxury</button>
+                <button class="filter-btn" data-filter="electric">Electric</button>
+                <button class="filter-btn" data-filter="suv">SUV</button>
+                <button class="filter-btn" data-filter="convertible">Convertible</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="showroom-section">
+        <div class="container">
+            <div class="showroom-grid">
+                <!-- Car 1 -->
+                <div class="car-card car-3d-container" data-category="sports">
+                    <div class="car-image-wrapper">
+                        <img src="images/cars/Aston Martin DB12.jpg" alt="Aston Martin DB12" class="car-image">
+                        <div class="car-overlay">
+                            <a href="car-details/aston-martin.html" class="view-details-btn">View Details</a>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Aston Martin DB12</h3>
+                        <p class="car-category">Sports Car</p>
+                        <p class="car-price">$248,000</p>
+                        <div class="car-specs">
+                            <div class="spec-item">
+                                <p class="spec-value">3.6s</p>
+                                <p class="spec-label">0-60 mph</p>
+                            </div>
+                            <div class="spec-item">
+                                <p class="spec-value">671 HP</p>
+                                <p class="spec-label">Power</p>
+                            </div>
+                            <div class="spec-item">
+                                <p class="spec-value">202 mph</p>
+                                <p class="spec-label">Top Speed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Car 2 -->
+                <div class="car-card car-3d-container" data-category="luxury">
+                    <div class="car-image-wrapper">
+                        <img src="images/cars/Bentley Continental GT.jpg" alt="Bentley Continental GT" class="car-image">
+                        <div class="car-overlay">
+                            <a href="car-details/bentley.html" class="view-details-btn">View Details</a>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Bentley Continental GT</h3>
+                        <p class="car-category">Luxury Coupe</p>
+                        <p class="car-price">$202,500</p>
+                        <div class="car-specs">
+                            <div class="spec-item">
+                                <p class="spec-value">3.9s</p>
+                                <p class="spec-label">0-60 mph</p>
+                            </div>
+                            <div class="spec-item">
+                                <p class="spec-value">626 HP</p>
+                                <p class="spec-label">Power</p>
+                            </div>
+                            <div class="spec-item">
+                                <p class="spec-value">207 mph</p>
+                                <p class="spec-label">Top Speed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Car 3 -->
+                <div class="car-card car-3d-container" data-category="electric">
+                    <div class="car-image-wrapper">
+                        <img src="images/cars/tesla.jpg" alt="Tesla Model S Plaid" class="car-image">
+                        <div class="car-overlay">
+                            <a href="car-details/tesla.html" class="view-details-btn">View Details</a>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Tesla Model S Plaid</h3>
+                        <p class="car-category">Electric Sedan</p>
+                        <p class="car-price">$129,990</p>
+                        <div class="car-specs">
+                            <div class="spec-item">
+                                <p class="spec-value">1.99s</p>
+                                <p class="spec-label">0-60 mph</p>
+                            </div>
+                            <div class="spec-item">
+                                <p class="spec-value">1,020 HP</p>
+                                <p class="spec-label">Power</p>
+                            </div>
+                            <div class="spec-item">
+                                <p class="spec-value">200 mph</p>
+                                <p class="spec-label">Top Speed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Car 4 -->
+                <div class="car-card car-3d-container" data-category="suv">
+                    <div class="car-image-wrapper">
+                        <img src="images/cars/range rover sv.jpg" alt="Range Rover SV" class="car-image">
+                        <div class="car-overlay">
+                            <a href="car-details/range-rover.html" class="view-details-btn">View Details</a>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Range Rover SV</h3>
+                        <p class="car-category">Luxury SUV</p>
+                        <p class="car-price">$218,300</p>
+                        <div class="car-specs">
+                            <div class="spec-item">
+                                <p class="spec-value">4.4s</p>
+                                <p class="spec-label">0-60 mph</p>
+                            </div>
+                            <div class="spec-item">
+                                <p class="spec-value">523 HP</p>
+                                <p class="spec-label">Power</p>
+                            </div>
+                            <div class="spec-item">
+                                <p class="spec-value">155 mph</p>
+                                <p class="spec-label">Top Speed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Car 5 -->
+                <div class="car-card car-3d-container" data-category="convertible">
+                    <div class="car-image-wrapper">
+                        <img src="images/cars/Porsche 911 Cabriolet.jpg" alt="Porsche 911 Cabriolet" class="car-image">
+                        <div class="car-overlay">
+                            <a href="car-details/porsche.html" class="view-details-btn">View Details</a>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Porsche 911 Cabriolet</h3>
+                        <p class="car-category">Convertible</p>
+                        <p class="car-price">$126,400</p>
+                        <div class="car-specs">
+                            <div class="spec-item">
+                                <p class="spec-value">3.5s</p>
+                                <p class="spec-label">0-60 mph</p>
+                            </div>
+                            <div class="spec-item">
+                                <p class="spec-value">443 HP</p>
+                                <p class="spec-label">Power</p>
+                            </div>
+                            <div class="spec-item">
+                                <p class="spec-value">191 mph</p>
+                                <p class="spec-label">Top Speed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Car 6 -->
+                <div class="car-card car-3d-container" data-category="sports">
+                    <div class="car-image-wrapper">
+                        <img src="images/cars/ferrari.jpg" alt="Ferrari 296 GTB" class="car-image">
+                        <div class="car-overlay">
+                            <a href="car-details/ferrari.html" class="view-details-btn">View Details</a>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Ferrari 296 GTB</h3>
+                        <p class="car-category">Sports Car</p>
+                        <p class="car-price">$321,400</p>
+                        <div class="car-specs">
+                            <div class="spec-item">
+                                <p class="spec-value">2.9s</p>
+                                <p class="spec-label">0-60 mph</p>
+                            </div>
+                            <div class="spec-item">
+                                <p class="spec-value">819 HP</p>
+                                <p class="spec-label">Power</p>
+                            </div>
+                            <div class="spec-item">
+                                <p class="spec-value">205 mph</p>
+                                <p class="spec-label">Top Speed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Car 7 -->
+                <div class="car-card car-3d-container" data-category="electric">
+                    <div class="car-image-wrapper">
+                        <img src="images/cars/lucid air dream.jpg" alt="Lucid Air" class="car-image">
+                        <div class="car-overlay">
+                            <a href="car-details/lucid.html" class="view-details-btn">View Details</a>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Lucid Air Dream</h3>
+                        <p class="car-category">Electric Sedan</p>
+                        <p class="car-price">$179,000</p>
+                        <div class="car-specs">
+                            <div class="spec-item">
+                                <p class="spec-value">2.5s</p>
+                                <p class="spec-label">0-60 mph</p>
+                            </div>
+                            <div class="spec-item">
+                                <p class="spec-value">1,111 HP</p>
+                                <p class="spec-label">Power</p>
+                            </div>
+                            <div class="spec-item">
+                                <p class="spec-value">520 mi</p>
+                                <p class="spec-label">Range</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Car 8 -->
+                <div class="car-card car-3d-container" data-category="luxury">
+                    <div class="car-image-wrapper">
+                        <img src="images/cars/Rolls-Royce-Spectre.jpg" alt="Rolls-Royce Spectre" class="car-image">
+                        <div class="car-overlay">
+                            <a href="car-details/rolls-royce.html" class="view-details-btn">View Details</a>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Rolls-Royce Spectre</h3>
+                        <p class="car-category">Luxury Coupe</p>
+                        <p class="car-price">$420,000</p>
+                        <div class="car-specs">
+                            <div class="spec-item">
+                                <p class="spec-value">4.4s</p>
+                                <p class="spec-label">0-60 mph</p>
+                            </div>
+                            <div class="spec-item">
+                                <p class="spec-value">577 HP</p>
+                                <p class="spec-label">Power</p>
+                            </div>
+                            <div class="spec-item">
+                                <p class="spec-value">155 mph</p>
+                                <p class="spec-label">Top Speed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Car 9 -->
+                <div class="car-card car-3d-container" data-category="sports">
+                    <div class="car-image-wrapper">
+                        <img src="images/cars/Lamborghini Huracán.jpg" alt="Lamborghini Huracán" class="car-image">
+                        <div class="car-overlay">
+                            <a href="car-details/lamborghini.html" class="view-details-btn">View Details</a>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">Lamborghini Huracán</h3>
+                        <p class="car-category">Sports Car</p>
+                        <p class="car-price">$248,295</p>
+                        <div class="car-specs">
+                            <div class="spec-item">
+                                <p class="spec-value">3.1s</p>
+                                <p class="spec-label">0-60 mph</p>
+                            </div>
+                            <div class="spec-item">
+                                <p class="spec-value">631 HP</p>
+                                <p class="spec-label">Power</p>
+                            </div>
+                            <div class="spec-item">
+                                <p class="spec-value">202 mph</p>
+                                <p class="spec-label">Top Speed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Car 10 -->
+                <div class="car-card car-3d-container" data-category="sports">
+                    <div class="car-image-wrapper">
+                        <img src="images/cars/McLaren 765LT.jpg" alt="McLaren 765LT" class="car-image">
+                        <div class="car-overlay">
+                            <a href="car-details/mclaren.html" class="view-details-btn">View Details</a>
+                        </div>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">McLaren 765LT</h3>
+                        <p class="car-category">Sports Car</p>
+                        <p class="car-price">$382,900</p>
+                        <div class="car-specs">
+                            <div class="spec-item">
+                                <p class="spec-value">2.7s</p>
+                                <p class="spec-label">0-60 mph</p>
+                            </div>
+                            <div class="spec-item">
+                                <p class="spec-value">755 HP</p>
+                                <p class="spec-label">Power</p>
+                            </div>
+                            <div class="spec-item">
+                                <p class="spec-value">205 mph</p>
+                                <p class="spec-label">Top Speed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pagination">
+                <div class="page-number active">1</div>
+                <div class="page-number">2</div>
+                <div class="page-number">3</div>
+                <div class="page-number">4</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CarVerse</h3>
+                    <p>Redefining the luxury automotive experience.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="showroom.html">Showroom</a></li>
+                        <li><a href="customize.html">Customize</a></li>
+                        <li><a href="buy-sell.html">Buy & Sell</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CarVerse. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
