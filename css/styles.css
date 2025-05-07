@@ -714,6 +714,15 @@ footer {
     transform-style: preserve-3d;
 }
 
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 20px;
+    padding: 10px 20px;
+}
+
 /* Car Customization Page Styles */
 .customize-container {
     display: flex;
