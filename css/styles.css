@@ -710,7 +710,7 @@ footer {
 }
 
 .car-card.three-d {
-    transition: 0.5s;
+    transition: transform 0.5s;
     transform-style: preserve-3d;
 }
 
@@ -848,6 +848,12 @@ footer {
     height: 400px;
     position: relative;
     overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .car-preview-image {
@@ -955,23 +961,26 @@ footer {
 }
 
 .env-option {
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
+    width: 60px;
+    height: 40px;
+    border-radius: 6px;
     overflow: hidden;
     cursor: pointer;
     transition: all 0.3s ease;
     opacity: 0.6;
     border: 2px solid transparent;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .env-option.active {
     border-color: var(--secondary-color);
     opacity: 1;
+    box-shadow: 0 0 10px rgba(217, 168, 50, 0.5);
 }
 
 .env-option:hover {
     opacity: 1;
+    transform: translateY(-3px);
 }
 
 .env-img {
@@ -1052,21 +1061,95 @@ footer {
     cursor: pointer;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    position: relative;
 }
 
-.wheel-option, .trim-option, .seat-option, .material-option {
+.wheel-option, .seat-option, .material-option {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
 }
 
-.wheel-option img, .trim-option img, .seat-option img, .material-option img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.wheel-option img, .seat-option img, .material-option img {
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+    margin: auto;
+    display: block;
 }
 
 .color-option.active, .wheel-option.active, .trim-option.active, .seat-option.active, .material-option.active {
     border-color: var(--secondary-color);
     transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(217, 168, 50, 0.5);
+}
+
+/* New Trim Options Styling */
+.trim-options-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.trim-box {
+    width: 100px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+.trim-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.trim-box.selected {
+    border-color: var(--secondary-color);
+    background-color: rgba(217, 168, 50, 0.1);
+    box-shadow: 0 0 15px rgba(217, 168, 50, 0.3);
+}
+
+.trim-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 10px;
+    border: 2px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+}
+
+.trim-image img {
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+}
+
+.trim-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.trim-price {
+    font-size: 0.8rem;
+    color: #666;
 }
 
 .feature-options, .accessory-options {
