@@ -1,5 +1,6 @@
 /* Global Styles */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('buy-sell.css');
 
 :root {
     --primary-color: #1e1e1e;
@@ -961,9 +962,9 @@ footer {
 }
 
 .env-option {
-    width: 60px;
-    height: 40px;
-    border-radius: 6px;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -1064,14 +1065,7 @@ footer {
     position: relative;
 }
 
-.wheel-option, .seat-option, .material-option {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-    position: relative;
+.wheel-option, .trim-option, .seat-option, .material-option {
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -1079,12 +1073,10 @@ footer {
     background-color: #f9f9f9;
 }
 
-.wheel-option img, .seat-option img, .material-option img {
-    width: 85%;
-    height: 85%;
-    object-fit: contain;
-    margin: auto;
-    display: block;
+.wheel-option img, .trim-option img, .seat-option img, .material-option img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .color-option.active, .wheel-option.active, .trim-option.active, .seat-option.active, .material-option.active {

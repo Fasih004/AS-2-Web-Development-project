@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy & Sell - CarVerse</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <!-- Range slider CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.1/nouislider.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <h1>CarVerse</h1>
+        </div>
+        <nav class="main-nav">
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="showroom.html">Showroom</a></li>
+                <li><a href="customize.html">Customize</a></li>
+                <li><a href="buy-sell.html" class="active">Buy & Sell</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-banner">
+        <div class="banner-content">
+            <h1>Buy & Sell Luxury Vehicles</h1>
+            <p>Find your next dream car or list your current vehicle on our premium marketplace.</p>
+        </div>
+    </div>
+
+    <!-- Tab Navigation -->
+    <section class="buy-sell-tabs">
+        <div class="container">
+            <div class="tab-navigation">
+                <button class="tab-btn active" data-tab="buy-tab">Buy a Car</button>
+                <button class="tab-btn" data-tab="sell-tab">Sell Your Car</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buy Tab Content -->
+    <section id="buy-tab" class="tab-content active">
+        <div class="container">
+            <!-- Search and Filter Section -->
+            <div class="search-filter-section">
+                <h2>Find Your Perfect Match</h2>
+                <form class="filter-form">
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label for="make">Make</label>
+                            <select id="make" name="make">
+                                <option value="">All Makes</option>
+                                <option value="aston-martin">Aston Martin</option>
+                                <option value="bentley">Bentley</option>
+                                <option value="ferrari">Ferrari</option>
+                                <option value="lamborghini">Lamborghini</option>
+                                <option value="mclaren">McLaren</option>
+                                <option value="porsche">Porsche</option>
+                                <option value="rolls-royce">Rolls-Royce</option>
+                                <option value="tesla">Tesla</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="model">Model</label>
+                            <select id="model" name="model">
+                                <option value="">All Models</option>
+                                <!-- Dynamic options will be populated by JavaScript -->
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="year">Year</label>
+                            <select id="year" name="year">
+                                <option value="">Any Year</option>
+                                <option value="2025">2025</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="body-type">Body Type</label>
+                            <select id="body-type" name="body-type">
+                                <option value="">All Types</option>
+                                <option value="coupe">Coupe</option>
+                                <option value="convertible">Convertible</option>
+                                <option value="sedan">Sedan</option>
+                                <option value="suv">SUV</option>
+                                <option value="sports">Sports Car</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-row">
+                        <div class="filter-group range-slider-group">
+                            <label for="price-range">Price Range</label>
+                            <div id="price-slider" class="slider"></div>
+                            <div class="range-values">
+                                <span id="price-min">$50,000</span>
+                                <span id="price-max">$500,000</span>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-group range-slider-group">
+                            <label for="mileage-range">Mileage</label>
+                            <div id="mileage-slider" class="slider"></div>
+                            <div class="range-values">
+                                <span id="mileage-min">0 miles</span>
+                                <span id="mileage-max">50,000 miles</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-actions">
+                        <button type="button" class="filter-btn" id="apply-filters">Apply Filters</button>
+                        <button type="button" class="filter-btn reset" id="reset-filters">Reset Filters</button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Featured Listings Carousel -->
+            <div class="featured-listings">
+                <h2>Featured Vehicles</h2>
+                <div class="carousel-container">
+                    <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="featured-carousel">
+                        <div class="carousel-slide">
+                            <div class="featured-car">
+                                <div class="featured-badge">Featured</div>
+                                <img src="images/cars/ferrari.jpg" alt="Ferrari 296 GTB">
+                                <div class="featured-details">
+                                    <h3>Ferrari 296 GTB</h3>
+                                    <p class="year-mileage">2023 • 1,200 miles</p>
+                                    <p class="price">$295,000</p>
+                                    <a href="#" class="view-details-btn">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="featured-car">
+                                <div class="featured-badge">Featured</div>
+                                <img src="images/cars/lamborghini.jpg" alt="Lamborghini Huracán">
+                                <div class="featured-details">
+                                    <h3>Lamborghini Huracán</h3>
+                                    <p class="year-mileage">2022 • 3,450 miles</p>
+                                    <p class="price">$249,999</p>
+                                    <a href="#" class="view-details-btn">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="featured-car">
+                                <div class="featured-badge">Featured</div>
+                                <img src="images/cars/rolls-royce.jpg" alt="Rolls-Royce Spectre">
+                                <div class="featured-details">
+                                    <h3>Rolls-Royce Spectre</h3>
+                                    <p class="year-mileage">2024 • 850 miles</p>
+                                    <p class="price">$398,500</p>
+                                    <a href="#" class="view-details-btn">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="featured-car">
+                                <div class="featured-badge">Featured</div>
+                                <img src="images/cars/bentley.jpg" alt="Bentley Continental GT">
+                                <div class="featured-details">
+                                    <h3>Bentley Continental GT</h3>
+                                    <p class="year-mileage">2023 • 2,100 miles</p>
+                                    <p class="price">$225,000</p>
+                                    <a href="#" class="view-details-btn">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="carousel-indicators">
+                    <span class="indicator active"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
+            </div>
+            
+            <!-- Inventory Grid Section -->
+            <div class="inventory-section">
+                <div class="inventory-header">
+                    <h2>Current Inventory</h2>
+                    <div class="inventory-controls">
+                        <div class="sort-by">
+                            <label for="sort">Sort by:</label>
+                            <select id="sort">
+                                <option value="featured">Featured</option>
+                                <option value="price-asc">Price: Low to High</option>
+                                <option value="price-desc">Price: High to Low</option>
+                                <option value="newest">Newest First</option>
+                                <option value="mileage">Lowest Mileage</option>
+                            </select>
+                        </div>
+                        <div class="view-toggle">
+                            <button class="view-btn grid active"><i class="fas fa-th"></i></button>
+                            <button class="view-btn list"><i class="fas fa-list"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="inventory-grid">
+                    <!-- Car Card 1 -->
+                    <div class="car-card" data-make="aston-martin" data-year="2023" data-price="248000" data-mileage="1500" data-body-type="sports">
+                        <div class="car-image-wrapper">
+                            <img src="images/cars/aston-martin.jpg" alt="Aston Martin DB12" class="car-image">
+                            <div class="car-overlay">
+                                <div class="overlay-btns">
+                                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                                    <button class="compare-btn"><i class="fas fa-exchange-alt"></i></button>
+                                </div>
+                                <a href="#" class="view-details-btn">View Details</a>
+                            </div>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-name">Aston Martin DB12</h3>
+                            <p class="car-year-mileage">2023 • 1,500 miles</p>
+                            <p class="car-price">$248,000</p>
+                            <div class="car-features">
+                                <span><i class="fas fa-car"></i> Sports</span>
+                                <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                                <span><i class="fas fa-cog"></i> Auto</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Car Card 2 -->
+                    <div class="car-card" data-make="bentley" data-year="2022" data-price="185500" data-mileage="8500" data-body-type="coupe">
+                        <div class="car-image-wrapper">
+                            <img src="images/cars/bentley.jpg" alt="Bentley Continental GT" class="car-image">
+                            <div class="car-overlay">
+                                <div class="overlay-btns">
+                                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                                    <button class="compare-btn"><i class="fas fa-exchange-alt"></i></button>
+                                </div>
+                                <a href="#" class="view-details-btn">View Details</a>
+                            </div>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-name">Bentley Continental GT</h3>
+                            <p class="car-year-mileage">2022 • 8,500 miles</p>
+                            <p class="car-price">$185,500</p>
+                            <div class="car-features">
+                                <span><i class="fas fa-car"></i> Coupe</span>
+                                <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                                <span><i class="fas fa-cog"></i> Auto</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Car Card 3 -->
+                    <div class="car-card" data-make="tesla" data-year="2023" data-price="105990" data-mileage="3200" data-body-type="sedan">
+                        <div class="car-image-wrapper">
+                            <img src="images/cars/tesla.jpg" alt="Tesla Model S Plaid" class="car-image">
+                            <div class="car-overlay">
+                                <div class="overlay-btns">
+                                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                                    <button class="compare-btn"><i class="fas fa-exchange-alt"></i></button>
+                                </div>
+                                <a href="#" class="view-details-btn">View Details</a>
+                            </div>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-name">Tesla Model S Plaid</h3>
+                            <p class="car-year-mileage">2023 • 3,200 miles</p>
+                            <p class="car-price">$105,990</p>
+                            <div class="car-features">
+                                <span><i class="fas fa-car"></i> Sedan</span>
+                                <span><i class="fas fa-bolt"></i> Electric</span>
+                                <span><i class="fas fa-cog"></i> Auto</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Car Card 4 -->
+                    <div class="car-card" data-make="porsche" data-year="2021" data-price="115200" data-mileage="12500" data-body-type="convertible">
+                        <div class="car-image-wrapper">
+                            <img src="images/cars/porsche.jpg" alt="Porsche 911 Cabriolet" class="car-image">
+                            <div class="car-overlay">
+                                <div class="overlay-btns">
+                                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                                    <button class="compare-btn"><i class="fas fa-exchange-alt"></i></button>
+                                </div>
+                                <a href="#" class="view-details-btn">View Details</a>
+                            </div>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-name">Porsche 911 Cabriolet</h3>
+                            <p class="car-year-mileage">2021 • 12,500 miles</p>
+                            <p class="car-price">$115,200</p>
+                            <div class="car-features">
+                                <span><i class="fas fa-car"></i> Convertible</span>
+                                <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                                <span><i class="fas fa-cog"></i> Auto</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Car Card 5 -->
+                    <div class="car-card" data-make="ferrari" data-year="2022" data-price="275000" data-mileage="5600" data-body-type="sports">
+                        <div class="car-image-wrapper">
+                            <img src="images/cars/ferrari.jpg" alt="Ferrari 296 GTB" class="car-image">
+                            <div class="car-overlay">
+                                <div class="overlay-btns">
+                                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                                    <button class="compare-btn"><i class="fas fa-exchange-alt"></i></button>
+                                </div>
+                                <a href="#" class="view-details-btn">View Details</a>
+                            </div>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-name">Ferrari 296 GTB</h3>
+                            <p class="car-year-mileage">2022 • 5,600 miles</p>
+                            <p class="car-price">$275,000</p>
+                            <div class="car-features">
+                                <span><i class="fas fa-car"></i> Sports</span>
+                                <span><i class="fas fa-gas-pump"></i> Hybrid</span>
+                                <span><i class="fas fa-cog"></i> Auto</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Car Card 6 -->
+                    <div class="car-card" data-make="rolls-royce" data-year="2023" data-price="405000" data-mileage="1200" data-body-type="coupe">
+                        <div class="car-image-wrapper">
+                            <img src="images/cars/rolls-royce.jpg" alt="Rolls-Royce Spectre" class="car-image">
+                            <div class="car-overlay">
+                                <div class="overlay-btns">
+                                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                                    <button class="compare-btn"><i class="fas fa-exchange-alt"></i></button>
+                                </div>
+                                <a href="#" class="view-details-btn">View Details</a>
+                            </div>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-name">Rolls-Royce Spectre</h3>
+                            <p class="car-year-mileage">2023 • 1,200 miles</p>
+                            <p class="car-price">$405,000</p>
+                            <div class="car-features">
+                                <span><i class="fas fa-car"></i> Coupe</span>
+                                <span><i class="fas fa-bolt"></i> Electric</span>
+                                <span><i class="fas fa-cog"></i> Auto</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pagination">
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Financing Calculator -->
+            <div class="financing-calculator">
+                <h2>Financing Calculator</h2>
+                <div class="calculator-container">
+                    <div class="calculator-inputs">
+                        <div class="calc-row">
+                            <div class="calc-group">
+                                <label for="vehicle-price">Vehicle Price</label>
+                                <input type="text" id="vehicle-price" value="100000">
+                            </div>
+                            <div class="calc-group">
+                                <label for="down-payment">Down Payment</label>
+                                <input type="text" id="down-payment" value="20000">
+                            </div>
+                        </div>
+                        <div class="calc-row">
+                            <div class="calc-group">
+                                <label for="loan-term">Loan Term (months)</label>
+                                <select id="loan-term">
+                                    <option value="36">36 months</option>
+                                    <option value="48">48 months</option>
+                                    <option value="60" selected>60 months</option>
+                                    <option value="72">72 months</option>
+                                    <option value="84">84 months</option>
+                                </select>
+                            </div>
+                            <div class="calc-group">
+                                <label for="interest-rate">Interest Rate (%)</label>
+                                <input type="text" id="interest-rate" value="3.5">
+                            </div>
+                        </div>
+                        <button id="calculate-btn" class="calculate-btn">Calculate Payment</button>
+                    </div>
+                    <div class="calculator-results">
+                        <div class="result-item">
+                            <h3>Monthly Payment</h3>
+                            <p id="monthly-payment">$1,500</p>
+                        </div>
+                        <div class="result-item">
+                            <h3>Total Loan Amount</h3>
+                            <p id="total-loan">$80,000</p>
+                        </div>
+                        <div class="result-item">
+                            <h3>Total Interest</h3>
+                            <p id="total-interest">$9,800</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="calculator-disclaimer">This calculator provides an estimate only. Contact our finance team for personalized options.</p>
+            </div>
+            
+            <!-- Saved Vehicles Section -->
+            <div class="saved-vehicles-section">
+                <h2>Saved Vehicles</h2>
+                <div class="saved-vehicles-container">
+                    <div class="empty-saved-message" id="empty-saved-message">
+                        <i class="far fa-heart"></i>
+                        <p>You haven't saved any vehicles yet.</p>
+                        <p>Click the heart icon on any listing to save it here for easy comparison.</p>
+                    </div>
+                    <div class="saved-vehicles-list" id="saved-vehicles-list">
+                        <!-- Saved vehicles will be dynamically added here by JavaScript -->
+                    </div>
+                    <div class="saved-actions hidden" id="saved-actions">
+                        <button class="compare-all-btn">Compare Selected</button>
+                        <button class="clear-saved-btn">Clear All</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sell Tab Content -->
+    <section id="sell-tab" class="tab-content">
+        <div class="container">
+            <!-- Value Estimator Tool -->
+            <div class="value-estimator">
+                <h2>Estimate Your Car's Value</h2>
+                <p class="section-intro">Get an instant estimate of your car's value based on market data and condition.</p>
+                
+                <div class="estimator-container">
+                    <form class="estimator-form">
+                        <div class="estimator-row">
+                            <div class="estimator-group">
+                                <label for="est-make">Make</label>
+                                <select id="est-make" name="est-make" required>
+                                    <option value="">Select Make</option>
+                                    <option value="aston-martin">Aston Martin</option>
+                                    <option value="bentley">Bentley</option>
+                                    <option value="ferrari">Ferrari</option>
+                                    <option value="lamborghini">Lamborghini</option>
+                                    <option value="mclaren">McLaren</option>
+                                    <option value="porsche">Porsche</option>
+                                    <option value="rolls-royce">Rolls-Royce</option>
+                                    <option value="tesla">Tesla</option>
+                                </select>
+                            </div>
+                            <div class="estimator-group">
+                                <label for="est-model">Model</label>
+                                <select id="est-model" name="est-model" required>
+                                    <option value="">Select Model</option>
+                                    <!-- Dynamic options will be populated by JavaScript -->
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="estimator-row">
+                            <div class="estimator-group">
+                                <label for="est-year">Year</label>
+                                <select id="est-year" name="est-year" required>
+                                    <option value="">Select Year</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2018">2018</option>
+                                </select>
+                            </div>
+                            <div class="estimator-group">
+                                <label for="est-mileage">Mileage</label>
+                                <input type="number" id="est-mileage" name="est-mileage" placeholder="Enter mileage" required>
+                            </div>
+                        </div>
+                        
+                        <div class="estimator-row">
+                            <div class="estimator-group">
+                                <label>Vehicle Condition</label>
+                                <div class="condition-options">
+                                    <div class="condition-option">
+                                        <input type="radio" id="condition-excellent" name="condition" value="excellent">
+                                        <label for="condition-excellent">Excellent</label>
+                                        <span class="condition-tooltip" data-tooltip="Like new, no visible wear and tear, perfect mechanical condition.">?</span>
+                                    </div>
+                                    <div class="condition-option">
+                                        <input type="radio" id="condition-good" name="condition" value="good" checked>
+                                        <label for="condition-good">Good</label>
+                                        <span class="condition-tooltip" data-tooltip="Minor wear and tear, well maintained, no major mechanical issues.">?</span>
+                                    </div>
+                                    <div class="condition-option">
+                                        <input type="radio" id="condition-fair" name="condition" value="fair">
+                                        <label for="condition-fair">Fair</label>
+                                        <span class="condition-tooltip" data-tooltip="Visible wear and tear, may need minor repairs, mechanically sound.">?</span>
+                                    </div>
+                                    <div class="condition-option">
+                                        <input type="radio" id="condition-poor" name="condition" value="poor">
+                                        <label for="condition-poor">Poor</label>
+                                        <span class="condition-tooltip" data-tooltip="Significant wear, requires repairs, may have mechanical issues.">?</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="estimator-actions">
+                            <button type="button" id="estimate-value-btn" class="estimate-btn">Get Estimate</button>
+                        </div>
+                    </form>
+                    
+                    <div class="estimate-results" id="estimate-results">
+                        <!-- Results will be shown here after form submission -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Selling Process Explainer -->
+            <div class="selling-process">
+                <h2>How Selling Works</h2>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">
+                            <i class="fas fa-car-alt"></i>
+                        </div>
+                        <h3>Value Your Car</h3>
+                        <p>Use our estimator tool to get an instant valuation based on current market data.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h3>Create Your Listing</h3>
+                        <p>Fill out our detailed form and upload high-quality photos of your vehicle.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Verification</h3>
+                        <p>Our team reviews your listing for accuracy and verifies vehicle details.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Connect With Buyers</h3>
+                        <p>Receive inquiries and offers from interested buyers through our secure platform.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h3>Complete the Sale</h3>
+                        <p>Finalize the transaction with our support team assisting with paperwork and payment.</p>
+                    </div>
+                </div>
+                <div class="process-cta">
+                    <a href="#listing-form" class="cta-button process-btn">List Your Car Now</a>
+                </div>
+            </div>
+            
+            <!-- Car Listing Form -->
+            <div id="listing-form" class="listing-form-section">
+                <h2>List Your Car</h2>
+                <p class="section-intro">Provide detailed information about your vehicle to create an attractive listing.</p>
+                
+                <form class="listing-form">
+                    <div class="form-section">
+                        <h3>Vehicle Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="listing-make">Make</label>
+                                <select id="listing-make" name="listing-make" required>
+                                    <option value="">Select Make</option>
+                                    <option value="aston-martin">Aston Martin</option>
+                                    <option value="bentley">Bentley</option>
+                                    <option value="ferrari">Ferrari</option>
+                                    <option value="lamborghini">Lamborghini</option>
+                                    <option value="mclaren">McLaren</option>
+                                    <option value="porsche">Porsche</option>
+                                    <option value="rolls-royce">Rolls-Royce</option>
+                                    <option value="tesla">Tesla</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="listing-model">Model</label>
+                                <select id="listing-model" name="listing-model" required>
+                                    <option value="">Select Model</option>
+                                    <!-- Dynamic options will be populated by JavaScript -->
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="listing-year">Year</label>
+                                <select id="listing-year" name="listing-year" required>
+                                    <option value="">Select Year</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2018">2018</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="listing-mileage">Mileage</label>
+                                <input type="number" id="listing-mileage" name="listing-mileage" placeholder="Enter mileage" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="listing-ext-color">Exterior Color</label>
+                                <input type="text" id="listing-ext-color" name="listing-ext-color" placeholder="e.g. Rosso Corsa Red">
+                            </div>
+                            <div class="form-group">
+                                <label for="listing-int-color">Interior Color</label>
+                                <input type="text" id="listing-int-color" name="listing-int-color" placeholder="e.g. Black Leather">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="listing-transmission">Transmission</label>
+                                <select id="listing-transmission" name="listing-transmission">
+                                    <option value="automatic">Automatic</option>
+                                    <option value="manual">Manual</option>
+                                    <option value="semi-automatic">Semi-Automatic</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="listing-drive">Drive Type</label>
+                                <select id="listing-drive" name="listing-drive">
+                                    <option value="rwd">Rear-Wheel Drive</option>
+                                    <option value="fwd">Front-Wheel Drive</option>
+                                    <option value="awd">All-Wheel Drive</option>
+                                    <option value="4wd">4-Wheel Drive</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label for="listing-price">Asking Price ($)</label>
+                                <input type="number" id="listing-price" name="listing-price" placeholder="Enter asking price" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Vehicle Features & Condition</h3>
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label for="listing-features">Key Features</label>
+                                <textarea id="listing-features" name="listing-features" rows="4" placeholder="List key features, packages, upgrades, etc."></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Vehicle Condition</label>
+                                <div class="condition-options">
+                                    <div class="condition-option">
+                                        <input type="radio" id="listing-condition-excellent" name="listing-condition" value="excellent">
+                                        <label for="listing-condition-excellent">Excellent</label>
+                                    </div>
+                                    <div class="condition-option">
+                                        <input type="radio" id="listing-condition-good" name="listing-condition" value="good" checked>
+                                        <label for="listing-condition-good">Good</label>
+                                    </div>
+                                    <div class="condition-option">
+                                        <input type="radio" id="listing-condition-fair" name="listing-condition" value="fair">
+                                        <label for="listing-condition-fair">Fair</label>
+                                    </div>
+                                    <div class="condition-option">
+                                        <input type="radio" id="listing-condition-poor" name="listing-condition" value="poor">
+                                        <label for="listing-condition-poor">Poor</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label for="listing-description">Full Description</label>
+                                <textarea id="listing-description" name="listing-description" rows="6" placeholder="Provide detailed information about your vehicle's history, condition, and any other relevant details."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Upload Photos</h3>
+                        <p class="photo-instructions">Upload 5-20 high-quality photos of your vehicle. Include exterior, interior, engine, and any areas showing wear or damage.</p>
+                        
+                        <div class="photo-upload-container">
+                            <div class="photo-upload-area" id="photo-upload-area">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Drag & drop photos here or click to browse</p>
+                                <input type="file" id="photo-upload" name="photos[]" multiple accept="image/*" class="hidden-file-input">
+                            </div>
+                            
+                            <div class="photo-preview" id="photo-preview">
+                                <!-- Photo previews will be added here dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Contact Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="listing-name">Your Name</label>
+                                <input type="text" id="listing-name" name="listing-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="listing-email">Email</label>
+                                <input type="email" id="listing-email" name="listing-email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="listing-phone">Phone Number</label>
+                                <input type="tel" id="listing-phone" name="listing-phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="listing-location">Location</label>
+                                <input type="text" id="listing-location" name="listing-location" placeholder="City, State" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <div class="terms-checkbox">
+                                    <input type="checkbox" id="listing-terms" name="listing-terms" required>
+                                    <label for="listing-terms">I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" id="listing-preview-btn" class="preview-btn">Preview Listing</button>
+                        <button type="submit" id="listing-submit-btn" class="submit-btn">Submit Listing</button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Seller Dashboard -->
+            <div class="seller-dashboard">
+                <h2>Seller Dashboard</h2>
+                <p class="section-intro">Track your listings and manage inquiries in one convenient place.</p>
+                
+                <div class="dashboard-login-message" id="dashboard-login-message">
+                    <i class="fas fa-lock"></i>
+                    <h3>Access Your Seller Dashboard</h3>
+                    <p>Please sign in to view your listings and messages.</p>
+                    <button class="login-btn">Sign In</button>
+                    <p class="create-account">Don't have an account? <a href="#">Create one now</a></p>
+                </div>
+                
+                <div class="dashboard-content hidden" id="dashboard-content">
+                    <!-- Dashboard content will be shown after login -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer will be placed here -->
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CarVerse</h3>
+                    <p>Redefining the luxury automotive experience.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="showroom.html">Showroom</a></li>
+                        <li><a href="customize.html">Customize</a></li>
+                        <li><a href="buy-sell.html">Buy & Sell</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CarVerse. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat functionality removed as requested -->
+
+    <!-- Compare Vehicles Modal (Hidden by default) -->
+    <div class="compare-modal" id="compare-modal">
+        <div class="compare-modal-content">
+            <div class="compare-header">
+                <h2>Compare Vehicles</h2>
+                <button id="close-compare"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="compare-vehicles" id="compare-vehicles">
+                <!-- Vehicles to compare will be added here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading and Success Overlay (Hidden by default) -->
+    <div class="overlay" id="loading-overlay">
+        <div class="overlay-content">
+            <div class="loader"></div>
+            <p>Processing...</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.1/nouislider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chart.js/3.9.1/chart.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/buy-sell.js"></script>
+</body>
+</html>
