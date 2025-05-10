@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - CarVerse</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <h1>CarVerse</h1>
+        </div>
+        <nav class="main-nav">
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="showroom.html">Showroom</a></li>
+                <li><a href="customize.html">Customize</a></li>
+                <li><a href="buy-sell.html">Buy & Sell</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html" class="active cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-banner">
+        <div class="banner-content">
+            <h1>Your Cart</h1>
+            <p>Review your selections and proceed to secure checkout</p>
+        </div>
+    </div>
+
+    <section class="cart-section">
+        <div class="container">
+            <div class="cart-status">
+                <div class="cart-steps">
+                    <div class="step active">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Shopping Cart</div>
+                    </div>
+                    <div class="step-divider"></div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Payment & Shipping</div>
+                    </div>
+                    <div class="step-divider"></div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Confirmation</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-content">
+                <div class="cart-main">
+                    <div class="cart-header">
+                        <h2>Your Selections (<span id="item-count">3</span>)</h2>
+                        <div class="cart-actions">
+                            <button class="text-btn" id="clear-cart">Clear Cart</button>
+                            <button class="text-btn" id="save-cart">Save Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="cart-items">
+                        <!-- Vehicle Item -->
+                        <div class="cart-item" data-id="ferrari-sf90">
+                            <div class="item-type">Vehicle Reservation</div>
+                            <div class="item-image">
+                                <img src="/api/placeholder/300/200" alt="Ferrari SF90 Stradale">
+                                <div class="image-counter">1/4</div>
+                                <div class="image-nav">
+                                    <button class="image-prev"><i class="fas fa-chevron-left"></i></button>
+                                    <button class="image-next"><i class="fas fa-chevron-right"></i></button>
+                                </div>
+                            </div>
+                            <div class="item-details">
+                                <div class="item-main-info">
+                                    <h3>Ferrari SF90 Stradale</h3>
+                                    <div class="item-price">$500,000</div>
+                                </div>
+                                <div class="item-specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Year:</span>
+                                        <span class="spec-value">2023</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Color:</span>
+                                        <span class="spec-value">Rosso Corsa</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Interior:</span>
+                                        <span class="spec-value">Nero Leather</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Engine:</span>
+                                        <span class="spec-value">4.0L V8 Hybrid</span>
+                                    </div>
+                                </div>
+                                <div class="reservation-status">
+                                    <div class="status-badge">Reservation Pending</div>
+                                    <div class="deposit-info">
+                                        Deposit Required: $50,000
+                                    </div>
+                                </div>
+                                <div class="item-config">
+                                    <button class="outline-btn">Edit Configuration</button>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="action-btn remove-item"><i class="fas fa-trash-alt"></i> Remove</button>
+                                    <button class="action-btn save-for-later"><i class="fas fa-bookmark"></i> Save for Later</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Custom Package Item -->
+                        <div class="cart-item" data-id="maintenance-package">
+                            <div class="item-type">Service Package</div>
+                            <div class="item-image">
+                                <img src="/api/placeholder/300/200" alt="Premium Maintenance Package">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-main-info">
+                                    <h3>Premium Maintenance Package</h3>
+                                    <div class="item-price">$15,000</div>
+                                </div>
+                                <div class="item-description">
+                                    <p>3-year comprehensive maintenance package including all scheduled services, wear and tear items, and priority scheduling.</p>
+                                </div>
+                                <div class="package-details">
+                                    <div class="detail-item"><i class="fas fa-check"></i> Oil changes and fluid top-ups</div>
+                                    <div class="detail-item"><i class="fas fa-check"></i> Brake pads and rotors</div>
+                                    <div class="detail-item"><i class="fas fa-check"></i> Filter replacements</div>
+                                    <div class="detail-item"><i class="fas fa-check"></i> 24/7 Roadside assistance</div>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="action-btn remove-item"><i class="fas fa-trash-alt"></i> Remove</button>
+                                    <a href="#" class="action-link">View Full Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Accessory Item with Quantity -->
+                        <div class="cart-item" data-id="carbon-wheels">
+                            <div class="item-type">Accessory</div>
+                            <div class="item-image">
+                                <img src="/api/placeholder/300/200" alt="Carbon Fiber Wheel Set">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-main-info">
+                                    <h3>Carbon Fiber Wheel Set</h3>
+                                    <div class="item-price">$12,500</div>
+                                </div>
+                                <div class="item-description">
+                                    <p>Lightweight carbon fiber wheel set with titanium lug nuts. Reduces unsprung weight for improved handling and performance.</p>
+                                </div>
+                                <div class="quantity-selector">
+                                    <label for="wheel-quantity">Quantity:</label>
+                                    <div class="quantity-controls">
+                                        <button class="quantity-btn decrease"><i class="fas fa-minus"></i></button>
+                                        <input type="number" id="wheel-quantity" class="quantity-input" value="1" min="1" max="10">
+                                        <button class="quantity-btn increase"><i class="fas fa-plus"></i></button>
+                                    </div>
+                                </div>
+                                <div class="item-subtotal">
+                                    Subtotal: <span class="amount">$12,500</span>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="action-btn remove-item"><i class="fas fa-trash-alt"></i> Remove</button>
+                                    <a href="#" class="action-link">View Compatible Vehicles</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="saved-items">
+                        <div class="saved-header">
+                            <h3>Saved for Later (<span id="saved-count">2</span>)</h3>
+                            <button class="text-btn toggle-saved">Hide</button>
+                        </div>
+                        <div class="saved-items-list">
+                            <div class="saved-item" data-id="custom-key">
+                                <div class="saved-image">
+                                    <img src="/api/placeholder/120/80" alt="Custom Key Fob">
+                                </div>
+                                <div class="saved-details">
+                                    <h4>Custom Key Fob with Carbon Fiber Inlay</h4>
+                                    <div class="saved-price">$1,200</div>
+                                </div>
+                                <div class="saved-actions">
+                                    <button class="outline-btn add-to-cart">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="saved-item" data-id="ceramic-coating">
+                                <div class="saved-image">
+                                    <img src="/api/placeholder/120/80" alt="Ceramic Coating Package">
+                                </div>
+                                <div class="saved-details">
+                                    <h4>Professional Ceramic Coating Package</h4>
+                                    <div class="saved-price">$3,500</div>
+                                </div>
+                                <div class="saved-actions">
+                                    <button class="outline-btn add-to-cart">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="related-products">
+                        <h3>Recommended for You</h3>
+                        <div class="related-items">
+                            <div class="related-item" data-id="floor-mats">
+                                <div class="related-image">
+                                    <img src="/api/placeholder/200/150" alt="Premium Floor Mats">
+                                </div>
+                                <div class="related-details">
+                                    <h4>Premium Floor Mats</h4>
+                                    <div class="related-price">$850</div>
+                                    <button class="outline-btn add-to-cart">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="related-item" data-id="car-cover">
+                                <div class="related-image">
+                                    <img src="/api/placeholder/200/150" alt="Indoor Car Cover">
+                                </div>
+                                <div class="related-details">
+                                    <h4>Custom Indoor Car Cover</h4>
+                                    <div class="related-price">$1,200</div>
+                                    <button class="outline-btn add-to-cart">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="related-item" data-id="luggage-set">
+                                <div class="related-image">
+                                    <img src="/api/placeholder/200/150" alt="Matching Luggage Set">
+                                </div>
+                                <div class="related-details">
+                                    <h4>Matching Luggage Set</h4>
+                                    <div class="related-price">$4,500</div>
+                                    <button class="outline-btn add-to-cart">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="related-item" data-id="driving-experience">
+                                <div class="related-image">
+                                    <img src="/api/placeholder/200/150" alt="Track Day Experience">
+                                </div>
+                                <div class="related-details">
+                                    <h4>Track Day Experience</h4>
+                                    <div class="related-price">$2,500</div>
+                                    <button class="outline-btn add-to-cart">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cart-sidebar">
+                    <div class="order-summary">
+                        <h3>Order Summary</h3>
+                        <div class="summary-items">
+                            <div class="summary-item">
+                                <div class="summary-label">Subtotal (3 items)</div>
+                                <div class="summary-value">$527,500</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-label">Vehicle Reservation</div>
+                                <div class="summary-value">$500,000</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-label">Accessories & Services</div>
+                                <div class="summary-value">$27,500</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-label">Shipping & Handling</div>
+                                <div class="summary-value">$5,000</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-label">Taxes</div>
+                                <div class="summary-value">$26,375</div>
+                            </div>
+                            <div class="promo-code">
+                                <div class="promo-field">
+                                    <input type="text" placeholder="Enter promo code">
+                                    <button class="apply-promo">Apply</button>
+                                </div>
+                            </div>
+                            <div class="summary-total">
+                                <div class="total-label">Total</div>
+                                <div class="total-value">$558,875</div>
+                            </div>
+                            <div class="deposit-summary">
+                                <div class="deposit-label">Initial Deposit Due Today</div>
+                                <div class="deposit-value">$50,000</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="financing-options">
+                        <h3>Financing Preview</h3>
+                        <div class="finance-calculator">
+                            <div class="finance-field">
+                                <label for="down-payment">Down Payment</label>
+                                <div class="input-with-symbol">
+                                    <span class="currency-symbol">$</span>
+                                    <input type="number" id="down-payment" value="100000" min="50000" step="5000">
+                                </div>
+                            </div>
+                            <div class="finance-field">
+                                <label for="loan-term">Term (months)</label>
+                                <div class="term-options">
+                                    <button class="term-option" data-term="36">36</button>
+                                    <button class="term-option active" data-term="48">48</button>
+                                    <button class="term-option" data-term="60">60</button>
+                                    <button class="term-option" data-term="72">72</button>
+                                </div>
+                            </div>
+                            <div class="finance-estimate">
+                                <div class="estimate-item">
+                                    <div class="estimate-label">Monthly Payment</div>
+                                    <div class="estimate-value">$10,186</div>
+                                </div>
+                                <div class="estimate-item">
+                                    <div class="estimate-label">Interest Rate</div>
+                                    <div class="estimate-value">4.99%</div>
+                                </div>
+                                <div class="estimate-item">
+                                    <div class="estimate-label">Total Cost</div>
+                                    <div class="estimate-value">$588,928</div>
+                                </div>
+                            </div>
+                            <div class="finance-note">
+                                <p>This is an estimate. Final terms subject to credit approval.</p>
+                            </div>
+                            <button class="outline-btn view-finance-options">View Financing Options</button>
+                        </div>
+                    </div>
+
+                    <div class="shipping-preview">
+                        <h3>Shipping & Delivery</h3>
+                        <div class="delivery-options">
+                            <div class="delivery-option">
+                                <input type="radio" id="delivery-standard" name="delivery-method" checked>
+                                <label for="delivery-standard">Standard Delivery</label>
+                                <div class="delivery-details">
+                                    <div class="delivery-time">Estimated: 12-14 weeks</div>
+                                    <div class="delivery-cost">$5,000</div>
+                                </div>
+                            </div>
+                            <div class="delivery-option">
+                                <input type="radio" id="delivery-expedited" name="delivery-method">
+                                <label for="delivery-expedited">Expedited Delivery</label>
+                                <div class="delivery-details">
+                                    <div class="delivery-time">Estimated: 8-10 weeks</div>
+                                    <div class="delivery-cost">$8,500</div>
+                                </div>
+                            </div>
+                            <div class="delivery-option">
+                                <input type="radio" id="delivery-pickup" name="delivery-method">
+                                <label for="delivery-pickup">Showroom Pickup</label>
+                                <div class="delivery-details">
+                                    <div class="delivery-time">Estimated: 10-12 weeks</div>
+                                    <div class="delivery-cost">$0</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkout-actions">
+                        <button class="primary-btn checkout-btn">Proceed to Checkout</button>
+                        <div class="express-checkout">
+                            <div class="express-divider">
+                                <span>Or checkout with</span>
+                            </div>
+                            <div class="express-options">
+                                <button class="express-option paypal">
+                                    <i class="fab fa-paypal"></i> PayPal
+                                </button>
+                                <button class="express-option applepay">
+                                    <i class="fab fa-apple-pay"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <button class="secondary-btn continue-shopping">Continue Shopping</button>
+                    </div>
+
+                    <div class="secure-checkout">
+                        <div class="secure-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="secure-text">
+                            <p>Secure Checkout</p>
+                            <p class="secure-subtext">All transactions are encrypted and secure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recently Viewed Section -->
+    <section class="recently-viewed">
+        <div class="container">
+            <h2>Recently Viewed</h2>
+            <div class="viewed-items">
+                <div class="viewed-item">
+                    <img src="/api/placeholder/250/150" alt="Lamborghini Aventador">
+                    <h4>Lamborghini Aventador</h4>
+                    <div class="viewed-price">$425,000</div>
+                    <button class="outline-btn">View Details</button>
+                </div>
+                <div class="viewed-item">
+                    <img src="/api/placeholder/250/150" alt="McLaren 720S">
+                    <h4>McLaren 720S</h4>
+                    <div class="viewed-price">$320,000</div>
+                    <button class="outline-btn">View Details</button>
+                </div>
+                <div class="viewed-item">
+                    <img src="/api/placeholder/250/150" alt="Bentley Continental GT">
+                    <h4>Bentley Continental GT</h4>
+                    <div class="viewed-price">$265,000</div>
+                    <button class="outline-btn">View Details</button>
+                </div>
+                <div class="viewed-item">
+                    <img src="/api/placeholder/250/150" alt="Aston Martin DBS">
+                    <h4>Aston Martin DBS</h4>
+                    <div class="viewed-price">$345,000</div>
+                    <button class="outline-btn">View Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Empty Cart Template (hidden by default) -->
+    <template id="empty-cart-template">
+        <div class="empty-cart">
+            <div class="empty-cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+            <h2>Your Cart is Empty</h2>
+            <p>Looks like you haven't added any items to your cart yet.</p>
+            <div class="empty-cart-actions">
+                <a href="showroom.html" class="primary-btn">Explore Showroom</a>
+                <a href="customize.html" class="secondary-btn">Customize Your Vehicle</a>
+            </div>
+        </div>
+    </template>
+
+    <!-- Remove Item Confirmation Modal -->
+    <div class="modal" id="remove-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Remove Item</h3>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to remove this item from your cart?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="secondary-btn" id="cancel-remove">Cancel</button>
+                <button class="primary-btn" id="confirm-remove">Remove Item</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Saved Confirmation Modal -->
+    <div class="modal" id="cart-saved-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Cart Saved</h3>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <p>Your cart has been saved. You can access it anytime from your account.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="primary-btn close-modal">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CarVerse</h3>
+                    <p>Redefining the luxury automotive experience.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="showroom.html">Showroom</a></li>
+                        <li><a href="customize.html">Customize</a></li>
+                        <li><a href="buy-sell.html">Buy & Sell</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CarVerse. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

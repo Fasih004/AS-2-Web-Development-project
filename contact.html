@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - CarVerse</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <h1>CarVerse</h1>
+        </div>
+        <nav class="main-nav">
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="showroom.html">Showroom</a></li>
+                <li><a href="customize.html">Customize</a></li>
+                <li><a href="buy-sell.html">Buy & Sell</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-banner">
+        <div class="banner-content">
+            <h1>Contact Us</h1>
+            <p>Reach out to our team of luxury automotive experts for inquiries, assistance, or to schedule a private viewing.</p>
+        </div>
+    </div>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2>Get in Touch</h2>
+                    <div class="contact-tabs">
+                        <button class="tab-btn active" data-tab="general">General Inquiry</button>
+                        <button class="tab-btn" data-tab="sales">Sales</button>
+                        <button class="tab-btn" data-tab="service">Service</button>
+                        <button class="tab-btn" data-tab="careers">Careers</button>
+                    </div>
+                    
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name*</label>
+                            <input type="text" id="name" name="name" required>
+                            <div class="error-message" id="name-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address*</label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="error-message" id="email-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group" id="inquiry-type-group">
+                            <label for="inquiry-type">Inquiry Type*</label>
+                            <select id="inquiry-type" name="inquiry-type" required>
+                                <option value="">Select Inquiry Type</option>
+                                <option value="information">Information Request</option>
+                                <option value="viewing">Schedule a Viewing</option>
+                                <option value="pricing">Pricing & Availability</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <div class="error-message" id="inquiry-error"></div>
+                        </div>
+                        
+                        <!-- Vehicle Interest field (shown only for Sales tab) -->
+                        <div class="form-group hidden" id="vehicle-interest-group">
+                            <label for="vehicle-interest">Vehicle of Interest</label>
+                            <select id="vehicle-interest" name="vehicle-interest">
+                                <option value="">Select a Vehicle</option>
+                                <option value="ferrari">Ferrari</option>
+                                <option value="lamborghini">Lamborghini</option>
+                                <option value="bentley">Bentley</option>
+                                <option value="rolls-royce">Rolls-Royce</option>
+                                <option value="aston-martin">Aston Martin</option>
+                                <option value="porsche">Porsche</option>
+                                <option value="mclaren">McLaren</option>
+                                <option value="tesla">Tesla</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Position field (shown only for Careers tab) -->
+                        <div class="form-group hidden" id="position-group">
+                            <label for="position">Position of Interest</label>
+                            <select id="position" name="position">
+                                <option value="">Select a Position</option>
+                                <option value="sales">Sales Specialist</option>
+                                <option value="service">Service Technician</option>
+                                <option value="marketing">Marketing Specialist</option>
+                                <option value="client-relations">Client Relations Manager</option>
+                                <option value="it">IT Specialist</option>
+                                <option value="admin">Administrative Support</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Resume upload (shown only for Careers tab) -->
+                        <div class="form-group hidden" id="resume-group">
+                            <label for="resume">Upload Resume</label>
+                            <div class="file-upload">
+                                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+                                <div class="upload-btn">
+                                    <i class="fas fa-cloud-upload-alt"></i> Select File
+                                </div>
+                                <span class="file-name">No file selected</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message*</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <div class="error-message" id="message-error"></div>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter" checked>
+                            <label for="newsletter">Subscribe to our newsletter for exclusive offers and updates</label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
+                            <label for="privacy-policy">I have read and agree to the <a href="#">Privacy Policy</a>*</label>
+                            <div class="error-message" id="privacy-error"></div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="submit-btn">Send Message</button>
+                            <div class="form-status">
+                                <div class="status-dot"></div>
+                                <span class="status-text">All fields marked with * are required</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="contact-info-container">
+                    <div class="info-card main-info">
+                        <h2>Contact Information</h2>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="details">
+                                    <h3>Global Headquarters</h3>
+                                    <p>Downtown Dubai</p>
+                                    <p>Sheikh Mohammed bin Rashid Boulevard</p>
+                                    <p>Dubai, United Arab Emirates</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="details">
+                                    <h3>Phone</h3>
+                                    <p><a href="tel:+97141234567">+971 4 123 4567</a> (General)</p>
+                                    <p><a href="tel:+97141234568">+971 4 123 4568</a> (Sales)</p>
+                                    <p><a href="tel:+97141234569">+971 4 123 4569</a> (Service)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="details">
+                                    <h3>Email</h3>
+                                    <p><a href="mailto:info@carverse.com">info@carverse.com</a> (General)</p>
+                                    <p><a href="mailto:sales@carverse.com">sales@carverse.com</a> (Sales)</p>
+                                    <p><a href="mailto:service@carverse.com">service@carverse.com</a> (Service)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="details">
+                                    <h3>Business Hours</h3>
+                                    <p>Monday to Saturday: 10:00 AM - 8:00 PM</p>
+                                    <p>Sunday: 12:00 PM - 6:00 PM</p>
+                                    <p><em>Private appointments available outside regular hours</em></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-contact">
+                            <h3>Connect With Us</h3>
+                            <div class="social-icons">
+                                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card live-chat">
+                        <h3>Need Immediate Assistance?</h3>
+                        <p>Our luxury automotive experts are available for live chat during business hours.</p>
+                        <button class="chat-btn">
+                            <i class="fas fa-comments"></i> Start Live Chat
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Global Locations -->
+            <div class="global-locations">
+                <h2>Our Global Locations</h2>
+                <div class="locations-tabs">
+                    <button class="location-tab active" data-region="middle-east">Middle East</button>
+                    <button class="location-tab" data-region="europe">Europe</button>
+                    <button class="location-tab" data-region="north-america">North America</button>
+                    <button class="location-tab" data-region="asia">Asia</button>
+                </div>
+                
+                <div class="location-content active" id="middle-east-locations">
+                    <div class="location-cards">
+                        <div class="location-card">
+                            <div class="location-image">
+                                <img src="/api/placeholder/400/250" alt="Dubai Showroom">
+                            </div>
+                            <div class="location-details">
+                                <h3>Dubai</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Downtown Dubai, Sheikh Mohammed bin Rashid Boulevard</p>
+                                <p><i class="fas fa-phone-alt"></i> <a href="tel:+97141234567">+971 4 123 4567</a></p>
+                                <p><i class="fas fa-envelope"></i> <a href="mailto:dubai@carverse.com">dubai@carverse.com</a></p>
+                            </div>
+                        </div>
+                        <div class="location-card">
+                            <div class="location-image">
+                                <img src="/api/placeholder/400/250" alt="Abu Dhabi Showroom">
+                            </div>
+                            <div class="location-details">
+                                <h3>Abu Dhabi</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Yas Marina Circuit, Yas Island</p>
+                                <p><i class="fas fa-phone-alt"></i> <a href="tel:+97125678901">+971 2 567 8901</a></p>
+                                <p><i class="fas fa-envelope"></i> <a href="mailto:abudhabi@carverse.com">abudhabi@carverse.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="location-content" id="europe-locations">
+                    <div class="location-cards">
+                        <div class="location-card">
+                            <div class="location-image">
+                                <img src="/api/placeholder/400/250" alt="London Showroom">
+                            </div>
+                            <div class="location-details">
+                                <h3>London</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Mayfair, 123 Park Lane</p>
+                                <p><i class="fas fa-phone-alt"></i> <a href="tel:+442012345678">+44 20 1234 5678</a></p>
+                                <p><i class="fas fa-envelope"></i> <a href="mailto:london@carverse.com">london@carverse.com</a></p>
+                            </div>
+                        </div>
+                        <div class="location-card">
+                            <div class="location-image">
+                                <img src="/api/placeholder/400/250" alt="Monaco Showroom">
+                            </div>
+                            <div class="location-details">
+                                <h3>Monaco</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Monte Carlo, 7 Avenue des Spélugues</p>
+                                <p><i class="fas fa-phone-alt"></i> <a href="tel:+37798765432">+377 9 876 5432</a></p>
+                                <p><i class="fas fa-envelope"></i> <a href="mailto:monaco@carverse.com">monaco@carverse.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="location-content" id="north-america-locations">
+                    <div class="location-cards">
+                        <div class="location-card">
+                            <div class="location-image">
+                                <img src="/api/placeholder/400/250" alt="New York Showroom">
+                            </div>
+                            <div class="location-details">
+                                <h3>New York</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Manhattan, 456 Fifth Avenue</p>
+                                <p><i class="fas fa-phone-alt"></i> <a href="tel:+12129876543">+1 212 987 6543</a></p>
+                                <p><i class="fas fa-envelope"></i> <a href="mailto:newyork@carverse.com">newyork@carverse.com</a></p>
+                            </div>
+                        </div>
+                        <div class="location-card">
+                            <div class="location-image">
+                                <img src="/api/placeholder/400/250" alt="Miami Showroom">
+                            </div>
+                            <div class="location-details">
+                                <h3>Miami</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Miami Beach, 789 Collins Avenue</p>
+                                <p><i class="fas fa-phone-alt"></i> <a href="tel:+13051234567">+1 305 123 4567</a></p>
+                                <p><i class="fas fa-envelope"></i> <a href="mailto:miami@carverse.com">miami@carverse.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="location-content" id="asia-locations">
+                    <div class="location-cards">
+                        <div class="location-card">
+                            <div class="location-image">
+                                <img src="/api/placeholder/400/250" alt="Tokyo Showroom">
+                            </div>
+                            <div class="location-details">
+                                <h3>Tokyo</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Ginza, 789 Chuo Street</p>
+                                <p><i class="fas fa-phone-alt"></i> <a href="tel:+81312345678">+81 3 1234 5678</a></p>
+                                <p><i class="fas fa-envelope"></i> <a href="mailto:tokyo@carverse.com">tokyo@carverse.com</a></p>
+                            </div>
+                        </div>
+                        <div class="location-card">
+                            <div class="location-image">
+                                <img src="/api/placeholder/400/250" alt="Singapore Showroom">
+                            </div>
+                            <div class="location-details">
+                                <h3>Singapore</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Marina Bay, 10 Bayfront Avenue</p>
+                                <p><i class="fas fa-phone-alt"></i> <a href="tel:+6565432109">+65 6543 2109</a></p>
+                                <p><i class="fas fa-envelope"></i> <a href="mailto:singapore@carverse.com">singapore@carverse.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        
+            <!-- FAQ Section -->
+            <div class="contact-faq">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How can I schedule a private viewing?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>To schedule a private viewing, you can either submit a request through our contact form, call our sales team directly, or use the live chat feature on our website. Private viewings are available during and outside regular business hours by appointment.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How long does it take to receive a response to my inquiry?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We strive to respond to all inquiries within 24 hours during business days. For urgent matters, we recommend using our live chat feature or calling our dedicated phone lines for immediate assistance.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can I request a test drive before purchasing?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we offer exclusive test drive experiences for qualified clients. To arrange a test drive, please contact our sales team with your vehicle of interest. We'll need to verify some information before scheduling, including a valid driver's license and proof of insurance.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How do I inquire about a vehicle that's not currently in your inventory?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our global network allows us to source rare and exclusive vehicles that may not be listed in our current inventory. Please contact our acquisition specialists with details about the specific vehicle you're interested in, and we'll work to locate it for you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Submission Success Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Message Sent Successfully</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <p>Thank you for contacting CarVerse. Your message has been received.</p>
+                <p>One of our representatives will get back to you shortly.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn" id="close-success-modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CarVerse</h3>
+                    <p>Redefining the luxury automotive experience.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="showroom.html">Showroom</a></li>
+                        <li><a href="customize.html">Customize</a></li>
+                        <li><a href="buy-sell.html">Buy & Sell</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CarVerse. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>

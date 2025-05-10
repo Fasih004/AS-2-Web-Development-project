@@ -20,67 +20,77 @@ document.addEventListener('DOMContentLoaded', function() {
     if (document.getElementById('price-slider')) {
         const priceSlider = document.getElementById('price-slider');
         
-        noUiSlider.create(priceSlider, {
-            start: [50000, 500000],
-            connect: true,
-            step: 5000,
-            range: {
-                'min': 50000,
-                'max': 500000
-            },
-            format: {
-                to: function(value) {
-                    return Math.round(value);
-                },
-                from: function(value) {
-                    return Number(value);
-                }
+        if (typeof noUiSlider !== 'undefined') {
+            // Only create if it hasn't been initialized
+            if (!priceSlider.noUiSlider) {
+                noUiSlider.create(priceSlider, {
+                    start: [50000, 500000],
+                    connect: true,
+                    step: 5000,
+                    range: {
+                        'min': 50000,
+                        'max': 500000
+                    },
+                    format: {
+                        to: function(value) {
+                            return Math.round(value);
+                        },
+                        from: function(value) {
+                            return Number(value);
+                        }
+                    }
+                });
+                
+                const priceMin = document.getElementById('price-min');
+                const priceMax = document.getElementById('price-max');
+                
+                priceSlider.noUiSlider.on('update', function(values, handle) {
+                    if (handle === 0) {
+                        priceMin.innerHTML = '$' + parseInt(values[0]).toLocaleString();
+                    } else {
+                        priceMax.innerHTML = '$' + parseInt(values[1]).toLocaleString();
+                    }
+                });
             }
-        });
-        
-        const priceMin = document.getElementById('price-min');
-        const priceMax = document.getElementById('price-max');
-        
-        priceSlider.noUiSlider.on('update', function(values, handle) {
-            if (handle === 0) {
-                priceMin.innerHTML = '$' + values[0].toLocaleString();
-            } else {
-                priceMax.innerHTML = '$' + values[1].toLocaleString();
-            }
-        });
+        }
     }
     
     if (document.getElementById('mileage-slider')) {
         const mileageSlider = document.getElementById('mileage-slider');
         
-        noUiSlider.create(mileageSlider, {
-            start: [0, 50000],
-            connect: true,
-            step: 1000,
-            range: {
-                'min': 0,
-                'max': 50000
-            },
-            format: {
-                to: function(value) {
-                    return Math.round(value);
-                },
-                from: function(value) {
-                    return Number(value);
-                }
+        if (typeof noUiSlider !== 'undefined') {
+            // Only create if it hasn't been initialized
+            if (!mileageSlider.noUiSlider) {
+                noUiSlider.create(mileageSlider, {
+                    start: [0, 50000],
+                    connect: true,
+                    step: 1000,
+                    range: {
+                        'min': 0,
+                        'max': 50000
+                    },
+                    format: {
+                        to: function(value) {
+                            return Math.round(value);
+                        },
+                        from: function(value) {
+                            return Number(value);
+                        }
+                    }
+                });
+                
+                const mileageMin = document.getElementById('mileage-min');
+                const mileageMax = document.getElementById('mileage-max');
+                
+                mileageSlider.noUiSlider.on('update', function(values, handle) {
+                    if (handle === 0) {
+                        mileageMin.innerHTML = parseInt(values[0]).toLocaleString() + ' miles';
+                    } else {
+                        mileageMax.innerHTML = parseInt(values[1]).toLocaleString() + ' miles';
+                    }
+                });
             }
-        });
-        
-        const mileageMin = document.getElementById('mileage-min');
-        const mileageMax = document.getElementById('mileage-max');
-        
-        mileageSlider.noUiSlider.on('update', function(values, handle) {
-            if (handle === 0) {
-                mileageMin.innerHTML = values[0].toLocaleString() + ' miles';
-            } else {
-                mileageMax.innerHTML = values[1].toLocaleString() + ' miles';
-            }
-        });
+        }
     }
     
     // Car Filtering
@@ -181,7 +191,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextBtn = document.querySelector('.carousel-arrow.next');
     
     function showSlide(index) {
-        // Hide all slides
+        if (!slides.length) return;
+        
+        // Ensure index is within bounds
+        index = Math.max(0, Math.min(index, slides.length - 1));
+        
+        // Move all slides
         slides.forEach(slide => {
             slide.style.transform = `translateX(-${index * 100}%)`;
         });
@@ -195,37 +210,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     if (prevBtn) {
-        prevBtn.addEventListener('click', function() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
+        prevBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (!slides.length) return;
+            
+            const newIndex = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(newIndex);
         });
     }
     
     if (nextBtn) {
-        nextBtn.addEventListener('click', function() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        });
-    }
-    
-    // Auto slide every 5 seconds
-    let slideInterval = setInterval(function() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-    }, 5000);
-    
-    // Pause auto slide on hover
-    const carouselContainer = document.querySelector('.carousel-container');
-    if (carouselContainer) {
-        carouselContainer.addEventListener('mouseenter', function() {
-            clearInterval(slideInterval);
-        });
-        
-        carouselContainer.addEventListener('mouseleave', function() {
-            slideInterval = setInterval(function() {
-                currentSlide = (currentSlide + 1) % slides.length;
-                showSlide(currentSlide);
-            }, 5000);
+        nextBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (!slides.length) return;
+            
+            const newIndex = (currentSlide + 1) % slides.length;
+            showSlide(newIndex);
         });
     }
     
@@ -233,12 +233,100 @@ document.addEventListener('DOMContentLoaded', function() {
     indicators.forEach((indicator, index) => {
         indicator.addEventListener('click', function() {
             showSlide(index);
+            clearInterval(slideInterval); // Stop auto-sliding when user interacts
+            
+            // Restart auto-slide after interaction
+            slideInterval = setInterval(function() {
+                const newIndex = (currentSlide + 1) % slides.length;
+                showSlide(newIndex);
+            }, 5000);
         });
     });
     
-    // Initialize first slide
+    // Auto slide every 5 seconds
+    let slideInterval;
     if (slides.length > 0) {
+        // Initialize first slide
         showSlide(0);
+        
+        // Start auto-sliding
+        slideInterval = setInterval(function() {
+            const newIndex = (currentSlide + 1) % slides.length;
+            showSlide(newIndex);
+        }, 5000);
+        
+        // Pause auto slide on hover
+        const carouselContainer = document.querySelector('.carousel-container');
+        if (carouselContainer) {
+            carouselContainer.addEventListener('mouseenter', function() {
+                clearInterval(slideInterval);
+            });
+            
+            carouselContainer.addEventListener('mouseleave', function() {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(function() {
+                    const newIndex = (currentSlide + 1) % slides.length;
+                    showSlide(newIndex);
+                }, 5000);
+            });
+        }
+    }
+    
+    // Sort functionality
+    const sortSelect = document.getElementById('sort');
+    if (sortSelect) {
+        sortSelect.addEventListener('change', function() {
+            const sortValue = this.value;
+            const inventoryGrid = document.querySelector('.inventory-grid');
+            const carCards = Array.from(document.querySelectorAll('.car-card'));
+            
+            // Sort the cards based on selection
+            carCards.sort(function(a, b) {
+                if (sortValue === 'price-asc') {
+                    const priceA = parseInt(a.getAttribute('data-price'));
+                    const priceB = parseInt(b.getAttribute('data-price'));
+                    return priceA - priceB;
+                } else if (sortValue === 'price-desc') {
+                    const priceA = parseInt(a.getAttribute('data-price'));
+                    const priceB = parseInt(b.getAttribute('data-price'));
+                    return priceB - priceA;
+                } else if (sortValue === 'newest') {
+                    const yearA = parseInt(a.getAttribute('data-year'));
+                    const yearB = parseInt(b.getAttribute('data-year'));
+                    return yearB - yearA;
+                } else if (sortValue === 'mileage') {
+                    const mileageA = parseInt(a.getAttribute('data-mileage'));
+                    const mileageB = parseInt(b.getAttribute('data-mileage'));
+                    return mileageA - mileageB;
+                }
+                // For 'featured' and default cases, keep original order
+                return 0;
+            });
+            
+            // Remove all cards and re-append them in the new order
+            carCards.forEach(card => {
+                inventoryGrid.appendChild(card);
+            });
+        });
+    }
+    
+    // Grid/List view toggle functionality
+    const gridBtn = document.querySelector('.view-btn.grid');
+    const listBtn = document.querySelector('.view-btn.list');
+    const inventoryGrid = document.querySelector('.inventory-grid');
+    
+    if (gridBtn && listBtn && inventoryGrid) {
+        gridBtn.addEventListener('click', function() {
+            gridBtn.classList.add('active');
+            listBtn.classList.remove('active');
+            inventoryGrid.classList.remove('list-view');
+        });
+        
+        listBtn.addEventListener('click', function() {
+            listBtn.classList.add('active');
+            gridBtn.classList.remove('active');
+            inventoryGrid.classList.add('list-view');
+        });
     }
     
     // Financing Calculator
@@ -647,71 +735,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 reader.readAsDataURL(file);
             });
         }
-    }
-    
-    // Live Chat Widget (kept for future implementation)
-    const closeChatBtn = document.getElementById('close-chat');
-    const chatWidget = document.getElementById('chat-widget');
-    const chatInput = document.getElementById('chat-message-input');
-    const sendMessageBtn = document.getElementById('send-message');
-    const chatMessages = document.getElementById('chat-messages');
-    
-    if (closeChatBtn) {
-        closeChatBtn.addEventListener('click', function() {
-            chatWidget.classList.remove('active');
-        });
-    }
-    
-    if (sendMessageBtn && chatInput) {
-        sendMessageBtn.addEventListener('click', sendMessage);
-        
-        chatInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                sendMessage();
-            }
-        });
-    }
-    
-    function sendMessage() {
-        const messageText = chatInput.value.trim();
-        
-        if (!messageText) return;
-        
-        // Create and add user message
-        const userMessage = document.createElement('div');
-        userMessage.className = 'message user';
-        userMessage.innerHTML = `
-            <div class="message-content">
-                <p>${messageText}</p>
-                <span class="message-time">Just now</span>
-            </div>
-        `;
-        
-        chatMessages.appendChild(userMessage);
-        
-        // Clear input
-        chatInput.value = '';
-        
-        // Auto-scroll to bottom
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-        
-        // Simulate response after a short delay
-        setTimeout(() => {
-            // Create and add support message
-            const supportMessage = document.createElement('div');
-            supportMessage.className = 'message support';
-            supportMessage.innerHTML = `
-                <div class="message-content">
-                    <p>Thanks for your message! One of our representatives will get back to you shortly.</p>
-                    <span class="message-time">Just now</span>
-                </div>
-            `;
-            
-            chatMessages.appendChild(supportMessage);
-            
-            // Auto-scroll to bottom
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }, 1000);
     }
     
     // Dynamic model options based on make selection

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customize Your Car - CarVerse</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/customize.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </head>
 <body>
@@ -42,7 +43,7 @@
         <div class="container">
             <div class="customize-header">
                 <h2>Car Customization Studio</h2>
-                <p>Select a model and customize it to your exact specifications. Preview your changes in real-time with our 360° viewer.</p>
+                <p>Select a model and customize it to your exact specifications.</p>
                 
                 <div class="car-model-selector">
                     <h3>Select Model</h3>
@@ -102,42 +103,7 @@
             </div>
             
             <div class="customize-wrapper">
-                <div class="car-preview">
-                    <div class="car-preview-wrapper">
-                        <img src="images/cars/ferrari.jpg" alt="Ferrari 296 GTB" class="car-preview-image">
-                        
-                        <button class="view-toggle" data-view="exterior">View Interior</button>
-                        
-                        <div class="zoom-controls">
-                            <button class="zoom-btn zoom-in"><i class="fas fa-plus"></i></button>
-                            <button class="zoom-btn zoom-out"><i class="fas fa-minus"></i></button>
-                        </div>
-                        
-                        <div class="environment-select">
-                            <div class="env-option active" data-env="showroom.jpg">
-                                <img src="images/custom-backgrounds/showroom.jpg" alt="Showroom" class="env-img">
-                            </div>
-                            <div class="env-option" data-env="desert.jpg">
-                                <img src="images/custom-backgrounds/desert.jpg" alt="Desert" class="env-img">
-                            </div>
-                            <div class="env-option" data-env="mountain.jpg">
-                                <img src="images/custom-backgrounds/mountain.jpg" alt="Mountain" class="env-img">
-                            </div>
-                            <div class="env-option" data-env="city.jpg">
-                                <img src="images/custom-backgrounds/city.jpg" alt="City" class="env-img">
-                            </div>
-                            <div class="env-option" data-env="track.jpg">
-                                <img src="images/custom-backgrounds/track.jpg" alt="Track" class="env-img">
-                            </div>
-                        </div>
-                        
-                        <div class="rotate-controls">
-                            <i class="fas fa-undo rotate-icon"></i>
-                            <input type="range" min="1" max="8" value="1" class="rotate-slider">
-                            <i class="fas fa-redo rotate-icon"></i>
-                        </div>
-                    </div>
-                </div>
+                <!-- Car preview section has been removed -->
                 
                 <div class="customize-options">
                     <div class="options-tabs">
@@ -166,37 +132,21 @@
                             <h3>Wheels</h3>
                             <div class="wheel-options">
                                 <div class="wheel-option" data-price="0">
-                                    <img src="/api/placeholder/50/50" alt="Standard Wheels">
+                                    <img src="images/Features/Standard Wheels.jpg" alt="Standard Wheels">
                                 </div>
                                 <div class="wheel-option" data-price="3000">
-                                    <img src="/api/placeholder/50/50" alt="Sport Wheels">
+                                    <img src="images/Features/Sport Wheels.jpg" alt="Sport Wheels">
                                 </div>
                                 <div class="wheel-option" data-price="5000">
-                                    <img src="/api/placeholder/50/50" alt="Carbon Fiber Wheels">
+                                    <img src="images/Features/Carbon Fiber Wheels.png" alt="Carbon Fiber Wheels">
                                 </div>
                                 <div class="wheel-option" data-price="4000">
-                                    <img src="/api/placeholder/50/50" alt="Forged Wheels">
+                                    <img src="images/Features/forged wheels.jpg" alt="Forged Wheels">
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="option-group">
-                            <h3>Exterior Trim</h3>
-                            <div class="trim-options">
-                                <div class="trim-option" data-price="0" style="border: 2px solid transparent;">
-                                    <img src="/api/placeholder/50/50" alt="Standard Trim">
-                                </div>
-                                <div class="trim-option" data-price="2000" style="border: 2px solid transparent;">
-                                    <img src="/api/placeholder/50/50" alt="Sport Trim">
-                                </div>
-                                <div class="trim-option" data-price="4000" style="border: 2px solid transparent;">
-                                    <img src="/api/placeholder/50/50" alt="Carbon Fiber Trim">
-                                </div>
-                                <div class="trim-option" data-price="3000" style="border: 2px solid transparent;">
-                                    <img src="/api/placeholder/50/50" alt="Chrome Trim">
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Exterior Trim option has been removed -->
                     </div>
                     
                     <div class="tab-content" id="interior-tab">
@@ -204,16 +154,16 @@
                             <h3>Seat Style</h3>
                             <div class="seats-options">
                                 <div class="seat-option" data-price="0">
-                                    <img src="/api/placeholder/50/50" alt="Standard Seats">
+                                    <img src="images/Features/standard.jpg" alt="Standard Seats">
                                 </div>
                                 <div class="seat-option" data-price="3000">
-                                    <img src="/api/placeholder/50/50" alt="Sport Seats">
+                                    <img src="images/Features/sport.jpg" alt="Sport Seats">
                                 </div>
                                 <div class="seat-option" data-price="5000">
-                                    <img src="/api/placeholder/50/50" alt="Racing Seats">
+                                    <img src="images/Features/racing.jpg" alt="Racing Seats">
                                 </div>
                                 <div class="seat-option" data-price="4000">
-                                    <img src="/api/placeholder/50/50" alt="Comfort Seats">
+                                    <img src="images/Features/comfort.jpg" alt="Comfort Seats">
                                 </div>
                             </div>
                         </div>
@@ -222,16 +172,16 @@
                             <h3>Interior Material</h3>
                             <div class="material-options">
                                 <div class="material-option" data-price="0">
-                                    <img src="/api/placeholder/50/50" alt="Cloth">
+                                    <img src="images/Features/cloth.jpg" alt="Cloth">
                                 </div>
                                 <div class="material-option" data-price="2000">
-                                    <img src="/api/placeholder/50/50" alt="Leather">
+                                    <img src="images/Features/leather.jpg" alt="Leather">
                                 </div>
                                 <div class="material-option" data-price="5000">
-                                    <img src="/api/placeholder/50/50" alt="Premium Leather">
+                                    <img src="images/Features/premium leather.avif" alt="Premium Leather">
                                 </div>
                                 <div class="material-option" data-price="7000">
-                                    <img src="/api/placeholder/50/50" alt="Alcantara">
+                                    <img src="images/Features/alcantara.avif" alt="Alcantara">
                                 </div>
                             </div>
                         </div>
@@ -445,6 +395,7 @@
         </div>
     </footer>
 
-    <script src="js/scripts.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/customize.js"></script>
 </body>
 </html>
