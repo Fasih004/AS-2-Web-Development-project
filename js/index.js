@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
             heroContent.classList.add('fade-in');
         }, 500);
     }
-    
+     
     // Animation for featured cars
     const animateFeaturedCars = function() {
         const featuredCars = document.querySelectorAll('.featured-car');
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const carPosition = car.getBoundingClientRect().top;
             const windowHeight = window.innerHeight;
             
-            if (carPosition < windowHeight - 100) {
+            if (carPosition < windowHeight - 100) { 
                 car.classList.add('fade-in');
             }
         });

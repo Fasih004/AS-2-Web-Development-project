@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburger.classList.toggle('active');
         });
     }
-    
-    // Header scroll effect
+     
+    // Header scroll effect 
     const header = document.querySelector('.main-header');
     
     window.addEventListener('scroll', function() {
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
-        }
+        } 
     });
     
     // Add animation classes to elements when they come into view

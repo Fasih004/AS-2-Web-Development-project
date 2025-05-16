@@ -1,21 +1,24 @@
 /* About Page Styles */
 
+/* Navigation section for About page */
 .about-nav-section {
-    background-color: var(--primary-color);
-    padding: 0;
+    background-color: var(--primary-color);  
+    padding: 0; 
     position: sticky;
     top: 70px;
     z-index: 99;
 }
 
+/* Navigation bar container */
 .about-nav {
     display: flex;
     justify-content: center;
     overflow-x: auto;
     white-space: nowrap;
     padding: 0 20px;
-}
+} 
 
+/* Navigation button styles */
 .nav-btn {
     background: none;
     border: none;
@@ -28,14 +31,17 @@
     transition: all 0.3s ease;
 }
 
+/* Navigation button hover effect */
 .nav-btn:hover {
     color: var(--secondary-color);
 }
 
+/* Active navigation button */
 .nav-btn.active {
     color: var(--secondary-color);
 }
 
+/* Active navigation button underline */
 .nav-btn.active::after {
     content: '';
     position: absolute;
@@ -46,32 +52,36 @@
     background-color: var(--secondary-color);
 }
 
+/* Main content section for About page */
 .about-content-section {
     padding: 50px 0;
 }
 
-/* about.css (continued) */
-
+/* About section container */
 .about-section {
     display: none;
     animation: fadeIn 0.5s ease forwards;
 }
 
+/* Active about section */
 .about-section.active {
     display: block;
 }
 
+/* Section header container */
 .section-header {
     text-align: center;
     margin-bottom: 40px;
 }
 
+/* Section header title */
 .section-header h2 {
     font-size: 2.5rem;
     color: var(--primary-color);
     margin-bottom: 15px;
 }
 
+/* Divider line under section headers */
 .divider {
     width: 80px;
     height: 3px;
@@ -79,7 +89,7 @@
     margin: 0 auto;
 }
 
-/* Our Story Section */
+/* Our Story section content */
 .story-content {
     display: flex;
     flex-wrap: wrap;
@@ -87,11 +97,13 @@
     margin-bottom: 50px;
 }
 
+/* Story image container */
 .story-image {
     flex: 1;
     min-width: 300px;
 }
 
+/* Story image styling */
 .story-image img {
     width: 100%;
     height: auto;
@@ -99,28 +111,32 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Story text container */
 .story-text {
     flex: 1;
     min-width: 300px;
 }
 
+/* Story text heading */
 .story-text h3 {
     font-size: 1.8rem;
     color: var(--primary-color);
     margin-bottom: 20px;
 }
 
+/* Story text paragraph */
 .story-text p {
     color: #555;
     line-height: 1.8;
     margin-bottom: 15px;
 }
 
-/* Timeline */
+/* Timeline section container */
 .timeline {
     margin: 50px 0;
 }
 
+/* Timeline section heading */
 .timeline h3 {
     text-align: center;
     font-size: 1.8rem;
@@ -128,11 +144,13 @@
     margin-bottom: 30px;
 }
 
+/* Timeline container */
 .timeline-container {
     position: relative;
     padding: 20px 0;
 }
 
+/* Timeline vertical line */
 .timeline-container::before {
     content: '';
     position: absolute;
@@ -144,22 +162,26 @@
     background-color: #eee;
 }
 
+/* Timeline item container */
 .timeline-item {
     position: relative;
     display: flex;
     margin-bottom: 40px;
 }
 
+/* Odd timeline item alignment */
 .timeline-item:nth-child(odd) {
     justify-content: flex-start;
     padding-right: 50%;
 }
 
+/* Even timeline item alignment */
 .timeline-item:nth-child(even) {
     justify-content: flex-end;
     padding-left: 50%;
 }
 
+/* Timeline dot indicator */
 .timeline-dot {
     position: absolute;
     top: 10px;
@@ -172,6 +194,7 @@
     z-index: 1;
 }
 
+/* Timeline date label */
 .timeline-date {
     position: absolute;
     top: 10px;
@@ -179,14 +202,17 @@
     color: var(--primary-color);
 }
 
+/* Odd timeline date alignment */
 .timeline-item:nth-child(odd) .timeline-date {
     right: 55%;
 }
 
+/* Even timeline date alignment */
 .timeline-item:nth-child(even) .timeline-date {
     left: 55%;
 }
 
+/* Timeline content box */
 .timeline-content {
     background-color: #fff;
     padding: 20px;
@@ -195,20 +221,23 @@
     width: 80%;
 }
 
+/* Timeline content heading */
 .timeline-content h4 {
     color: var(--primary-color);
     margin-bottom: 10px;
 }
 
+/* Timeline content paragraph */
 .timeline-content p {
     color: #666;
 }
 
-/* Achievements */
+/* Achievements section container */
 .achievements {
     margin: 50px 0;
 }
 
+/* Achievements section heading */
 .achievements h3 {
     text-align: center;
     font-size: 1.8rem;
@@ -216,6 +245,7 @@
     margin-bottom: 30px;
 }
 
+/* Stats container for achievements */
 .stats-container {
     display: flex;
     flex-wrap: wrap;
@@ -223,6 +253,7 @@
     gap: 30px;
 }
 
+/* Individual stat item */
 .stat-item {
     text-align: center;
     flex: 1;
@@ -233,6 +264,7 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
+/* Stat number */
 .stat-number {
     font-size: 3rem;
     font-weight: 700;
@@ -241,36 +273,41 @@
     display: inline-block;
 }
 
+/* Stat suffix */
 .stat-suffix {
     font-size: 2rem;
     font-weight: 700;
     color: var(--secondary-color);
 }
 
+/* Stat label */
 .stat-label {
     color: var(--primary-color);
     font-weight: 500;
 }
 
-/* Mission and Values */
+/* Mission statement section */
 .mission-statement {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 50px;
 }
 
+/* Mission statement heading */
 .mission-statement h3 {
     font-size: 1.8rem;
     color: var(--primary-color);
     margin-bottom: 20px;
 }
 
+/* Mission statement paragraph */
 .mission-statement p {
     font-size: 1.2rem;
     color: #555;
     line-height: 1.8;
 }
 
+/* Values container grid */
 .values-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -278,6 +315,7 @@
     margin-bottom: 50px;
 }
 
+/* Individual value card */
 .value-card {
     background-color: #fff;
     padding: 30px;
@@ -287,11 +325,13 @@
     transition: all 0.3s ease;
 }
 
+/* Value card hover effect */
 .value-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* Value icon container */
 .value-icon {
     width: 70px;
     height: 70px;
@@ -303,26 +343,31 @@
     margin: 0 auto 20px;
 }
 
+/* Value icon style */
 .value-icon i {
     font-size: 2rem;
     color: var(--secondary-color);
 }
 
+/* Value card heading */
 .value-card h3 {
     font-size: 1.3rem;
     color: var(--primary-color);
     margin-bottom: 15px;
 }
 
+/* Value card paragraph */
 .value-card p {
     color: #666;
     line-height: 1.6;
 }
 
+/* Commitment section container */
 .commitment {
     margin: 50px 0;
 }
 
+/* Commitment section heading */
 .commitment h3 {
     text-align: center;
     font-size: 1.8rem;
@@ -330,17 +375,20 @@
     margin-bottom: 30px;
 }
 
+/* Commitment content flex container */
 .commitment-content {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
 }
 
+/* Commitment image container */
 .commitment-image {
     flex: 1;
     min-width: 300px;
 }
 
+/* Commitment image style */
 .commitment-image img {
     width: 100%;
     height: auto;
@@ -348,34 +396,39 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Commitment text container */
 .commitment-text {
     flex: 1;
     min-width: 300px;
 }
 
+/* Commitment text paragraph */
 .commitment-text p {
     color: #555;
     line-height: 1.8;
     margin-bottom: 15px;
 }
 
-/* Team Section */
+/* Team introduction section */
 .team-intro {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 40px;
 }
 
+/* Team intro paragraph */
 .team-intro p {
     font-size: 1.1rem;
     color: #555;
     line-height: 1.8;
 }
 
+/* Leadership team section */
 .leadership-team {
     margin-bottom: 50px;
 }
 
+/* Leadership team heading */
 .leadership-team h3 {
     text-align: center;
     font-size: 1.8rem;
@@ -383,12 +436,14 @@
     margin-bottom: 30px;
 }
 
+/* Team members grid container */
 .team-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
 }
 
+/* Individual team member card */
 .team-member {
     background-color: #fff;
     border-radius: 10px;
@@ -397,16 +452,19 @@
     transition: all 0.3s ease;
 }
 
+/* Team member hover effect */
 .team-member:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* Team member image container */
 .member-image {
     height: 250px;
     overflow: hidden;
 }
 
+/* Team member image style */
 .member-image img {
     width: 100%;
     height: 100%;
@@ -414,35 +472,42 @@
     transition: all 0.5s ease;
 }
 
+/* Team member image hover effect */
 .team-member:hover .member-image img {
     transform: scale(1.1);
 }
 
+/* Team member info container */
 .member-info {
     padding: 20px;
 }
 
+/* Team member name */
 .member-info h4 {
     font-size: 1.3rem;
     color: var(--primary-color);
     margin-bottom: 5px;
 }
 
+/* Team member title */
 .member-title {
     color: var(--secondary-color);
     font-weight: 500;
     margin-bottom: 10px;
 }
 
+/* Team member bio */
 .member-bio {
     color: #666;
     line-height: 1.6;
 }
 
+/* Team culture section */
 .team-culture {
     margin: 50px 0;
 }
 
+/* Team culture heading */
 .team-culture h3 {
     text-align: center;
     font-size: 1.8rem;
@@ -450,23 +515,27 @@
     margin-bottom: 30px;
 }
 
+/* Team culture content flex container */
 .culture-content {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
 }
 
+/* Team culture text container */
 .culture-text {
     flex: 1;
     min-width: 300px;
 }
 
+/* Team culture text paragraph */
 .culture-text p {
     color: #555;
     line-height: 1.8;
     margin-bottom: 15px;
 }
 
+/* Team culture gallery grid */
 .culture-gallery {
     flex: 1;
     min-width: 300px;
@@ -475,12 +544,14 @@
     gap: 15px;
 }
 
+/* Gallery image container */
 .gallery-image {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
+/* Gallery image style */
 .gallery-image img {
     width: 100%;
     height: 100%;
@@ -488,10 +559,12 @@
     transition: all 0.3s ease;
 }
 
+/* Gallery image hover effect */
 .gallery-image:hover img {
     transform: scale(1.1);
 }
 
+/* Join team call-to-action section */
 .join-team {
     text-align: center;
     padding: 50px;
@@ -499,12 +572,14 @@
     border-radius: 10px;
 }
 
+/* Join team heading */
 .join-team h3 {
     font-size: 1.8rem;
     color: var(--primary-color);
     margin-bottom: 20px;
 }
 
+/* Join team paragraph */
 .join-team p {
     max-width: 600px;
     margin: 0 auto 30px;
@@ -512,6 +587,7 @@
     line-height: 1.8;
 }
 
+/* Secondary button style */
 .btn-secondary {
     display: inline-block;
     padding: 12px 25px;
@@ -523,35 +599,40 @@
     transition: all 0.3s ease;
 }
 
+/* Secondary button hover effect */
 .btn-secondary:hover {
     background-color: var(--secondary-color);
     color: var(--text-dark);
 }
 
-/* Locations Section */
+/* Locations section intro */
 .locations-intro {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 40px;
 }
 
+/* Locations intro paragraph */
 .locations-intro p {
     font-size: 1.1rem;
     color: #555;
     line-height: 1.8;
 }
 
+/* Locations map container */
 .locations-map {
     margin-bottom: 40px;
     border-radius: 10px;
     overflow: hidden;
 }
 
+/* Locations map image */
 .locations-map img {
     width: 100%;
     height: auto;
 }
 
+/* Locations grid container */
 .locations-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -559,6 +640,7 @@
     margin-bottom: 50px;
 }
 
+/* Individual location card */
 .location-card {
     background-color: #fff;
     border-radius: 10px;
@@ -567,16 +649,19 @@
     transition: all 0.3s ease;
 }
 
+/* Location card hover effect */
 .location-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* Location image container */
 .location-image {
     height: 200px;
     overflow: hidden;
 }
 
+/* Location image style */
 .location-image img {
     width: 100%;
     height: 100%;
@@ -584,20 +669,24 @@
     transition: all 0.5s ease;
 }
 
+/* Location image hover effect */
 .location-card:hover .location-image img {
     transform: scale(1.1);
 }
 
+/* Location info container */
 .location-info {
     padding: 20px;
 }
 
+/* Location name heading */
 .location-info h4 {
     font-size: 1.3rem;
     color: var(--primary-color);
     margin-bottom: 10px;
 }
 
+/* Location address, phone, hours */
 .location-address,
 .location-phone,
 .location-hours {
@@ -605,6 +694,7 @@
     margin-bottom: 5px;
 }
 
+/* Virtual tour section */
 .virtual-tour {
     text-align: center;
     padding: 50px;
@@ -612,12 +702,14 @@
     border-radius: 10px;
 }
 
+/* Virtual tour heading */
 .virtual-tour h3 {
     font-size: 1.8rem;
     color: var(--primary-color);
     margin-bottom: 20px;
 }
 
+/* Virtual tour paragraph */
 .virtual-tour p {
     max-width: 600px;
     margin: 0 auto 30px;
@@ -625,6 +717,7 @@
     line-height: 1.8;
 }
 
+/* Call-to-action button */
 .cta-button {
     display: inline-block;
     background-color: var(--secondary-color);
@@ -635,28 +728,32 @@
     transition: all 0.3s ease;
 }
 
+/* Call-to-action button hover effect */
 .cta-button:hover {
     background-color: #b78a27;
 }
 
-/* Partners Section */
+/* Partners section intro */
 .partners-intro {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 40px;
 }
 
+/* Partners intro paragraph */
 .partners-intro p {
     font-size: 1.1rem;
     color: #555;
     line-height: 1.8;
 }
 
+/* Brand partners section */
 .brand-partners,
 .service-partners {
     margin-bottom: 50px;
 }
 
+/* Brand and service partners heading */
 .brand-partners h3,
 .service-partners h3 {
     text-align: center;
@@ -665,12 +762,14 @@
     margin-bottom: 30px;
 }
 
+/* Partners grid container */
 .partners-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 30px;
 }
 
+/* Individual partner logo card */
 .partner-logo {
     background-color: #fff;
     padding: 20px;
@@ -682,20 +781,24 @@
     transition: all 0.3s ease;
 }
 
+/* Partner logo hover effect */
 .partner-logo:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Partner logo image */
 .partner-logo img {
     max-width: 100%;
     max-height: 80px;
 }
 
+/* Partner testimonials section */
 .partner-testimonials {
     margin-bottom: 50px;
 }
 
+/* Partner testimonials heading */
 .partner-testimonials h3 {
     text-align: center;
     font-size: 1.8rem;
@@ -703,12 +806,14 @@
     margin-bottom: 30px;
 }
 
+/* Testimonial container flex */
 .testimonial-container {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
 }
 
+/* Individual testimonial card */
 .testimonial {
     flex: 1;
     min-width: 300px;
@@ -718,17 +823,20 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
+/* Testimonial text container */
 .testimonial-text {
     margin-bottom: 20px;
     position: relative;
 }
 
+/* Testimonial text paragraph */
 .testimonial-text p {
     color: #555;
     line-height: 1.8;
     font-style: italic;
 }
 
+/* Testimonial quote marks */
 .testimonial-text p::before,
 .testimonial-text p::after {
     content: '"';
@@ -737,12 +845,14 @@
     font-weight: 700;
 }
 
+/* Testimonial author container */
 .testimonial-author {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
+/* Testimonial author image */
 .testimonial-author img {
     width: 60px;
     height: 60px;
@@ -750,17 +860,20 @@
     object-fit: cover;
 }
 
+/* Testimonial author name */
 .author-name {
     font-weight: 600;
     color: var(--primary-color);
     margin-bottom: 5px;
 }
 
+/* Testimonial author title */
 .author-title {
     color: #666;
     font-size: 0.9rem;
 }
 
+/* Become a partner call-to-action section */
 .become-partner {
     text-align: center;
     padding: 50px;
@@ -768,12 +881,14 @@
     border-radius: 10px;
 }
 
+/* Become partner heading */
 .become-partner h3 {
     font-size: 1.8rem;
     color: var(--primary-color);
     margin-bottom: 20px;
 }
 
+/* Become partner paragraph */
 .become-partner p {
     max-width: 600px;
     margin: 0 auto 30px;
@@ -781,24 +896,27 @@
     line-height: 1.8;
 }
 
-/* FAQ Section */
+/* FAQ section intro */
 .faq-intro {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 40px;
 }
 
+/* FAQ intro paragraph */
 .faq-intro p {
     font-size: 1.1rem;
     color: #555;
     line-height: 1.8;
 }
 
+/* FAQ container */
 .faq-container {
     max-width: 800px;
     margin: 0 auto 50px;
 }
 
+/* Individual FAQ item */
 .faq-item {
     background-color: #fff;
     border-radius: 10px;
@@ -807,6 +925,7 @@
     margin-bottom: 20px;
 }
 
+/* FAQ question row */
 .faq-question {
     display: flex;
     justify-content: space-between;
@@ -816,10 +935,12 @@
     transition: all 0.3s ease;
 }
 
+/* FAQ question hover effect */
 .faq-question:hover {
     background-color: #f9f9f9;
 }
 
+/* FAQ question heading */
 .faq-question h3 {
     font-size: 1.1rem;
     color: var(--primary-color);
@@ -827,15 +948,18 @@
     padding-right: 20px;
 }
 
+/* FAQ question icon */
 .faq-question i {
     color: var(--secondary-color);
     transition: all 0.3s ease;
 }
 
+/* Active FAQ item icon rotation */
 .faq-item.active .faq-question i {
     transform: rotate(45deg);
 }
 
+/* FAQ answer container */
 .faq-answer {
     padding: 0 20px;
     max-height: 0;
@@ -843,16 +967,19 @@
     transition: all 0.3s ease;
 }
 
+/* Active FAQ answer */
 .faq-item.active .faq-answer {
     padding: 0 20px 20px;
     max-height: 1000px;
 }
 
+/* FAQ answer paragraph */
 .faq-answer p {
     color: #666;
     line-height: 1.8;
 }
 
+/* Contact call-to-action section */
 .contact-cta {
     text-align: center;
     padding: 50px;
@@ -860,12 +987,14 @@
     border-radius: 10px;
 }
 
+/* Contact CTA heading */
 .contact-cta h3 {
     font-size: 1.8rem;
     color: var(--primary-color);
     margin-bottom: 20px;
 }
 
+/* Contact CTA paragraph */
 .contact-cta p {
     max-width: 600px;
     margin: 0 auto 30px;
@@ -873,7 +1002,7 @@
     line-height: 1.8;
 }
 
-/* Animation */
+/* Animation for fade in effect */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -886,30 +1015,38 @@
 }
 
 /* Responsive Adjustments */
+
+/* Tablet and below */
 @media (max-width: 992px) {
+    /* About nav alignment */
     .about-nav {
         justify-content: flex-start;
     }
     
+    /* Timeline vertical line position */
     .timeline-container::before {
         left: 30px;
     }
     
+    /* Timeline item padding and alignment */
     .timeline-item {
         padding-right: 0;
         padding-left: 70px;
         justify-content: flex-start;
     }
     
+    /* Even timeline item padding and alignment */
     .timeline-item:nth-child(even) {
         padding-left: 70px;
         justify-content: flex-start;
     }
     
+    /* Timeline dot position */
     .timeline-dot {
         left: 30px;
     }
     
+    /* Timeline date position */
     .timeline-date {
         position: relative;
         top: 0;
@@ -917,22 +1054,27 @@
         display: block;
     }
     
+    /* Timeline date alignment */
     .timeline-item:nth-child(odd) .timeline-date,
     .timeline-item:nth-child(even) .timeline-date {
         left: 0;
         right: auto;
     }
     
+    /* Timeline content width */
     .timeline-content {
         width: 100%;
     }
 }
 
+/* Mobile and below */
 @media (max-width: 768px) {
+    /* Section header font size */
     .section-header h2 {
         font-size: 2rem;
     }
     
+    /* Section headings font size */
     .story-text h3,
     .timeline h3,
     .achievements h3,
@@ -950,37 +1092,46 @@
         font-size: 1.5rem;
     }
     
+    /* Stat item padding */
     .stat-item {
         padding: 20px;
     }
     
+    /* Stat number font size */
     .stat-number {
         font-size: 2.5rem;
     }
 }
 
+/* Extra small devices */
 @media (max-width: 576px) {
+    /* About nav padding */
     .about-nav {
         padding: 0 10px;
     }
     
+    /* Nav button padding and font size */
     .nav-btn {
         padding: 15px 15px;
         font-size: 0.9rem;
     }
     
+    /* Stat item min width */
     .stat-item {
         min-width: 150px;
     }
     
+    /* Stats container gap */
     .stats-container {
         gap: 15px;
     }
     
+    /* Value card padding */
     .value-card {
         padding: 20px;
     }
     
+    /* Partners grid columns */
     .partners-grid {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }

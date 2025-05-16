@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         btn.addEventListener('click', function() {
             // Remove active class from all buttons and tabs
             tabBtns.forEach(b => b.classList.remove('active'));
-            tabContents.forEach(content => content.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active')); 
             
             // Add active class to clicked button and corresponding tab
             this.classList.add('active');
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     connect: true,
                     step: 5000,
                     range: {
-                        'min': 50000,
+                        'min': 50000, 
                         'max': 500000
                     },
                     format: {

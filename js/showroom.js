@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 const filterValue = this.getAttribute('data-filter');
                 
-                // Show/hide cars based on category
+                // Show/hide cars based on category 
                 carCards.forEach(card => {
                     if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                        card.style.display = 'block';
+                        card.style.display = 'block'; 
                         setTimeout(() => {
                             card.style.opacity = '1';
                             card.style.transform = 'translateY(0)';

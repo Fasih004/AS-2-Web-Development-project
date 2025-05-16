@@ -1,0 +1,785 @@
+/* Aston Martin DB12 Detail Page Styles */
+
+/* Color variables */
+:root {
+    --aston-primary: #005D62; /* Aston Martin British Racing Green */
+    --aston-secondary: #B3A36C; /* Aston Martin Gold */
+    --aston-dark: #151B1D;
+    --aston-light: #F0F0F0;
+    --aston-accent: #D6D2C4;
+    --aston-text: #333333;
+    --aston-overlay: rgba(0, 93, 98, 0.85);
+}
+
+/* Hero Section */
+.car-hero { 
+    height: 100vh;
+    background-image: url('../images/car-details/Aston\ Martin\ DB12.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(21, 27, 29, 0.6), rgba(21, 27, 29, 0.8));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.brand-logo {
+    margin-bottom: 30px;
+}
+
+.brand-logo img {
+    height: 60px;
+    filter: brightness(0) invert(1);
+}
+
+.car-title {
+    font-size: 8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+
+.car-tagline {
+    font-size: 1.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin: 0;
+}
+
+/* Overview Section */
+.car-overview {
+    padding: 100px 0;
+    background-color: var(--aston-light);
+}
+
+.overview-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.overview-text h2 {
+    font-size: 2.5rem;
+    color: var(--aston-primary);
+    margin: 0 0 30px;
+    position: relative;
+}
+
+.overview-text h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--aston-secondary);
+}
+
+.overview-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--aston-text);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.overview-text p {
+    line-height: 1.6;
+    color: var(--aston-text);
+    margin-bottom: 30px;
+}
+
+.quick-specs {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.spec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.spec-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--aston-primary);
+}
+
+.spec-unit {
+    font-size: 0.9rem;
+    color: var(--aston-text);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.primary-cta {
+    background-color: var(--aston-primary);
+    color: white;
+    border: 1px solid var(--aston-primary);
+}
+
+.primary-cta:hover {
+    background-color: transparent;
+    color: var(--aston-primary);
+}
+
+.secondary-cta {
+    background-color: transparent;
+    color: var(--aston-primary);
+    border: 1px solid var(--aston-primary);
+}
+
+.secondary-cta:hover {
+    background-color: var(--aston-primary);
+    color: white;
+}
+
+.overview-image img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 100px 0;
+    background-color: white;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--aston-primary);
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--aston-secondary);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    gap: 20px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-item.large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Features Section */
+.features-section {
+    padding: 100px 0;
+    background-color: var(--aston-dark);
+    color: white;
+}
+
+.features-section .section-title {
+    color: white;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 30px;
+    transition: transform 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-bottom: 3px solid transparent;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+    border-bottom: 3px solid var(--aston-secondary);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--aston-secondary);
+    margin-bottom: 20px;
+}
+
+.feature-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.feature-description {
+    line-height: 1.6;
+    color: var(--aston-light);
+}
+
+/* Specifications Section */
+.specifications-section {
+    padding: 100px 0;
+    background-color: var(--aston-light);
+}
+
+.specs-tabs {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tabs-header {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+
+.tab-button {
+    padding: 15px 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--aston-text);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.tab-button:after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--aston-secondary);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.tab-button.active {
+    color: var(--aston-primary);
+}
+
+.tab-button.active:after {
+    transform: scaleX(1);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.spec-group {
+    margin-bottom: 30px;
+}
+
+.spec-group-title {
+    font-size: 1.3rem;
+    color: var(--aston-primary);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.spec-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.spec-name {
+    color: #666;
+    font-weight: 500;
+}
+
+.spec-value {
+    color: var(--aston-text);
+    font-weight: 600;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+}
+
+.features-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    padding-left: 25px;
+}
+
+.features-list li:before {
+    content: '\f00c';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--aston-secondary);
+}
+
+/* Customization Section */
+.customization-section {
+    padding: 100px 0;
+    background-color: white;
+}
+
+.customization-intro {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--aston-text);
+    line-height: 1.6;
+}
+
+.customization-categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.category-item {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.category-item:hover {
+    transform: translateY(-10px);
+}
+
+.category-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.category-item h3 {
+    font-size: 1.3rem;
+    color: var(--aston-primary);
+    margin-bottom: 10px;
+}
+
+.category-item p {
+    color: var(--aston-text);
+    line-height: 1.5;
+}
+
+.customization-cta {
+    text-align: center;
+}
+
+/* Pricing Section */
+.pricing-section {
+    padding: 100px 0;
+    background-color: var(--aston-dark);
+    color: white;
+}
+
+.pricing-section .section-title {
+    color: white;
+}
+
+.pricing-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.pricing-box {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-left: 5px solid var(--aston-secondary);
+}
+
+.pricing-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.price-tag {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--aston-light);
+}
+
+.price-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--aston-secondary);
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.pricing-features li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    padding-left: 25px;
+}
+
+.pricing-features li:before {
+    content: '\f00c';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--aston-secondary);
+}
+
+.price-note {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 30px;
+}
+
+.pricing-cta {
+    display: flex;
+    gap: 20px;
+}
+
+.pricing-image img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Related Models Section */
+.related-models {
+    padding: 100px 0;
+    background-color: var(--aston-light);
+}
+
+.related-models-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.related-model-card {
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.related-model-card:hover {
+    transform: translateY(-10px);
+}
+
+.related-model-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.related-model-card:hover img {
+    transform: scale(1.05);
+}
+
+.related-model-info {
+    padding: 25px;
+}
+
+.related-model-info h3 {
+    font-size: 1.3rem;
+    color: var(--aston-primary);
+    margin-bottom: 10px;
+}
+
+.related-model-info p {
+    color: var(--aston-text);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.model-link {
+    color: var(--aston-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: gap 0.3s ease;
+}
+
+.model-link:hover {
+    gap: 10px;
+}
+
+/* Inquire Section */
+.inquire-section {
+    padding: 100px 0;
+    background-image: url('../images/backgrounds/aston-martin-inquire.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+}
+
+.inquire-section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--aston-overlay);
+}
+
+.inquire-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.inquire-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.inquire-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.inquire-cta {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 30px;
+    }
+    
+    .car-title {
+        font-size: 6rem;
+    }
+    
+    .customization-categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .related-models-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .overview-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .overview-image {
+        order: -1;
+    }
+    
+    .specs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-image {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .car-title {
+        font-size: 4rem;
+    }
+    
+    .car-tagline {
+        font-size: 1.3rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .gallery-item.large {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .customization-categories {
+        grid-template-columns: 1fr;
+    }
+    
+    .related-models-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tabs-header {
+        flex-wrap: wrap;
+    }
+    
+    .tab-button {
+        flex: 1;
+        padding: 10px;
+        text-align: center;
+    }
+    
+    .cta-buttons, .pricing-cta, .inquire-cta {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .cta-button {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+    }
+}
+
+/* Animation for page elements */
+.car-overview, .gallery-section, .features-section,
+.specifications-section, .customization-section,
+.pricing-section, .related-models, .inquire-section {
+    animation: sectionFadeIn 1s ease;
+}
+
+@keyframes sectionFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Interactive elements hover effects */
+.cta-button, .tab-button, .gallery-item,
+.feature-item, .related-model-card, .category-item {
+    transition: all 0.3s ease;
+}
+
+/* Custom styling for scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--aston-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--aston-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--aston-secondary);
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}

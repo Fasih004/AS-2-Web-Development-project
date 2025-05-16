@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
             navBtns.forEach(b => b.classList.remove('active'));
             aboutSections.forEach(section => section.classList.remove('active'));
             
-            // Add active class to clicked button and corresponding section
+            // Add active class to clicked button and corresponding section 
             this.classList.add('active');
             const sectionId = this.getAttribute('data-section') + '-section';
             document.getElementById(sectionId).classList.add('active');
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Scroll to the top of the section
             document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
-    });
+    }); 
     
     // FAQ Accordion
     const faqItems = document.querySelectorAll('.faq-item');

@@ -1,4 +1,4 @@
-// Cart Page JavaScript
+// Fixed Cart Page JavaScript
 document.addEventListener('DOMContentLoaded', function() {
     // Elements
     const cartItems = document.querySelector('.cart-items');
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function initializeCart() {
         // Attempt to load cart from localStorage
         const savedCart = localStorage.getItem('carverse_cart');
-        const savedItems = localStorage.getItem('carverse_saved_items');
+        const savedItemsData = localStorage.getItem('carverse_saved_items');
         
         if (savedCart) {
             try {
@@ -43,9 +43,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        if (savedItems) {
+        if (savedItemsData) {
             try {
-                savedForLater = JSON.parse(savedItems);
+                savedForLater = JSON.parse(savedItemsData);
                 // Update UI if needed
                 renderSavedItems();
             } catch (e) {
@@ -55,44 +55,32 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Check if cart is empty and show empty state if needed
-        if (currentCart.length === 0) {
-            // Also check for newly added customized vehicle from URL parameter
-            const urlParams = new URLSearchParams(window.location.search);
-            const customVehicle = urlParams.get('customVehicle');
+        if (currentCart.length === 0 && cartItems && cartItems.children.length === 0) {
+            // Check for newly added customized vehicle from localStorage
+            const pendingCustomVehicle = localStorage.getItem('carverse_pending_custom_vehicle');
             
-            if (customVehicle) {
+            if (pendingCustomVehicle) {
                 try {
                     // Parse the custom vehicle data
-                    const customVehicleData = JSON.parse(atob(customVehicle));
+                    const customVehicleData = JSON.parse(pendingCustomVehicle);
                     addCustomVehicleToCart(customVehicleData);
                     
-                    // Remove the URL parameter after processing
-                    window.history.replaceState({}, document.title, window.location.pathname);
+                    // Remove the pending vehicle after processing
+                    localStorage.removeItem('carverse_pending_custom_vehicle');
                 } catch (e) {
                     console.error('Error parsing custom vehicle data:', e);
                     showEmptyCartState();
                 }
             } else {
-                // Check for newly added customized vehicle from localStorage
-                const pendingCustomVehicle = localStorage.getItem('carverse_pending_custom_vehicle');
-                
-                if (pendingCustomVehicle) {
-                    try {
-                        // Parse the custom vehicle data
-                        const customVehicleData = JSON.parse(pendingCustomVehicle);
-                        addCustomVehicleToCart(customVehicleData);
-                        
-                        // Remove the pending vehicle after processing
-                        localStorage.removeItem('carverse_pending_custom_vehicle');
-                    } catch (e) {
-                        console.error('Error parsing custom vehicle data:', e);
-                        showEmptyCartState();
-                    }
-                } else {
+                // If cart is still empty, show empty state
+                if (cartItems && cartItems.children.length === 0) {
                     showEmptyCartState();
                 }
             }
         }
+        
+        // Update item count
+        updateItemCount();
     }
     
     // Render cart items from currentCart array
@@ -130,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="reservation-status">
                                 <div class="status-badge">Reservation Pending</div>
                                 <div class="deposit-info">
-                                    Deposit Required: ${formatNumber(parseFloat(item.price.replace(/[^0-9.-]+/g, '')) * 0.1)}
+                                    Deposit Required: $${formatNumber(parseFloat(item.price.replace(/[^0-9.-]+/g, '')) * 0.1)}
                                 </div>
                             </div>
                             <div class="item-config">
@@ -168,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 </div>
                             </div>
                             <div class="item-subtotal">
-                                Subtotal: <span class="amount">${formatCurrency(parseFloat(item.price.replace(/[^0-9.-]+/g, '')) * (item.quantity ||.1))}</span>
+                                Subtotal: <span class="amount">${formatCurrency(parseFloat(item.price.replace(/[^0-9.-]+/g, '')) * (item.quantity || 1))}</span>
                             </div>
                             <div class="item-actions">
                                 <button class="action-btn remove-item"><i class="fas fa-trash-alt"></i> Remove</button>
@@ -258,8 +246,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Render package details
-    function renderPackageDetails(package) {
-        if (!package.details || package.details.length === 0) {
+    function renderPackageDetails(packageItem) {
+        if (!packageItem.details || packageItem.details.length === 0) {
             return `
                 <div class="detail-item"><i class="fas fa-check"></i> Oil changes and fluid top-ups</div>
                 <div class="detail-item"><i class="fas fa-check"></i> Brake pads and rotors</div>
@@ -271,54 +259,25 @@ document.addEventListener('DOMContentLoaded', function() {
         let detailsHTML = '';
         
         // Generate HTML for each detail
-        package.details.forEach(detail => {
+        packageItem.details.forEach(detail => {
             detailsHTML += `<div class="detail-item"><i class="fas fa-check"></i> ${detail}</div>`;
         });
         
         return detailsHTML;
     }
     
-    // Render saved items
-    function renderSavedItems() {
-        if (!savedItemsList || savedForLater.length === 0) {
-            if (savedItems) {
-                savedItems.style.display = 'none';
-            }
-            return;
-        }
-        
-        // Show saved items section
-        if (savedItems) {
-            savedItems.style.display = 'block';
-        }
-        
-        // Clear current items
-        savedItemsList.innerHTML = '';
-        
-        // Add each item to the saved list
-        savedForLater.forEach(item => {
-            const savedItemHTML = `
-                <div class="saved-item" data-id="${item.id}">
-                    <div class="saved-image">
-                        <img src="${item.image}" alt="${item.name}">
-                    </div>
-                    <div class="saved-details">
-                        <h4>${item.name}</h4>
-                        <div class="saved-price">${item.price}</div>
-                    </div>
-                    <div class="saved-actions">
-                        <button class="outline-btn add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-            `;
-            
-            savedItemsList.innerHTML += savedItemHTML;
-        });
-        
-        // Update saved count
-        if (savedCount) {
-            savedCount.textContent = savedForLater.length;
-        }
+    // Format number with commas
+    function formatNumber(number) {
+        return Math.round(number).toLocaleString('en-US');
+    }
+    
+    // Format currency
+    function formatCurrency(amount) {
+        return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 0
+        }).format(amount);
     }
     
     // Add custom vehicle to cart
@@ -404,20 +363,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Format number with commas
-    function formatNumber(number) {
-        return number.toLocaleString('en-US');
-    }
-    
-    // Format currency
-    function formatCurrency(amount) {
-        return new Intl.NumberFormat('en-US', {
-            style: 'currency',
-            currency: 'USD',
-            minimumFractionDigits: 0
-        }).format(amount);
-    }
-    
     // Event Delegation for Cart Items
     if (cartItems) {
         cartItems.addEventListener('click', function(e) {
@@ -490,16 +435,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 if (cartItem && !isNaN(quantity) && quantity > 0) {
                     updateItemQuantity(cartItem, quantity);
-                    
-                    // Update quantity in cart array
-                    const itemId = cartItem.dataset.id;
-                    const itemIndex = currentCart.findIndex(item => item.id === itemId);
-                    
-                    if (itemIndex !== -1) {
-                        currentCart[itemIndex].quantity = quantity;
-                        // Save to localStorage
-                        localStorage.setItem('carverse_cart', JSON.stringify(currentCart));
-                    }
                 } else {
                     // Reset to 1 if invalid
                     e.target.value = 1;
@@ -652,7 +587,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update item count
     function updateItemCount() {
         if (itemCount) {
-            itemCount.textContent = cartItems.querySelectorAll('.cart-item').length;
+            const count = cartItems ? cartItems.querySelectorAll('.cart-item').length : 0;
+            itemCount.textContent = count;
         }
     }
     
@@ -662,6 +598,8 @@ document.addEventListener('DOMContentLoaded', function() {
         let subtotal = 0;
         let accessoriesTotal = 0;
         let vehicleTotal = 0;
+        
+        if (!cartItems) return;
         
         cartItems.querySelectorAll('.cart-item').forEach(item => {
             const priceText = item.querySelector('.item-price').textContent;
@@ -764,14 +702,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Add saved item back to cart
-        savedItemsList.addEventListener('click', function(e) {
-            if (e.target.classList.contains('add-to-cart')) {
-                const savedItem = e.target.closest('.saved-item');
-                if (savedItem) {
-                    addSavedItemToCart(savedItem);
+        if (savedItemsList) {
+            savedItemsList.addEventListener('click', function(e) {
+                if (e.target.classList.contains('add-to-cart')) {
+                    const savedItem = e.target.closest('.saved-item');
+                    if (savedItem) {
+                        addSavedItemToCart(savedItem);
+                    }
                 }
-            }
-        });
+            });
+        }
     }
     
     // Add saved item back to cart
@@ -785,7 +725,9 @@ document.addEventListener('DOMContentLoaded', function() {
         savedItem.remove();
         
         // Update saved count
-        savedCount.textContent = savedItemsList.querySelectorAll('.saved-item').length;
+        if (savedCount) {
+            savedCount.textContent = savedItemsList.querySelectorAll('.saved-item').length;
+        }
         
         // Check if cart was empty
         const wasEmpty = document.querySelector('.empty-cart');
@@ -847,7 +789,9 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         
         // Add to cart
-        cartItems.innerHTML += cartItemHTML;
+        if (cartItems) {
+            cartItems.innerHTML += cartItemHTML;
+        }
         
         // Update item count
         updateItemCount();
@@ -859,7 +803,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showNotification('Item added to cart');
         
         // Hide saved items section if empty
-        if (savedItemsList.querySelectorAll('.saved-item').length === 0) {
+        if (savedItemsList && savedItemsList.querySelectorAll('.saved-item').length === 0 && savedItems) {
             savedItems.style.display = 'none';
         }
         
@@ -934,7 +878,9 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         
         // Add to cart
-        cartItems.innerHTML += cartItemHTML;
+        if (cartItems) {
+            cartItems.innerHTML += cartItemHTML;
+        }
         
         // Update count and summary
         updateItemCount();
@@ -952,34 +898,45 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 500);
     }
     
-    // Clear cart button
-    if (clearCartBtn) {
-        clearCartBtn.addEventListener('click', function() {
-            if (confirm('Are you sure you want to clear your cart?')) {
-                // Remove all items
+    // Clear cart handler
+    function clearCartHandler() {
+        if (confirm('Are you sure you want to clear your cart?')) {
+            // Remove all items
+            if (cartItems) {
                 cartItems.innerHTML = '';
-                
-                // Update count
-                updateItemCount();
-                
-                // Show empty state
-                showEmptyCartState();
-                
-                // Show notification
-                showNotification('Cart cleared');
             }
-        });
+            
+            // Update count
+            updateItemCount();
+            
+            // Show empty state
+            showEmptyCartState();
+            
+            // Show notification
+            showNotification('Cart cleared');
+            
+            // Clear localStorage
+            localStorage.removeItem('carverse_cart');
+        }
     }
     
-    // Save cart button
+    // Save cart handler
+    function saveCartHandler() {
+        // In a real implementation, this would save the cart to localStorage or server
+        // For this demo, we'll just show the modal
+        if (cartSavedModal) {
+            cartSavedModal.classList.add('active');
+        }
+    }
+    
+    // Set up clear cart button
+    if (clearCartBtn) {
+        clearCartBtn.addEventListener('click', clearCartHandler);
+    }
+    
+    // Set up save cart button
     if (saveCartBtn) {
-        saveCartBtn.addEventListener('click', function() {
-            // In a real implementation, this would save the cart to localStorage or server
-            // For this demo, we'll just show the modal
-            if (cartSavedModal) {
-                cartSavedModal.classList.add('active');
-            }
-        });
+        saveCartBtn.addEventListener('click', saveCartHandler);
     }
     
     // Modal close buttons
@@ -1022,6 +979,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         if (cartItems.childElementCount === 0) {
                             showEmptyCartState();
                         }
+                        
+                        // Update cart in localStorage
+                        updateCartStorage();
                     }, 300);
                 }
                 
@@ -1032,6 +992,44 @@ document.addEventListener('DOMContentLoaded', function() {
                 closeModals();
             }
         });
+    }
+    
+    // Update cart in localStorage
+    function updateCartStorage() {
+        const cartItemElements = cartItems.querySelectorAll('.cart-item');
+        const cartData = [];
+        
+        cartItemElements.forEach(item => {
+            const itemId = item.dataset.id;
+            const itemType = item.querySelector('.item-type').textContent.toLowerCase();
+            const itemName = item.querySelector('h3').textContent;
+            const itemPrice = item.querySelector('.item-price').textContent;
+            const itemImage = item.querySelector('.item-image img').src;
+            
+            // Create cart item object
+            const cartItem = {
+                id: itemId,
+                type: itemType.includes('vehicle') ? 'vehicle' : 
+                      itemType.includes('service') ? 'service' : 'accessory',
+                name: itemName,
+                price: itemPrice,
+                image: itemImage
+            };
+            
+            // Add quantity if it's an accessory
+            if (cartItem.type === 'accessory') {
+                const quantityInput = item.querySelector('.quantity-input');
+                if (quantityInput) {
+                    cartItem.quantity = parseInt(quantityInput.value) || 1;
+                }
+            }
+            
+            // Add to cart data
+            cartData.push(cartItem);
+        });
+        
+        // Save to localStorage
+        localStorage.setItem('carverse_cart', JSON.stringify(cartData));
     }
     
     // Financing calculator functionality
@@ -1099,7 +1097,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Calculate monthly payment (simplified)
         const monthlyInterest = interestRate / 100 / 12;
         const monthlyPayment = loanAmount * (monthlyInterest * Math.pow(1 + monthlyInterest, term)) / 
-                               (Math.pow(1 + monthlyInterest, term) - 1);
+                              (Math.pow(1 + monthlyInterest, term) - 1);
         
         // Calculate total cost
         const totalCost = (monthlyPayment * term) + downPayment;
@@ -1228,14 +1226,19 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         
         // Check if discount already exists and remove it
-        const existingDiscount = document.querySelector('.summary-item .summary-label:contains("Discount")');
+        const existingDiscount = document.querySelector('.summary-label').textContent.includes('Discount');
         if (existingDiscount) {
             existingDiscount.closest('.summary-item').remove();
         }
         
         // Insert discount before total
         if (promoCode && summaryItems) {
-            summaryItems.insertBefore(discountItem, document.querySelector('.summary-total'));
+            const totalItem = document.querySelector('.summary-total');
+            if (totalItem) {
+                summaryItems.insertBefore(discountItem, totalItem);
+            } else {
+                summaryItems.appendChild(discountItem);
+            }
             
             // Update the order summary
             updateOrderSummary();
@@ -1270,109 +1273,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Initialize UI based on DOM content
-    initializeUI();
-    
-    function initializeUI() {
-        // Update item count
-        updateItemCount();
-        
-        // Check if there are saved items
-        if (savedItemsList.querySelectorAll('.saved-item').length === 0) {
-            savedItems.style.display = 'none';
-        }
-        
-        // Initialize financing calculator
-        updateFinancingEstimate();
-        
-        // Add CSS for notification if it doesn't exist
-        if (!document.getElementById('notification-style')) {
-            const style = document.createElement('style');
-            style.id = 'notification-style';
-            style.textContent = `
-                .notification {
-                    position: fixed;
-                    bottom: 20px;
-                    left: 50%;
-                    transform: translateX(-50%) translateY(100px);
-                    background-color: var(--primary-color);
-                    color: white;
-                    padding: 12px 25px;
-                    border-radius: 5px;
-                    font-size: 0.9rem;
-                    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-                    z-index: 2000;
-                    opacity: 0;
-                    transition: transform 0.3s ease, opacity 0.3s ease;
-                }
-                
-                .notification.show {
-                    transform: translateX(-50%) translateY(0);
-                    opacity: 1;
-                }
-            `;
-            document.head.appendChild(style);
-        }
+    // Add notification CSS if it doesn't exist
+    if (!document.getElementById('notification-style')) {
+        const style = document.createElement('style');
+        style.id = 'notification-style';
+        style.textContent = `
+            .notification {
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%) translateY(100px);
+                background-color: var(--primary-color);
+                color: white;
+                padding: 12px 25px;
+                border-radius: 5px;
+                font-size: 0.9rem;
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+                z-index: 2000;
+                opacity: 0;
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+            
+            .notification.show {
+                transform: translateX(-50%) translateY(0);
+                opacity: 1;
+            }
+        `;
+        document.head.appendChild(style);
     }
     
-    // Add a selector contains method if it doesn't exist
-    if (!Element.prototype.matches) {
-        Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
-    }
-    
-    if (!document.querySelector(':contains')) {
-        // Add a contains selector to make code more readable
-        document.querySelector = (function(_querySelector) {
-            return function(selector) {
-                // Check if the selector contains our custom :contains selector
-                if (selector.includes(':contains(')) {
-                    // Extract the contains part
-                    const match = selector.match(/:contains\(["'](.+?)["']\)/);
-                    if (match) {
-                        const text = match[1];
-                        const parts = selector.split(':contains');
-                        const baseSelector = parts[0];
-                        const postSelector = parts[1].replace(/\(["'].+?["']\)/, '');
-                        
-                        // Get all elements matching the base selector
-                        const elements = Array.from(document.querySelectorAll(baseSelector));
-                        
-                        // Filter for those containing the text
-                        const filtered = elements.filter(el => 
-                            el.textContent.includes(text)
-                        );
-                        
-                        // If there's a post selector, further filter the results
-                        if (postSelector) {
-                            return filtered.find(el => 
-                                el.matches(postSelector) || el.querySelector(postSelector)
-                            );
-                        }
-                        
-                        return filtered[0]; // Return the first match
-                    }
-                }
-                
-                // Otherwise, use the original querySelector
-                return _querySelector.call(document, selector);
-            };
-        })(document.querySelector);
-    }
-    
-    // These event listeners would be here in a real implementation
-    // For the express checkout buttons
-    const expressOptions = document.querySelectorAll('.express-option');
-    if (expressOptions.length > 0) {
-        expressOptions.forEach(option => {
-            option.addEventListener('click', function() {
-                const checkoutMethod = this.classList.contains('paypal') ? 'PayPal' : 'Apple Pay';
-                showNotification(`Processing ${checkoutMethod} checkout...`);
-                
-                // Simulate redirect after delay
-                setTimeout(() => {
-                    window.location.href = `checkout.html?method=${checkoutMethod.toLowerCase().replace(' ', '')}`;
-                }, 1500);
-            });
-        });
-    }
-});
+    // Initialize financing calculator
+    updateFinancingEstimate();
+}); 

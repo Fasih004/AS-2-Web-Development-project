@@ -1,0 +1,1285 @@
+/* Confirmation Page Styles */
+
+/* Base Styles */
+.confirmation-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Confirmation Header */
+.confirmation-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.confirmation-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin: 20px 0 10px;
+}
+
+.confirmation-message {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.order-details {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.order-detail {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: #333;
+}
+
+.detail-value {
+    font-family: 'Courier New', monospace;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.confirmation-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Success Animation */
+.success-animation {
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+
+.checkmark-circle {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.checkmark-circle .background {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+}
+
+.checkmark-circle .checkmark {
+    border-radius: 5px;
+}
+
+.checkmark-circle .checkmark.draw:after {
+    animation-delay: 300ms;
+    animation-duration: 800ms;
+    animation-timing-function: ease;
+    animation-name: checkmark;
+    transform: scaleX(-1) rotate(135deg);
+    animation-fill-mode: forwards;
+}
+
+.checkmark-circle .checkmark:after {
+    opacity: 1;
+    height: 40px;
+    width: 20px;
+    transform-origin: left top;
+    border-right: 5px solid var(--secondary-color);
+    border-top: 5px solid var(--secondary-color);
+    border-radius: 2px !important;
+    content: '';
+    left: 35px;
+    top: 65px;
+    position: absolute;
+}
+
+@keyframes checkmark {
+    0% {
+        height: 0;
+        width: 0;
+        opacity: 1;
+    }
+    20% {
+        height: 0;
+        width: 20px;
+        opacity: 1;
+    }
+    40% {
+        height: 40px;
+        width: 20px;
+        opacity: 1;
+    }
+    100% {
+        height: 40px;
+        width: 20px;
+        opacity: 1;
+    }
+}
+
+/* Content Layout */
+.confirmation-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 992px) {
+    .confirmation-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Card Styles */
+.confirmation-card,
+.sidebar-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 20px 25px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.card-header h2,
+.card-header h3 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+/* Order Summary Card */
+.vehicle-details {
+    display: flex;
+    margin-bottom: 30px;
+    gap: 25px;
+}
+
+@media (max-width: 768px) {
+    .vehicle-details {
+        flex-direction: column;
+    }
+}
+
+.vehicle-image {
+    width: 400px;
+    max-width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.vehicle-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.vehicle-status {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.vehicle-info {
+    flex-grow: 1;
+}
+
+.vehicle-info h3 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.vehicle-specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.spec-label {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.spec-value {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.additional-items {
+    margin-bottom: 30px;
+}
+
+.additional-items h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.additional-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.item-name {
+    color: #333;
+}
+
+.item-price {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.pricing-summary {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.pricing-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.pricing-item:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+.pricing-label {
+    color: #555;
+}
+
+.pricing-value {
+    font-weight: 500;
+    color: #333;
+}
+
+.pricing-item.discount .pricing-value {
+    color: #2ecc71;
+}
+
+.pricing-item.total {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.pricing-item.paid .pricing-value {
+    color: #2ecc71;
+}
+
+.pricing-item.remaining .pricing-value {
+    color: #e74c3c;
+}
+
+/* Delivery Card */
+.delivery-details {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.delivery-method,
+.delivery-estimate,
+.delivery-address {
+    display: flex;
+    gap: 20px;
+}
+
+.method-icon,
+.estimate-icon,
+.address-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #f0f7ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: #0066cc;
+    flex-shrink: 0;
+}
+
+.method-details,
+.estimate-details,
+.address-details {
+    flex-grow: 1;
+}
+
+.method-details h4,
+.estimate-details h4,
+.address-details h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.method-details p,
+.estimate-details p,
+.address-details p {
+    color: #555;
+    margin: 0 0 10px;
+    line-height: 1.5;
+}
+
+.text-btn {
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.text-btn:hover {
+    color: var(--primary-color);
+}
+
+.tracking-info {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.tracking-info h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.tracking-info p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.notification-preferences h5 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.notification-options {
+    display: flex;
+    gap: 20px;
+}
+
+.notification-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.notification-option label {
+    color: #555;
+}
+
+/* Payment Card */
+.payment-details {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.payment-method,
+.payment-transaction,
+.payment-schedule {
+    display: flex;
+    gap: 20px;
+}
+
+.method-icon,
+.transaction-icon,
+.schedule-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #f0f7ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: #0066cc;
+    flex-shrink: 0;
+}
+
+.method-details,
+.transaction-details,
+.schedule-details {
+    flex-grow: 1;
+}
+
+.method-details h4,
+.transaction-details h4,
+.schedule-details h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.method-details p,
+.transaction-details p,
+.schedule-details p {
+    color: #555;
+    margin: 0 0 10px;
+    line-height: 1.5;
+}
+
+.card-info {
+    font-family: 'Courier New', monospace;
+}
+
+.transaction-detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+.transaction-detail:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+.payment-receipt {
+    text-align: center;
+}
+
+/* Status Tracker */
+.status-tracker {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.status-tracker::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 2px;
+    height: calc(100% - 50px);
+    background-color: #eee;
+}
+
+.status-step {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.step-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: #999;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.status-step.active .step-icon {
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+}
+
+.step-content {
+    flex-grow: 1;
+    padding-top: 5px;
+}
+
+.step-content h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.status-step.active .step-content h4 {
+    font-weight: 600;
+}
+
+.step-content p {
+    color: #555;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.status-updates {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.status-updates h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.status-updates p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.view-details {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.view-details:hover {
+    text-decoration: underline;
+}
+
+/* Sidebar Cards */
+.concierge-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.concierge-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.concierge-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.concierge-details h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.concierge-title {
+    color: #555;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.concierge-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.contact-method i {
+    width: 30px;
+    height: 30px;
+    background-color: #f0f7ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: #0066cc;
+}
+
+.contact-method a {
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-method a:hover {
+    color: var(--secondary-color);
+}
+
+.concierge-note {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.concierge-note p {
+    color: #555;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Documents Card */
+.document-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.document-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.document-item:hover {
+    background-color: #f9f9f9;
+}
+
+.document-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #f0f7ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #0066cc;
+    margin-right: 15px;
+}
+
+.document-details {
+    flex-grow: 1;
+}
+
+.document-details h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.document-details p {
+    color: #777;
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.document-download {
+    width: 35px;
+    height: 35px;
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.document-download:hover {
+    background-color: #b78a27;
+}
+
+/* Next Steps Card */
+.steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.step-item {
+    display: flex;
+    gap: 15px;
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.step-content p {
+    color: #555;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Share Card */
+.share-card .card-body {
+    text-align: center;
+}
+
+.share-card p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.share-options {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.share-option {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.share-option:hover {
+    transform: translateY(-3px);
+}
+
+.share-option.facebook {
+    background-color: #3b5998;
+}
+
+.share-option.twitter {
+    background-color: #1da1f2;
+}
+
+.share-option.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.share-option.linkedin {
+    background-color: #0077b5;
+}
+
+.share-option.whatsapp {
+    background-color: #25d366;
+}
+
+/* Account Creation Section */
+.account-creation {
+    margin-bottom: 50px;
+}
+
+.account-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.account-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.account-header h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.account-header p {
+    color: #555;
+    margin: 0;
+}
+
+.account-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(217, 168, 50, 0.2);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+/* Continue Shopping Section */
+.continue-shopping-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.continue-shopping-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.continue-options {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.continue-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 200px;
+    padding: 30px 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.continue-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.option-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.option-label {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: modalFade 0.3s ease;
+    overflow: hidden;
+}
+
+@keyframes modalFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    color: #777;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #333;
+}
+
+.modal-body {
+    padding: 30px 20px;
+}
+
+/* Chat Modal */
+.chat-modal-content {
+    max-width: 400px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.chat-message {
+    margin-bottom: 15px;
+    max-width: 80%;
+}
+
+.chat-message.system {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 90%;
+    background-color: #f5f5f5;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.chat-message.user {
+    margin-left: auto;
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    padding: 10px 15px;
+    border-radius: 10px 10px 0 10px;
+}
+
+.chat-message.agent {
+    margin-right: auto;
+    background-color: #f0f8ff;
+    padding: 10px 15px;
+    border-radius: 10px 10px 10px 0;
+}
+
+.chat-input-area {
+    display: flex;
+    border-top: 1px solid #f0f0f0;
+    padding: 15px;
+}
+
+.chat-input {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    resize: none;
+    height: 50px;
+}
+
+.send-message-btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Calendar Modal */
+.calendar-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.calendar-option {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.calendar-option:hover {
+    background-color: #f9f9f9;
+    border-color: var(--secondary-color);
+}
+
+.calendar-option i {
+    font-size: 1.5rem;
+}
+
+.calendar-option span {
+    font-weight: 500;
+    color: #333;
+}
+
+/* Button Styles */
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.primary-btn:hover {
+    background-color: #0c3b5e;
+}
+
+.secondary-btn {
+    background-color: #f5f5f5;
+    color: #333;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.secondary-btn:hover {
+    background-color: #e5e5e5;
+}
+
+.skip-account-btn {
+    color: #777;
+}
+
+/* Animation for status transitions */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.status-step.active {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .confirmation-header {
+        padding: 30px 20px;
+    }
+    
+    .confirmation-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .confirmation-actions button {
+        width: 100%;
+    }
+    
+    .order-details {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .vehicle-image {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .delivery-method,
+    .delivery-estimate,
+    .delivery-address,
+    .payment-method,
+    .payment-transaction,
+    .payment-schedule {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .method-icon,
+    .estimate-icon,
+    .address-icon,
+    .transaction-icon,
+    .schedule-icon {
+        margin: 0 auto;
+    }
+    
+    .notification-options {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .continue-options {
+        gap: 15px;
+    }
+    
+    .continue-option {
+        width: calc(50% - 15px);
+        padding: 20px 15px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+ 
+@media (max-width: 576px) {
+    .confirmation-header h1 {
+        font-size: 2rem;
+    }
+    
+    .continue-option {
+        width: 100%;
+    }
+    
+    .share-options {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

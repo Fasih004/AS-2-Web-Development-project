@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - CarVerse</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <h1>CarVerse</h1>
+        </div>
+        <nav class="main-nav">
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="showroom.html">Showroom</a></li>
+                <li><a href="customize.html">Customize</a></li>
+                <li><a href="buy-sell.html">Buy & Sell</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-banner">
+        <div class="banner-content">
+            <h1>Secure Checkout</h1>
+            <p>Complete your reservation and secure your exclusive CarVerse experience</p>
+            <div class="secure-badge">
+                <i class="fas fa-lock"></i> Encrypted and Secure
+            </div>
+        </div>
+    </div>
+
+    <section class="checkout-section">
+        <div class="container">
+            <div class="checkout-status">
+                <div class="checkout-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Shopping Cart</div>
+                    </div>
+                    <div class="step-divider"></div>
+                    <div class="step active">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Payment & Shipping</div>
+                    </div>
+                    <div class="step-divider"></div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Confirmation</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkout-content">
+                <div class="checkout-main">
+                    <div class="checkout-option">
+                        <div class="checkout-toggle">
+                            <button class="toggle-btn active" data-option="guest">Guest Checkout</button>
+                            <button class="toggle-btn" data-option="login">Member Login</button>
+                        </div>
+                        <div class="login-form" style="display: none;">
+                            <div class="form-group">
+                                <label for="login-email">Email Address</label>
+                                <input type="email" id="login-email" placeholder="Enter your email">
+                            </div>
+                            <div class="form-group">
+                                <label for="login-password">Password</label>
+                                <input type="password" id="login-password" placeholder="Enter your password">
+                            </div>
+                            <button class="primary-btn login-btn">Sign In</button>
+                            <div class="forgot-password">
+                                <a href="#">Forgot your password?</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkout-section-title">
+                        <h2>Customer Information</h2>
+                    </div>
+                    <div class="checkout-form">
+                        <div class="form-columns">
+                            <div class="form-group">
+                                <label for="first-name">First Name*</label>
+                                <input type="text" id="first-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name*</label>
+                                <input type="text" id="last-name" required>
+                            </div>
+                        </div>
+                        <div class="form-columns">
+                            <div class="form-group">
+                                <label for="email">Email Address*</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number*</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                        </div>
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="create-account">
+                            <label for="create-account">Create an account for faster checkout next time</label>
+                        </div>
+                    </div>
+
+                    <div class="checkout-section-title">
+                        <h2>Shipping</h2>
+                    </div>
+                    <div class="checkout-form">
+                        <div class="form-group">
+                            <label for="address1">Address Line 1*</label>
+                            <input type="text" id="address1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address2">Address Line 2</label>
+                            <input type="text" id="address2">
+                        </div>
+                        <div class="form-columns">
+                            <div class="form-group">
+                                <label for="city">City*</label>
+                                <input type="text" id="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State/Province*</label>
+                                <input type="text" id="state" required>
+                            </div>
+                        </div>
+                        <div class="form-columns">
+                            <div class="form-group">
+                                <label for="zip">Zip/Postal Code*</label>
+                                <input type="text" id="zip" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Country*</label>
+                                <select id="country" required>
+                                    <option value="">Select Country</option>
+                                    <option value="US">United States</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="AE" selected>United Arab Emirates</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="different-billing">
+                            <label for="different-billing">My billing address is different from my shipping address</label>
+                        </div>
+
+                        <div id="billing-address" style="display: none;">
+                            <div class="form-divider"></div>
+                            <h3>Billing Address</h3>
+                            <div class="form-group">
+                                <label for="billing-address1">Address Line 1*</label>
+                                <input type="text" id="billing-address1">
+                            </div>
+                            <div class="form-group">
+                                <label for="billing-address2">Address Line 2</label>
+                                <input type="text" id="billing-address2">
+                            </div>
+                            <div class="form-columns">
+                                <div class="form-group">
+                                    <label for="billing-city">City*</label>
+                                    <input type="text" id="billing-city">
+                                </div>
+                                <div class="form-group">
+                                    <label for="billing-state">State/Province*</label>
+                                    <input type="text" id="billing-state">
+                                </div>
+                            </div>
+                            <div class="form-columns">
+                                <div class="form-group">
+                                    <label for="billing-zip">Zip/Postal Code*</label>
+                                    <input type="text" id="billing-zip">
+                                </div>
+                                <div class="form-group">
+                                    <label for="billing-country">Country*</label>
+                                    <select id="billing-country">
+                                        <option value="">Select Country</option>
+                                        <option value="US">United States</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="UK">United Kingdom</option>
+                                        <option value="AE" selected>United Arab Emirates</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkout-section-title">
+                        <h2>Delivery Options</h2>
+                    </div>
+                    <div class="checkout-form">
+                        <div class="delivery-options">
+                            <div class="delivery-option">
+                                <input type="radio" id="standard-delivery" name="delivery-option" checked>
+                                <div class="delivery-details">
+                                    <label for="standard-delivery">Standard Delivery</label>
+                                    <p class="delivery-description">Vehicle delivered to your location in an enclosed carrier. Includes detailed walkthrough of vehicle features.</p>
+                                    <div class="delivery-meta">
+                                        <span class="delivery-time">12-14 weeks</span>
+                                        <span class="delivery-price">$5,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="delivery-option">
+                                <input type="radio" id="expedited-delivery" name="delivery-option">
+                                <div class="delivery-details">
+                                    <label for="expedited-delivery">Expedited Delivery</label>
+                                    <p class="delivery-description">Priority production scheduling and expedited delivery in an enclosed carrier. Includes detailed walkthrough of vehicle features.</p>
+                                    <div class="delivery-meta">
+                                        <span class="delivery-time">8-10 weeks</span>
+                                        <span class="delivery-price">$8,500</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="delivery-option">
+                                <input type="radio" id="showroom-pickup" name="delivery-option">
+                                <div class="delivery-details">
+                                    <label for="showroom-pickup">Showroom Pickup</label>
+                                    <p class="delivery-description">Collect your vehicle from our luxury showroom. Includes champagne reception and personal handover ceremony.</p>
+                                    <div class="delivery-meta">
+                                        <span class="delivery-time">10-12 weeks</span>
+                                        <span class="delivery-price">$0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="delivery-notes">Delivery Instructions (Optional)</label>
+                            <textarea id="delivery-notes" rows="3" placeholder="Special instructions for delivery"></textarea>
+                        </div>
+
+                        <div id="showroom-options" style="display: none;">
+                            <div class="form-divider"></div>
+                            <h3>Showroom Pickup Details</h3>
+                            <div class="form-group">
+                                <label for="pickup-location">Preferred Showroom Location*</label>
+                                <select id="pickup-location">
+                                    <option value="">Select Showroom</option>
+                                    <option value="dubai" selected>Dubai, UAE</option>
+                                    <option value="abudhabi">Abu Dhabi, UAE</option>
+                                    <option value="london">London, UK</option>
+                                    <option value="newyork">New York, USA</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkout-section-title">
+                        <h2>Payment Method</h2>
+                    </div>
+                    <div class="checkout-form">
+                        <div class="payment-methods">
+                            <div class="payment-option active" data-method="card">
+                                <div class="payment-icon"><i class="far fa-credit-card"></i></div>
+                                <div class="payment-label">Credit Card</div>
+                            </div>
+                            <div class="payment-option" data-method="bank">
+                                <div class="payment-icon"><i class="fas fa-university"></i></div>
+                                <div class="payment-label">Bank Transfer</div>
+                            </div>
+                            <div class="payment-option" data-method="financing">
+                                <div class="payment-icon"><i class="fas fa-calculator"></i></div>
+                                <div class="payment-label">Financing</div>
+                            </div>
+                        </div>
+
+                        <!-- Credit Card Payment Form -->
+                        <div class="payment-form" id="card-payment">
+                            <div class="form-group">
+                                <label for="card-name">Name on Card*</label>
+                                <input type="text" id="card-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="card-number">Card Number*</label>
+                                <div class="card-input-wrapper">
+                                    <input type="text" id="card-number" required placeholder="XXXX XXXX XXXX XXXX">
+                                    <div class="card-icons">
+                                        <i class="fab fa-cc-visa"></i>
+                                        <i class="fab fa-cc-mastercard"></i>
+                                        <i class="fab fa-cc-amex"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-columns">
+                                <div class="form-group">
+                                    <label for="card-expiry">Expiration Date*</label>
+                                    <input type="text" id="card-expiry" placeholder="MM/YY" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="card-cvv">Security Code*</label>
+                                    <div class="cvv-wrapper">
+                                        <input type="text" id="card-cvv" maxlength="4" required>
+                                        <div class="cvv-tooltip">
+                                            <i class="fas fa-question-circle"></i>
+                                            <div class="tooltip-content">
+                                                The 3 or 4 digit code on the back of your card.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="save-card">
+                                <label for="save-card">Save this card for future purchases</label>
+                            </div>
+                        </div>
+
+                        <!-- Bank Transfer Payment Form -->
+                        <div class="payment-form" id="bank-payment" style="display: none;">
+                            <div class="bank-transfer-info">
+                                <p>Please use the following details to make your deposit transfer within 24 hours. Your reservation will be confirmed once we receive your deposit.</p>
+                                <div class="bank-details">
+                                    <div class="bank-detail-item">
+                                        <div class="detail-label">Bank Name:</div>
+                                        <div class="detail-value">Emirates International Bank</div>
+                                    </div>
+                                    <div class="bank-detail-item">
+                                        <div class="detail-label">Account Name:</div>
+                                        <div class="detail-value">CarVerse Luxury Automobiles LLC</div>
+                                    </div>
+                                    <div class="bank-detail-item">
+                                        <div class="detail-label">Account Number:</div>
+                                        <div class="detail-value">88844455566677</div>
+                                    </div>
+                                    <div class="bank-detail-item">
+                                        <div class="detail-label">IBAN:</div>
+                                        <div class="detail-value">AE123456789012345678901</div>
+                                    </div>
+                                    <div class="bank-detail-item">
+                                        <div class="detail-label">SWIFT/BIC:</div>
+                                        <div class="detail-value">EIBAEXDXXX</div>
+                                    </div>
+                                    <div class="bank-detail-item">
+                                        <div class="detail-label">Reference:</div>
+                                        <div class="detail-value">Your order reference will appear here</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Financing Payment Form -->
+                        <div class="payment-form" id="financing-payment" style="display: none;">
+                            <div class="financing-options">
+                                <p>Select your preferred financing terms. Your deposit payment today will secure your reservation while we process your financing application.</p>
+                                <div class="form-group">
+                                    <label for="down-payment">Down Payment*</label>
+                                    <div class="input-with-symbol">
+                                        <span class="currency-symbol">$</span>
+                                        <input type="number" id="down-payment" value="100000" min="50000" step="5000">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="financing-term">Financing Term*</label>
+                                    <div class="term-buttons">
+                                        <button class="term-button" data-term="36">36 months</button>
+                                        <button class="term-button active" data-term="48">48 months</button>
+                                        <button class="term-button" data-term="60">60 months</button>
+                                        <button class="term-button" data-term="72">72 months</button>
+                                    </div>
+                                </div>
+                                <div class="financing-summary">
+                                    <div class="summary-row">
+                                        <div class="summary-label">Vehicle Price:</div>
+                                        <div class="summary-value">$500,000</div>
+                                    </div>
+                                    <div class="summary-row">
+                                        <div class="summary-label">Down Payment:</div>
+                                        <div class="summary-value">$100,000</div>
+                                    </div>
+                                    <div class="summary-row">
+                                        <div class="summary-label">Amount to Finance:</div>
+                                        <div class="summary-value">$400,000</div>
+                                    </div>
+                                    <div class="summary-row">
+                                        <div class="summary-label">Interest Rate:</div>
+                                        <div class="summary-value">4.99%</div>
+                                    </div>
+                                    <div class="summary-row">
+                                        <div class="summary-label">Term:</div>
+                                        <div class="summary-value">48 months</div>
+                                    </div>
+                                    <div class="summary-row highlight">
+                                        <div class="summary-label">Estimated Monthly Payment:</div>
+                                        <div class="summary-value">$9,258</div>
+                                    </div>
+                                </div>
+                                <div class="financing-note">
+                                    <p>This is a financing estimate only. Final terms subject to credit approval. Additional documents will be required to complete your financing application.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkout-section-title">
+                        <h2>Order Review</h2>
+                    </div>
+                    <div class="checkout-form">
+                        <div class="order-items">
+                            <div class="order-item">
+                                <div class="item-image">
+                                    <img src="images/car-details/Ferrari SF90 Stradale front.jpg" alt="Ferrari SF90 Stradale">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Ferrari SF90 Stradale</h4>
+                                    <div class="item-specs">
+                                        <span>2023</span> • 
+                                        <span>Rosso Corsa</span> • 
+                                        <span>4.0L V8 Hybrid</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">$500,000</div>
+                            </div>
+                            <div class="order-item">
+                                <div class="item-image">
+                                    <img src="images/car-details/Professional Ceramic Coating Package.jpg" alt="Premium Maintenance Package">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Premium Maintenance Package</h4>
+                                    <div class="item-specs">
+                                        <span>3-year service plan</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">$15,000</div>
+                            </div>
+                            <div class="order-item">
+                                <div class="item-image">
+                                    <img src="images/car-details/am wheels.webp" alt="Carbon Fiber Wheel Set">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Carbon Fiber Wheel Set</h4>
+                                    <div class="item-specs">
+                                        <span>Quantity: 1</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">$12,500</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-checkbox terms-checkbox">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">I agree to the <a href="#">Terms and Conditions</a>, <a href="#">Privacy Policy</a>, and acknowledge the <a href="#">Cancellation Policy</a>*</label>
+                    </div>
+
+                    <div class="form-actions">
+                        <a href="cart.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to Cart</a>
+                        <button type="submit" class="primary-btn place-order-btn">Place Order</button>
+                    </div>
+
+                    <div class="checkout-security">
+                        <div class="security-badges">
+                            <div class="security-badge">
+                                <i class="fas fa-lock"></i>
+                                <span>Secure Checkout</span>
+                            </div>
+                            <div class="security-badge">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Encrypted Data</span>
+                            </div>
+                            <div class="security-badge">
+                                <i class="far fa-credit-card"></i>
+                                <span>Safe Payment</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-sidebar">
+                    <div class="order-summary">
+                        <h3>Order Summary</h3>
+                        <div class="summary-items">
+                            <div class="summary-item">
+                                <div class="summary-label">Subtotal (3 items)</div>
+                                <div class="summary-value">$527,500</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-label">Vehicle Reservation</div>
+                                <div class="summary-value">$500,000</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-label">Accessories & Services</div>
+                                <div class="summary-value">$27,500</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-label">Shipping & Handling</div>
+                                <div class="summary-value" id="shipping-cost">$5,000</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-label">Taxes</div>
+                                <div class="summary-value">$26,375</div>
+                            </div>
+                            <div class="promocode-applied">
+                                <div class="promo-info">
+                                    <div class="promo-code">WELCOME10</div>
+                                    <button class="remove-promo">Remove</button>
+                                </div>
+                                <div class="promo-savings">-$2,750</div>
+                            </div>
+                            <div class="summary-total">
+                                <div class="total-label">Total</div>
+                                <div class="total-value">$556,125</div>
+                            </div>
+                        </div>
+                        <div class="deposit-summary">
+                            <div class="deposit-info">
+                                <div class="deposit-label">Initial Deposit Due Today</div>
+                                <div class="deposit-note">Secures your reservation</div>
+                            </div>
+                            <div class="deposit-value">$50,000</div>
+                        </div>
+                    </div>
+
+                    <div class="concierge-support">
+                        <h3>Concierge Support</h3>
+                        <p>Need assistance with your luxury vehicle order?</p> 
+                        <div class="concierge-options">
+                            <a href="tel:+97141234567" class="concierge-option">
+                                <i class="fas fa-phone-alt"></i>
+                                <span>Direct Call</span>
+                            </a>
+                            <a href="#" class="concierge-option" id="start-chat">
+                                <i class="fas fa-comments"></i>
+                                <span>Live Chat</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="purchase-timeline">
+                        <h3>What Happens Next</h3>
+                        <div class="timeline-steps">
+                            <div class="timeline-step">
+                                <div class="step-marker">1</div>
+                                <div class="step-content">
+                                    <h4>Order Confirmation</h4>
+                                    <p>You'll receive an order confirmation within 24 hours.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-marker">2</div>
+                                <div class="step-content">
+                                    <h4>Production Updates</h4>
+                                    <p>We'll send you regular updates on your vehicle's production status.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-marker">3</div>
+                                <div class="step-content">
+                                    <h4>Delivery Coordination</h4>
+                                    <p>Our concierge team will contact you to arrange delivery details.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-marker">4</div>
+                                <div class="step-content">
+                                    <h4>Vehicle Delivery</h4>
+                                    <p>Your vehicle will be delivered or ready for collection as selected.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CarVerse</h3>
+                    <p>Redefining the luxury automotive experience.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="showroom.html">Showroom</a></li>
+                        <li><a href="customize.html">Customize</a></li>
+                        <li><a href="buy-sell.html">Buy & Sell</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CarVerse. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Support Modal -->
+    <div class="modal" id="chat-modal">
+        <div class="modal-content chat-modal-content">
+            <div class="modal-header">
+                <h3>Luxury Concierge Chat</h3>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body chat-body">
+                <div class="chat-messages">
+                    <div class="chat-message system">
+                        <p>Welcome to CarVerse Luxury Concierge. How may we assist you with your purchase today?</p>
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <textarea class="chat-input" placeholder="Type your message here..."></textarea>
+                    <button class="send-message-btn"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Processing Modal -->
+    <div class="modal" id="processing-modal">
+        <div class="modal-content processing-modal-content">
+            <div class="modal-body text-center">
+                <div class="loading-spinner"></div>
+                <h3>Processing Your Order</h3>
+                <p>Please do not close this page. This may take a moment.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>

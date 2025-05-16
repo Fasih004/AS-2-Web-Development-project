@@ -8,14 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburger.addEventListener('click', function() {
             navLinks.classList.toggle('active');
             hamburger.classList.toggle('active');
-        });
+        }); 
     }
     
     // Header scroll effect
     const header = document.querySelector('.main-header');
     
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
+        if (window.scrollY > 100) { 
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');

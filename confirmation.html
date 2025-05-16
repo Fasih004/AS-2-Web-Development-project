@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - CarVerse</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/confirmation.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <h1>CarVerse</h1> 
+        </div>
+        <nav class="main-nav">
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="showroom.html">Showroom</a></li>
+                <li><a href="customize.html">Customize</a></li>
+                <li><a href="buy-sell.html">Buy & Sell</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="confirmation-section">
+        <div class="container">
+            <div class="confirmation-header">
+                <div class="success-animation">
+                    <div class="checkmark-circle">
+                        <div class="checkmark draw"></div>
+                    </div>
+                </div>
+                <h1>Order Confirmed</h1>
+                <p class="confirmation-message">Thank you for your exclusive CarVerse purchase.</p>
+                <div class="order-details">
+                    <div class="order-detail">
+                        <span class="detail-label">Order Number:</span>
+                        <span class="detail-value">CV-58721394</span>
+                    </div>
+                    <div class="order-detail">
+                        <span class="detail-label">Order Date:</span>
+                        <span class="detail-value">May 11, 2025</span>
+                    </div>
+                </div>
+                <div class="confirmation-actions">
+                    <button class="primary-btn download-confirmation">
+                        <i class="fas fa-download"></i> Download Confirmation
+                    </button>
+                    <button class="secondary-btn email-confirmation">
+                        <i class="fas fa-envelope"></i> Email Confirmation
+                    </button>
+                </div>
+            </div>
+
+            <div class="confirmation-content">
+                <div class="confirmation-main">
+                    <div class="confirmation-card order-summary-card">
+                        <div class="card-header">
+                            <h2>Order Summary</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="vehicle-details">
+                                <div class="vehicle-image">
+                                    <img src="images/car-details/Ferrari SF90 Stradale front.jpg" alt="Ferrari SF90 Stradale">
+                                    <div class="vehicle-status">Reserved</div>
+                                </div>
+                                <div class="vehicle-info">
+                                    <h3>Ferrari SF90 Stradale</h3>
+                                    <div class="vehicle-specs">
+                                        <div class="spec-item">
+                                            <span class="spec-label">Year:</span>
+                                            <span class="spec-value">2023</span>
+                                        </div>
+                                        <div class="spec-item">
+                                            <span class="spec-label">Color:</span>
+                                            <span class="spec-value">Rosso Corsa</span>
+                                        </div>
+                                        <div class="spec-item">
+                                            <span class="spec-label">Interior:</span>
+                                            <span class="spec-value">Nero Leather</span>
+                                        </div>
+                                        <div class="spec-item">
+                                            <span class="spec-label">Engine:</span>
+                                            <span class="spec-value">4.0L V8 Hybrid</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="additional-items">
+                                <h4>Additional Items</h4>
+                                <div class="additional-item">
+                                    <div class="item-name">Premium Maintenance Package</div>
+                                    <div class="item-price">$15,000</div>
+                                </div>
+                                <div class="additional-item">
+                                    <div class="item-name">Carbon Fiber Wheel Set</div>
+                                    <div class="item-price">$12,500</div>
+                                </div>
+                            </div>
+                            
+                            <div class="pricing-summary">
+                                <div class="pricing-item">
+                                    <div class="pricing-label">Subtotal</div>
+                                    <div class="pricing-value">$527,500</div>
+                                </div>
+                                <div class="pricing-item">
+                                    <div class="pricing-label">Shipping & Handling</div>
+                                    <div class="pricing-value">$5,000</div>
+                                </div>
+                                <div class="pricing-item">
+                                    <div class="pricing-label">Taxes</div>
+                                    <div class="pricing-value">$26,375</div>
+                                </div>
+                                <div class="pricing-item discount">
+                                    <div class="pricing-label">Promotional Discount</div>
+                                    <div class="pricing-value">-$2,750</div>
+                                </div>
+                                <div class="pricing-item total">
+                                    <div class="pricing-label">Total</div>
+                                    <div class="pricing-value">$556,125</div>
+                                </div>
+                                <div class="pricing-item paid">
+                                    <div class="pricing-label">Deposit Paid</div>
+                                    <div class="pricing-value">$50,000</div>
+                                </div>
+                                <div class="pricing-item remaining">
+                                    <div class="pricing-label">Balance Due</div>
+                                    <div class="pricing-value">$506,125</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="confirmation-card delivery-card">
+                        <div class="card-header">
+                            <h2>Delivery Information</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="delivery-details">
+                                <div class="delivery-method">
+                                    <div class="method-icon">
+                                        <i class="fas fa-truck"></i>
+                                    </div>
+                                    <div class="method-details">
+                                        <h4>Standard Delivery</h4>
+                                        <p>Enclosed carrier transport to your specified location</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="delivery-estimate">
+                                    <div class="estimate-icon">
+                                        <i class="far fa-calendar-alt"></i>
+                                    </div>
+                                    <div class="estimate-details">
+                                        <h4>Estimated Delivery</h4>
+                                        <p>August 3 - August 17, 2025</p>
+                                        <button class="text-btn add-to-calendar">
+                                            <i class="fas fa-calendar-plus"></i> Add to Calendar
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="delivery-address">
+                                    <div class="address-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="address-details">
+                                        <h4>Delivery Address</h4>
+                                        <p>John Smith<br>
+                                        123 Luxury Lane<br>
+                                        Dubai Marina<br>
+                                        Dubai, United Arab Emirates</p>
+                                        <button class="text-btn update-address">
+                                            <i class="fas fa-edit"></i> Update Address
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tracking-info">
+                                <h4>Tracking Information</h4>
+                                <p>A tracking number will be provided once your vehicle production is complete.</p>
+                                <div class="notification-preferences">
+                                    <h5>Delivery Notifications</h5>
+                                    <div class="notification-options">
+                                        <div class="notification-option">
+                                            <input type="checkbox" id="email-notifications" checked>
+                                            <label for="email-notifications">Email Notifications</label>
+                                        </div>
+                                        <div class="notification-option">
+                                            <input type="checkbox" id="sms-notifications" checked>
+                                            <label for="sms-notifications">SMS Notifications</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="confirmation-card payment-card">
+                        <div class="card-header">
+                            <h2>Payment Information</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="payment-details">
+                                <div class="payment-method">
+                                    <div class="method-icon">
+                                        <i class="far fa-credit-card"></i>
+                                    </div>
+                                    <div class="method-details">
+                                        <h4>Payment Method</h4>
+                                        <p>Credit Card</p>
+                                        <p class="card-info">VISA •••• 4567</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="payment-transaction">
+                                    <div class="transaction-icon">
+                                        <i class="fas fa-receipt"></i>
+                                    </div>
+                                    <div class="transaction-details">
+                                        <h4>Transaction Details</h4>
+                                        <div class="transaction-detail">
+                                            <span class="detail-label">Transaction ID:</span>
+                                            <span class="detail-value">TRX-29384756</span>
+                                        </div>
+                                        <div class="transaction-detail">
+                                            <span class="detail-label">Transaction Date:</span>
+                                            <span class="detail-value">May 11, 2025</span>
+                                        </div>
+                                        <div class="transaction-detail">
+                                            <span class="detail-label">Amount:</span>
+                                            <span class="detail-value">$50,000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="payment-schedule">
+                                    <div class="schedule-icon">
+                                        <i class="fas fa-calendar-check"></i>
+                                    </div>
+                                    <div class="schedule-details">
+                                        <h4>Payment Schedule</h4>
+                                        <p>The remaining balance of $506,125 will be due prior to delivery.</p>
+                                        <p>Your CarVerse concierge will contact you approximately 2 weeks before delivery to arrange final payment.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="payment-receipt">
+                                <button class="secondary-btn view-receipt">
+                                    <i class="fas fa-file-invoice-dollar"></i> View Receipt
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="confirmation-card status-card">
+                        <div class="card-header">
+                            <h2>Production Status</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="status-tracker">
+                                <div class="status-step active">
+                                    <div class="step-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="step-content">
+                                        <h4>Order Confirmed</h4>
+                                        <p>May 11, 2025</p>
+                                    </div>
+                                </div>
+                                <div class="status-step">
+                                    <div class="step-icon">
+                                        <i class="fas fa-cog"></i>
+                                    </div>
+                                    <div class="step-content">
+                                        <h4>Production Scheduled</h4>
+                                        <p>Estimated: May 16, 2025</p>
+                                    </div>
+                                </div>
+                                <div class="status-step">
+                                    <div class="step-icon">
+                                        <i class="fas fa-tools"></i>
+                                    </div>
+                                    <div class="step-content">
+                                        <h4>Production In Progress</h4>
+                                        <p>Estimated: June 1, 2025</p>
+                                    </div>
+                                </div>
+                                <div class="status-step">
+                                    <div class="step-icon">
+                                        <i class="fas fa-clipboard-check"></i>
+                                    </div>
+                                    <div class="step-content">
+                                        <h4>Quality Control</h4>
+                                        <p>Estimated: July 15, 2025</p>
+                                    </div>
+                                </div>
+                                <div class="status-step">
+                                    <div class="step-icon">
+                                        <i class="fas fa-shipping-fast"></i>
+                                    </div>
+                                    <div class="step-content">
+                                        <h4>Shipping</h4>
+                                        <p>Estimated: July 25, 2025</p>
+                                    </div>
+                                </div>
+                                <div class="status-step">
+                                    <div class="step-icon">
+                                        <i class="fas fa-flag-checkered"></i>
+                                    </div>
+                                    <div class="step-content">
+                                        <h4>Delivery</h4>
+                                        <p>Estimated: August 3-17, 2025</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="status-updates">
+                                <h4>Status Updates</h4>
+                                <p>You will receive automatic updates as your vehicle progresses through each production stage.</p>
+                                <a href="#" class="view-details">View detailed production information</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="confirmation-sidebar">
+                    <div class="sidebar-card concierge-card">
+                        <div class="card-header">
+                            <h3>Your Personal Concierge</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="concierge-profile">
+                                <div class="concierge-image">
+                                    <img src="/api/placeholder/120/120" alt="Concierge">
+                                </div>
+                                <div class="concierge-details">
+                                    <h4>Sarah Johnson</h4>
+                                    <p class="concierge-title">Luxury Vehicle Specialist</p>
+                                </div>
+                            </div>
+                            <div class="concierge-contact">
+                                <div class="contact-method">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <a href="tel:+97144567890">+971 4 456 7890</a>
+                                </div>
+                                <div class="contact-method">
+                                    <i class="fas fa-envelope"></i>
+                                    <a href="mailto:sarah.j@carverse.com">sarah.j@carverse.com</a>
+                                </div>
+                                <div class="contact-method">
+                                    <i class="fas fa-comment-alt"></i>
+                                    <a href="#" class="start-chat">Start Live Chat</a>
+                                </div>
+                            </div>
+                            <div class="concierge-note">
+                                <p>Your concierge is available 24/7 to answer any questions about your order.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-card documents-card">
+                        <div class="card-header">
+                            <h3>Documents</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="document-list">
+                                <div class="document-item">
+                                    <div class="document-icon">
+                                        <i class="far fa-file-pdf"></i>
+                                    </div>
+                                    <div class="document-details">
+                                        <h4>Order Confirmation</h4>
+                                        <p>PDF - 245 KB</p>
+                                    </div>
+                                    <a href="#" class="document-download">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                </div>
+                                <div class="document-item">
+                                    <div class="document-icon">
+                                        <i class="far fa-file-pdf"></i>
+                                    </div>
+                                    <div class="document-details">
+                                        <h4>Deposit Receipt</h4>
+                                        <p>PDF - 178 KB</p>
+                                    </div>
+                                    <a href="#" class="document-download">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                </div>
+                                <div class="document-item">
+                                    <div class="document-icon">
+                                        <i class="far fa-file-alt"></i>
+                                    </div>
+                                    <div class="document-details">
+                                        <h4>Vehicle Specifications</h4>
+                                        <p>PDF - 1.2 MB</p>
+                                    </div>
+                                    <a href="#" class="document-download">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                </div>
+                                <div class="document-item">
+                                    <div class="document-icon">
+                                        <i class="far fa-file-alt"></i>
+                                    </div>
+                                    <div class="document-details">
+                                        <h4>Terms & Conditions</h4>
+                                        <p>PDF - 320 KB</p>
+                                    </div>
+                                    <a href="#" class="document-download">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-card next-steps-card">
+                        <div class="card-header">
+                            <h3>What's Next</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="steps-list">
+                                <div class="step-item">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h4>Confirmation Email</h4>
+                                        <p>You'll receive a detailed confirmation email within the next hour.</p>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h4>Concierge Contact</h4>
+                                        <p>Your personal concierge will contact you within 24 hours to introduce themselves.</p>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h4>Production Updates</h4>
+                                        <p>You'll receive regular updates as your vehicle moves through production.</p>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h4>Delivery Coordination</h4>
+                                        <p>Your concierge will contact you to coordinate the final payment and delivery details.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-card share-card">
+                        <div class="card-header">
+                            <h3>Share Your Purchase</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Share your exclusive CarVerse purchase with friends and family.</p>
+                            <div class="share-options">
+                                <a href="#" class="share-option facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="share-option twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="share-option instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="share-option linkedin">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="share-option whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="account-creation">
+                <div class="account-card">
+                    <div class="account-header">
+                        <h2>Create an Account</h2>
+                        <p>Create an account to track your order, access exclusive owner benefits, and manage your CarVerse experience.</p>
+                    </div>
+                    <div class="account-form">
+                        <div class="form-group">
+                            <label for="account-email">Email Address</label>
+                            <input type="email" id="account-email" value="john.smith@example.com" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="account-password">Create Password</label>
+                            <input type="password" id="account-password" placeholder="Enter your password">
+                        </div>
+                        <div class="form-group">
+                            <label for="account-confirm-password">Confirm Password</label>
+                            <input type="password" id="account-confirm-password" placeholder="Confirm your password">
+                        </div>
+                        <div class="form-actions">
+                            <button class="primary-btn create-account-btn">Create Account</button>
+                            <button class="text-btn skip-account-btn">Not Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="continue-shopping-section">
+                <h2>Continue Exploring CarVerse</h2>
+                <div class="continue-options">
+                    <a href="showroom.html" class="continue-option">
+                        <div class="option-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="option-label">Explore Showroom</div>
+                    </a>
+                    <a href="customize.html" class="continue-option">
+                        <div class="option-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="option-label">Customize Another Vehicle</div>
+                    </a>
+                    <a href="about.html" class="continue-option">
+                        <div class="option-icon">
+                            <i class="fas fa-concierge-bell"></i>
+                        </div>
+                        <div class="option-label">Owner Services</div>
+                    </a>
+                    <a href="index.html" class="continue-option">
+                        <div class="option-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="option-label">Return to Homepage</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CarVerse</h3>
+                    <p>Redefining the luxury automotive experience.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="showroom.html">Showroom</a></li>
+                        <li><a href="customize.html">Customize</a></li>
+                        <li><a href="buy-sell.html">Buy & Sell</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CarVerse. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Support Modal -->
+    <div class="modal" id="chat-modal">
+        <div class="modal-content chat-modal-content">
+            <div class="modal-header">
+                <h3>Luxury Concierge Chat</h3>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body chat-body">
+                <div class="chat-messages">
+                    <div class="chat-message system">
+                        <p>Welcome to CarVerse Luxury Concierge. How may we assist you with your order today?</p>
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <textarea class="chat-input" placeholder="Type your message here..."></textarea>
+                    <button class="send-message-btn"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calendar Modal -->
+    <div class="modal" id="calendar-modal">
+        <div class="modal-content calendar-modal-content">
+            <div class="modal-header">
+                <h3>Add to Calendar</h3>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="calendar-options">
+                    <div class="calendar-option">
+                        <i class="fab fa-google"></i>
+                        <span>Google Calendar</span>
+                    </div>
+                    <div class="calendar-option">
+                        <i class="fab fa-apple"></i>
+                        <span>Apple Calendar</span>
+                    </div>
+                    <div class="calendar-option">
+                        <i class="fab fa-microsoft"></i>
+                        <span>Outlook Calendar</span>
+                    </div>
+                    <div class="calendar-option">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>Download .ICS File</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/confirmation.js"></script>
+</body>
+</html>
