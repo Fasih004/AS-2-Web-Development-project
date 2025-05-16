@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         filterButtons.forEach(button => {
             button.addEventListener('click', function() {
                 // Remove active class from all buttons and add to clicked button
-                filterButtons.forEach(btn => btn.classList.remove('active'));
+                filterButtons.forEach(btn => btn.classList.remove('active')); 
                 this.classList.add('active');
                 
                 const filterValue = this.getAttribute('data-filter');
@@ -20,11 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         setTimeout(() => {
                             card.style.opacity = '1';
                             card.style.transform = 'translateY(0)';
-                        }, 100);
+                        }, 100); 
                     } else {
                         card.style.opacity = '0';
                         card.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
+                        setTimeout(() => { 
                             card.style.display = 'none';
                         }, 300);
                     }

@@ -118,8 +118,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 z-index: 1002;
                 background-color: rgba(0, 0, 0, 0.5);
                 border-radius: 50%;
-                width: 50px;
-                height: 50px;
+                width: 50px; 
+                height: 50px; 
                 display: flex;
                 align-items: center;
                 justify-content: center;

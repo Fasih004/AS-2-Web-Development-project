@@ -13,12 +13,12 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         
         // Current vehicle model and configuration 
-        let currentVehicle = {
-            model: 'ferrari-sf90', 
+        let currentVehicle = { 
+            model: 'ferrari-sf90',  
             name: 'Ferrari SF90 Stradale',
             basePrice: 321400,
-            specs: {
-                year: '2023',
+            specs: { 
+                year: '2023', 
                 color: 'Rosso Corsa',
                 interior: 'Nero Leather',
                 engine: 'Standard V8 Hybrid'

@@ -511,16 +511,16 @@ Estimated Delivery: August 3 - August 17, 2025
 
 Thank you for your exclusive CarVerse purchase.
 For assistance, contact your personal concierge at +971 4 456 7890.
-`;
+`; 
             downloadTextFile('CarVerse_Order_Confirmation_CV-58721394.txt', content);
         });
     }
 
     // View receipt  button
     const viewReceiptBtn = document.querySelector('.view-receipt');
-    if (viewReceiptBtn) {
+    if (viewReceiptBtn) { 
         viewReceiptBtn.addEventListener('click', function() {
-            const content = `
+            const content = ` 
 CarVerse Payment Receipt
 =======================
 Transaction ID: TRX-29384756

@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     navBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             // Remove active class from all buttons and sections
-            navBtns.forEach(b => b.classList.remove('active'));
+            navBtns.forEach(b => b.classList.remove('active')); 
             aboutSections.forEach(section => section.classList.remove('active'));
             
             // Add active class to clicked button and corresponding section 
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Scroll to the top of the section
             document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
-    }); 
+    });  
     
     // FAQ Accordion
     const faqItems = document.querySelectorAll('.faq-item');

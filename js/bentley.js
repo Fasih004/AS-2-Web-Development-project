@@ -1,6 +1,17 @@
 // Bentley Continental GT Detail Page - Specific JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Add Bentley-specific background styling to hero section
+    const carHero = document.querySelector('.car-hero');
+    if (carHero) {
+        // Set background image if not already set in CSS
+        if (!carHero.style.backgroundImage) {
+            carHero.style.backgroundImage = 'url("../images/car-deatails/bently.jpg")';
+            carHero.style.backgroundSize = 'cover';
+            carHero.style.backgroundPosition = 'center'; 
+        }
+    } 
+
     // Bentley Rotating Display Functionality
     const displayButtons = document.querySelectorAll('.display-btn');
     const displayViews = document.querySelectorAll('.display-view');
@@ -27,6 +38,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add automatic rotation for demonstration (optional)
         let currentDisplayIndex = 0;
         const displayTypes = ['veneer', 'digital', 'analog'];
+        
+        // Make sure at least one view is active initially
+        if (!document.querySelector('.display-view.active')) {
+            document.querySelector('.display-view.veneer').classList.add('active');
+            document.querySelector('.display-btn[data-display="veneer"]').classList.add('active');
+        }
         
         // Function to rotate the display
         function rotateDisplay() {
@@ -248,3 +265,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+

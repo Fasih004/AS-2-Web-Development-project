@@ -10,17 +10,17 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburger.classList.toggle('active');
         }); 
     }
-    
+     
     // Header scroll effect
     const header = document.querySelector('.main-header');
-    
+     
     window.addEventListener('scroll', function() {
         if (window.scrollY > 100) { 
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
-    });
+    }); 
     
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(event) {

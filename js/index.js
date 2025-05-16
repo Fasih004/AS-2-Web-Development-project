@@ -12,14 +12,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const animateFeaturedCars = function() {
         const featuredCars = document.querySelectorAll('.featured-car');
         
-        featuredCars.forEach(car => {
+        featuredCars.forEach(car => { 
             const carPosition = car.getBoundingClientRect().top;
             const windowHeight = window.innerHeight;
-            
+             
             if (carPosition < windowHeight - 100) { 
                 car.classList.add('fade-in');
             }
-        });
+        }); 
     };
     
     // Initial check

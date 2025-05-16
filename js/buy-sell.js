@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add active class to clicked button and corresponding tab
             this.classList.add('active');
             const tabId = this.getAttribute('data-tab');
-            document.getElementById(tabId).classList.add('active');
+            document.getElementById(tabId).classList.add('active');  
         });
     });
     
